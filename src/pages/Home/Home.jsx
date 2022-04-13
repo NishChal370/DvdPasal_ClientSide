@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import './home.css';
-import { SliderImg1, logo, ExperienceImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg } from '../../assets/images';
 import { homeSlider } from './slider';
+import { SliderImg1, logo, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg } from '../../assets/images';
+
 
 function Home() {
 
@@ -30,7 +31,7 @@ function Home() {
     <main id='home-main' >
       {
         [
-          {bgImg:ExperienceImg, heading:'Experience', subHeading: 'A new design that just flows.', desc:'With a fresh look and enhanced features, Apple Music makes it easier than ever to find music you love, listen to live radio broadcasting worldwide, and get recommendations from experts.'},
+          {bgImg:GostBalloonImg, heading:'Experience', subHeading: 'A new design that just flows.', desc:'With a fresh look and enhanced features, Apple Music makes it easier than ever to find music you love, listen to live radio broadcasting worldwide, and get recommendations from experts.'},
           {bgImg:ExclusivesImg, heading:'Premiering on Apple Music', subHeading: 'Hear it here. First.', desc:'Be the first to hear songs and albums from top artists, emerging acts, and more. You’ll also enjoy music videos, concert films, and live shows created just for Apple Music.'},
           {bgImg:PlaylistsImg, heading:'Songs and Playlists', subHeading: 'The music you love now. The music you’ll love next.', desc:'All your music, no matter where it came from, lives in your Apple Music library. And we’ve made it easier than ever to search, explore, and listen to all of it. But we’ve also made it easy to find new music. Our team of experts — people who live and breathe music — scour the globe to find the artists, songs, and albums you’ll love tomorrow.'},
           {bgImg:BeatsImg, heading:'Radio', subHeading: 'The best DJs on the planet. Broadcasting worldwide.', desc:'Beats 1 celebrates the best new music every day. Listen to original shows hosted by some of the biggest artists and DJs from around the world — all for free. Miss a show? If you’re a member, you can listen to any past program on demand. Into a specific genre? Members can choose from a wide range of music-only stations, each expertly curated and free of ads.'},
