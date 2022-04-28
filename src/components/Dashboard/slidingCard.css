@@ -18,7 +18,23 @@
       padding: 1rem;
       width: 16%;
       gap: 1rem;
+      animation: float 5s ease-in-out infinite;
       box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+#slidingCard-wrapper>span>.card:nth-child(even){
+      animation-delay: 2s;
+}
+
+@keyframes float{
+      0%{
+            transform: translateY(0);
+      }
+      50%{
+            transform: translateY(-15px);
+      }
+      100%{
+            transform: translateY(0);
+      }
 }
 #slidingCard-wrapper>span>.card:hover{
       cursor: pointer;
