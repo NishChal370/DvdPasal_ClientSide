@@ -1,87 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&display=swap');
-
-#home{
-      color: white;
+.showSideNav{
+      width: 20rem;
+      visibility: visible;
+      transition: visibility 0.3s, width 0.4s linear;  
 }
 
-/*
-* Header
-*/
-
-#home-header{
-      font-size: 0.8rem;
-      padding: 4rem 20rem 0rem 20rem;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat !important;
+.sideNav{
+      z-index: 1;
+      height: 100%;
+      background: red;
+      position: absolute;
+      transition: visibility 0s, width 0.4s linear;
 }
-#home-nav{
-      display: flex;
-      text-align: center;
-      padding: 1rem 2rem 0rem 2rem;
-      justify-content: space-between;
-      border-bottom: 0.08rem solid white;
-}
-#home-nav > aside{
-      gap: 2rem;
-      display: flex;
-}
-#home-nav > aside> p{
-      margin: 0%;
-}
-#home-nav > aside>p:nth-child(3){
-      padding: 2px 6px;
-      border-radius: 0.2rem;
-      background-color: rgb(212, 60, 60);
-}
-#home-header>.center {
-      padding:2px;
-      margin:20% auto;
-      text-align: center;
-      font-family: 'Bai Jamjuree', sans-serif;
-}
-#home-header>.center>p:nth-child(2){
-      font-size: 3.6rem;
-}
-#home-header>.center>p:nth-child(3){
-      font-size: 1.5rem;
-}
-
-/*
-* Main
-*/
-#home-main>section{
-      background-size: cover;
-      background-position: center center;
-}
-#home-main>section>div{
-      width: 40%;
-      padding: 10% 0% 0% 16%;
-}
-#home-main>section>div>p:nth-child(1){
-      font-size: 2rem;
-}
-#home-main>section>div>p:nth-child(2){
-      font-size: 2.6rem;
-}
-#home-main>section:last-child{
-      height: 40rem !important;
-      background-repeat: no-repeat !important;
-      background-position: center;
-}
-
-/*
-* Footer
-*/
-
-#home-footer{
-      width: 100%;
-      color: rgb(95, 93, 93);
-      padding: 1% 20% 1% 20%;
-      font-size: smaller;
-      background-color: black;
-}
-
-#home-footer>section>div>p>hr{
-      margin-bottom: 1rem;
+.hideSideNav{
+      width: 0rem;
+      visibility: hidden;
+      transition: visibility 0.3s, width 0.4s linear;
 }
