@@ -20,6 +20,29 @@
 #dashboard>.top-img>div:hover{
       box-shadow: 0px 15px 10px -15px rgb(140, 21, 238);
 }
+#dashboard>.top-img>div>span>p:nth-child(1){
+      /* text-shadow: none; */
+      text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.3em blue;
+      animation: lightBlink 2s  ease-in-out infinite;
+}
+
+
+@keyframes lightBlink{
+      0%{
+            
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.3em blue;
+            /* color: red; */
+      }
+      50%{
+            text-shadow: 1px 1px 2px rgb(226, 124, 124), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+            /* color: blue; */
+      }
+      100%{
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+            /* color: green; */
+      }
+}
+
 
 
 #login-button{
@@ -57,9 +80,6 @@
 }
 
 
-
-
-
 #available-dvds-wrapper> nav{
       padding: 0px;
       margin: 0px;
@@ -71,6 +91,22 @@
       padding: 0px;
       margin: 0px;
 }
+
+#available-dvds-wrapper> nav>p{
+      animation: moving 8s ease-in-out infinite;
+}
+@keyframes moving{
+      0%{
+           padding-left: 0%;
+      }
+      50%{
+            padding-left: 6%;
+      }
+      100%{
+            padding-left: 0%;
+      }
+}
+
 #available-dvds-wrapper>hr{
       padding: 0px;
       margin: 0px 0px 2rem 0px;
