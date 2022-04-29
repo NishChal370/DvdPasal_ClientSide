@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import'./login.css';
 
 
 let initialLoginDetail = {email:'', password:''};
 function Login() {
+  const navigate = useNavigate();
   const [loginDetail, setLoginDetail] = useState(initialLoginDetail);
 
   const inputChangeHandler=({target})=>{
@@ -18,6 +20,8 @@ function Login() {
     console.log('Hello');
     console.log(loginDetail);
 
+    localStorage.setItem('is_login', true);
+    navigate('/');
     resetInput();
   }
 
@@ -26,6 +30,7 @@ function Login() {
     loginDetail.password = '';
 
     setLoginDetail({...loginDetail});
+
     document.getElementById('rememberMeCheck').checked = false;
   }
 

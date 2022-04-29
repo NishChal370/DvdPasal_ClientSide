@@ -1,0 +1,60 @@
+.showSideNav{
+      height: 200vh;
+      transition: visibility 1.1s,height 1s ease-in;
+}
+
+.sideNav{
+      z-index: 1;
+      width: 20rem; 
+      padding: 1rem 0rem;
+      background: rgb(41, 41, 41);
+      position: absolute;
+}
+.hideSideNav{
+      visibility: hidden;
+      height: 0;
+      transition: visibility 0.5s,height 0.6s ease-out;
+}
+
+#side-nav>button{
+      border: none;
+      color: white;
+      width: 100%;
+      font-size: 1.2rem;
+      background-color: rgba(255, 255, 255, 0);
+      border-bottom: 0.2rem solid rgba(255, 255, 255, 0.548);
+      box-shadow: 0px 15px 15px -10px rgb(255, 255, 255);
+
+}
+
+#side-nav>div{
+      padding: 2rem 0rem;
+      text-align: left;
+      color: white;
+      
+
+}
+#side-nav>div>ul{
+      list-style-type: none;
+      padding: 0rem 1rem; 
+      
+}
+#side-nav>div>ul>.nav-item>.nav-link{
+      color: black !important;
+      font-weight: bold;
+}
+#side-nav>div>ul>.nav-item{
+     color: white;
+     border-radius: 1rem;
+     margin-top: 1rem;
+     cursor: pointer;
+}
+
+#side-nav>div>ul>.nav-item:hover{
+      background-color: rgba(255, 255, 255, 0.774);
+      color: black ;
+}
+#side-nav>div>ul>.active{
+      background-color: rgba(255, 255, 255, 0.582);
+      color: black ;
+}

@@ -25,5 +25,6 @@ import SearchIcon2 from './search-icon3.png';
 import video from './login.mp4';
 import NavCompassIcon from './compasses.png';
 // import LoginBackgroungImg from './login-backgoround.jpg'
-import LoginBackgroungImg from './login-backgoround7.jpg'
-export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, DvdImg,NavCompassIcon, SearchIcon2, video,LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg, Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10}
+import LoginBackgroungImg from './login-backgoround7.jpg';
+import DvdImg2 from './dvdImg.jpg';
+export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, DvdImg, DvdImg2, NavCompassIcon, SearchIcon2, video,LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg, Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10}

@@ -8,34 +8,11 @@ import { useNavigate } from 'react-router-dom';
 
 function Dashboard({HandlerNavbarVisible}) {
 
-      const navigate = useNavigate();
-
-      const changePageHandler=({target})=>{
-            const {id} = target;
-
-            if(id === 'login-button'){
-                  navigate('/login');
-            }
-      }     
-
       return (
       <div id='dashboard'>
-            <section className='top-img' style={{backgroundImage:`url(${Cartoon4})`}}>
-                  {/* <button onClick={HandlerNavbarVisible}>CLick</button> */}
-                  {/* <img src={Cartoon4} alt="" /> */}
-                  <div>
-                        <span className='ps-4' style={{ display:'flex', justifyContent:'space-between'}}>
-                              <p className='p-0 m-0 fs-3'>DVD Store</p>
-                              <button id='login-button' onClick={changePageHandler}>Login</button>
-                        </span>
-                  </div>
-            </section>
-
-            <SlidingCard/>
-
             <section id='available-dvds-wrapper'>
                   <nav>
-                        <p className='fw-bolder fs-1'>DVDs in store</p>
+                        <p className='fw-bolder fs-1 moving-text---effect'>DVDs in store</p>
                         <aside>
                               <input type="text" name="" id=""  placeholder='Search...'/>
                               <img src={SearchIcon2} alt="" />
@@ -68,6 +45,21 @@ function Dashboard({HandlerNavbarVisible}) {
 }
 
 export default Dashboard
+
+
+
+/**<section className='top-img' style={{backgroundImage:`url(${Cartoon4})`}}>
+
+                  <div>
+                        <span className='ps-4' style={{ display:'flex', justifyContent:'space-between'}}>
+                              <p className='p-0 m-0 fs-3'>DVD Store</p>
+                              <button id='login-button' onClick={changePageHandler}>Login</button>
+                        </span>
+                  </div>
+            </section>
+
+            <SlidingCard/> */
+
 
 
 

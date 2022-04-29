@@ -1,10 +1,10 @@
-import { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import { Home, Login } from "./pages";
+
+import { Catelog, Dashboard, Home, Login } from "./pages";
 
 
 function App() {
@@ -15,7 +15,16 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login/>}/>
-        <Route path="/" element={<Home/>}/>
+
+        <Route path="/" element={<Home />}>
+
+          <Route index element={<Dashboard />} />
+
+          {localStorage.getItem('is_login')&&(
+            <Route path="catelog" element={<Catelog />} />
+          )}
+          
+        </Route>
       </Routes>
     </Router>
     
@@ -23,8 +32,3 @@ function App() {
 }
 
 export default App;
-
- {/* <Route path="overview" element={<h1>Overview</h1>}>
-          <Route index element={<h1>HE 1</h1>} />
-          <Route path="b" element={<h1>HE 2</h1>} />
-        </Route> */}

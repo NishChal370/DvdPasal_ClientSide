@@ -1,4 +1,4 @@
-.showSideNav{
+/* .showSideNav{
       height: 200vh;
       transition: visibility 1.1s,height 1s ease-in;
 }
@@ -14,4 +14,168 @@
       height: 0;
       transition: visibility 1.1s,height 1s ease-out;
 }
+ */
 
+ 
+
+ 
+#main{
+      width: 100%;
+      margin-bottom: 10rem !important;
+}
+#main>.top-img{
+      height: 40rem ;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+}
+
+#main>.top-img>div{
+      box-shadow: 0px 15px 10px -15px #0ff;
+      color: white;
+      padding-top: 2%;
+      margin: 0rem 10%;
+      border-bottom: 0.2rem solid white;
+}
+
+#main>.top-img>div:hover{
+      box-shadow: 0px 15px 10px -15px rgb(140, 21, 238);
+}
+#main>.top-img>div>span>p:nth-child(1){
+      /* text-shadow: none; */
+      text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.3em blue;
+      animation: lightBlink 2s  ease-in-out infinite;
+}
+
+
+@keyframes lightBlink{
+      0%{
+            
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.3em blue;
+            /* color: red; */
+      }
+      50%{
+            text-shadow: 1px 1px 2px rgb(226, 124, 124), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+            /* color: blue; */
+      }
+      100%{
+            text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+            /* color: green; */
+      }
+}
+
+
+
+#login-button{
+      background-color: rgba(37, 35, 35, 0.301);
+      border-radius: 1rem;
+      box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      outline: none;
+      outline: 0;
+      padding: 0rem 1rem;
+      margin: 0rem;
+      text-align: center;
+      transform: translateY(0);
+      transition: transform 150ms, box-shadow 150ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+}
+
+#login-button:hover {
+      box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+      transform: translateY(-9px);
+}
+
+/* 
+
+#dashboard>section:nth-child(3){
+      padding: 0rem 2.6rem;
+      height: 40rem;
+}
+
+
+#available-dvds-wrapper> nav{
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      place-items: center;
+      justify-content: space-between;
+}
+#available-dvds-wrapper> nav>*{
+      padding: 0px;
+      margin: 0px;
+}
+
+#available-dvds-wrapper> nav>p{
+      animation: moving 8s ease-in-out infinite;
+}
+@keyframes moving{
+      0%{
+           padding-left: 0%;
+      }
+      50%{
+            padding-left: 6%;
+      }
+      100%{
+            padding-left: 0%;
+      }
+}
+
+#available-dvds-wrapper>hr{
+      padding: 0px;
+      margin: 0px 0px 2rem 0px;
+}
+
+
+#available-dvds-wrapper>nav>aside>input{
+      border: 0rem;
+      border-bottom: 1px solid black !important;
+}
+
+#available-dvds-wrapper>nav>aside>input:focus{
+      outline: none;
+      box-shadow: 0 4px 2px -2px #0ff;
+
+}
+
+
+#available-dvds-wrapper>nav>aside>img{
+      width: 3rem;
+      margin-bottom: 1.6rem;
+      padding: 0rem 0rem 0.2rem 0rem;
+      border-bottom: 1px solid black !important;
+}
+
+#available-dvds-wrapper>nav>aside>img:hover{
+      cursor: pointer;
+      box-shadow: 0 4px 2px -2px #0ff;
+
+}
+
+
+.dvd-card{
+      border-radius: 1rem;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.dvd-card:hover{
+      cursor: pointer;
+      transform: translateY(-6%);
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.dvd-card>.card-body>img{
+      border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.dvd-card>.card-body>article>p:nth-child(2){
+      color: rgb(185, 184, 184);
+} */
