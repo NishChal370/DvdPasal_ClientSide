@@ -4,7 +4,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Home } from "./pages";
+import { Home, Login } from "./pages";
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     
     <Router>
       <Routes>
-  
+        <Route path="/login" element={<Login/>}/>
         <Route path="/" element={<Home/>}/>
       </Routes>
     </Router>

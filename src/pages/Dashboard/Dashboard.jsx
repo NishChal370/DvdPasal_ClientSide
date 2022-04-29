@@ -2,9 +2,21 @@ import React from 'react'
 import './dashboard.css'
 import { SlidingCard } from '../../components/Dashboard'
 import { Cartoon4, DvdImg, SearchIcon2 } from '../../assets/images'
+import { useNavigate } from 'react-router-dom';
+
 
 
 function Dashboard({HandlerNavbarVisible}) {
+
+      const navigate = useNavigate();
+
+      const changePageHandler=({target})=>{
+            const {id} = target;
+
+            if(id === 'login-button'){
+                  navigate('/login');
+            }
+      }     
 
       return (
       <div id='dashboard'>
@@ -14,7 +26,7 @@ function Dashboard({HandlerNavbarVisible}) {
                   <div>
                         <span className='ps-4' style={{ display:'flex', justifyContent:'space-between'}}>
                               <p className='p-0 m-0 fs-3'>DVD Store</p>
-                              <button id='login-button'>Login</button>
+                              <button id='login-button' onClick={changePageHandler}>Login</button>
                         </span>
                   </div>
             </section>
@@ -31,7 +43,7 @@ function Dashboard({HandlerNavbarVisible}) {
                   </nav>
                   
                   <hr />
-                  
+
                   <div style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap:'3rem'}}>
 
                         {[1,2,3,4,5,6].map((data)=>{return(
