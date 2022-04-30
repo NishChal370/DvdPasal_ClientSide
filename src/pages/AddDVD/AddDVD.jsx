@@ -5,41 +5,6 @@ import { AddUserImg, CrossImg } from '../../assets/images';
 import { Get_Actors_Name, Get_DVD_Cateogaries_Name, Get_Producets_Name, Get_Studios_Name, Post_Dvd_Title } from '../../API/UserService';
 
 
-let initialData = {
-      "dvdName": "",
-      "dateReleased": new Date().toLocaleDateString(),
-      "standardCharge": 0,
-      "penaltyCharge": 0,
-      "dvdCategory": {
-            "categoryNumber": 0,
-            "categoryDescription": "",
-            "ageRestricted": false
-      },
-      "dvdProducer": {
-            "producerNumber": 0,
-            "producerName": ""
-      },
-      "dvdStudio": {
-            "studioNumber": 0,
-            "studioName": ""
-      },
-      "dvDimages": [
-            {
-                  "dvDimageId": 0,
-                  "dvDnumber": 0,
-                  "image64": ""
-            }
-      ],
-      "actors": [
-            {
-                  "actorNumber": 0,
-                  "actorName": "",
-                  "actorLastName": "",
-                  "profileUrl": ""
-            }
-      ]
-}
-
 let data ={
       "dvdName": "",
       "dateReleased": new Date().toLocaleDateString(),
@@ -264,7 +229,41 @@ function AddDVD() {
       const resetButtonHandler=()=>{
             setNumberOfActors(1);
             setNumberOfDvdImage(1);
-            setDvdData({...initialData});
+            setDvdData({
+                  "dvdName": "",
+                  "dateReleased": new Date().toLocaleDateString(),
+                  "standardCharge": 0,
+                  "penaltyCharge": 0,
+                  "dvdCategory": {
+                        "categoryNumber": 0,
+                        "categoryDescription": "",
+                        "ageRestricted": false
+                  },
+                  "dvdProducer": {
+                        "producerNumber": 0,
+                        "producerName": ""
+                  },
+                  "dvdStudio": {
+                        "studioNumber": 0,
+                        "studioName": ""
+                  },
+                  "dvDimages": [
+                        {
+                              "dvDimageId": 0,
+                              "dvDnumber": 0,
+                              "image64": ""
+                        }
+                  ],
+                  "actors": [
+                        {
+                              "actorNumber": 0,
+                              "actorName": "",
+                              "actorLastName": "",
+                              "profileUrl": ""
+                        }
+                  ]
+            }
+            );
             setInputNewStatus({producer: false, studio: false, actor: {0:false}, image:{0:false}, cateogary: false});
       }
 
