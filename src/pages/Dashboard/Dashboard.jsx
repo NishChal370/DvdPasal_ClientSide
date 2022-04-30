@@ -58,7 +58,7 @@ function Dashboard({HandlerNavbarVisible}) {
                   })
       }
 
-      
+
       const get_available_dvd_by_lastname=()=>{
             Get_Available_Dvd_By_Lastname()
                   .then(({data})=>{
@@ -111,7 +111,7 @@ function Dashboard({HandlerNavbarVisible}) {
                   {/* cards */}
                   <div style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap:'3rem', minHeight: '40rem'}}>
 
-                        {(dvdDetails !== undefined) &&(dvdDetails.map(({dvdName, dateReleased, standardCharge, dvdCategory})=>{return(
+                        {(dvdDetails !== undefined) &&(dvdDetails.map(({dvdName, dateReleased, standardCharge, dvdCategory, actors})=>{return(
                               <div className="card dvd-card">
                                     <div className="card-body p-0">
                                           <img  className="card-img-top" src={DvdImg} alt="div" />
@@ -122,6 +122,7 @@ function Dashboard({HandlerNavbarVisible}) {
                                                 <p className="fs-5 p-0 m-0"><span style={{fontWeight:'bold'}}>Release Date:</span> {dateConverter(dateReleased)}</p>
                                                 <p className="fs-5 p-0 m-0"><span style={{fontWeight:'bold'}}>Price:</span> {standardCharge}</p>
                                                 <p className="fs-5 p-0 m-0"><span style={{fontWeight:'bold'}}>Cateogary:</span> {dvdCategory['categoryDescription']}</p>
+                                                <p className="fs-5 p-0 m-0"><span style={{fontWeight:'bold'}}>Actor:</span> {`${actors[0].actorName} ${actors[0].actorLastName}`}</p>
                                                 <p className="fs-5 p-0 m-0"><span style={{fontWeight:'bold'}}>AgeLimit:</span> <span className={`badge rounded-pill ${(dvdCategory.ageRestricted)?'bg-danger': 'bg-success'}`}>{(dvdCategory.ageRestricted)? 'Adults': 'Family'}</span></p>
                                           </article>
                                     </div>
