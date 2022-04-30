@@ -8,6 +8,7 @@ import RangersImg from './WallpaperDog-10915266.jpg';
 import GostBalloonImg from './WallpaperDog-697338.jpg';
 import ExclusivesImg from './wp9049761-films-4k-wallpapers.jpg';
 import PlaylistsImg from './wp5242984-dark-movie-wallpapers.jpg';
+import Cartoon from './cartoon.jpg'
 import Cartoon1 from './cartoon1.jpg';
 import Cartoon3 from './cartoon3.jpg';
 import Cartoon4 from './cartoon4.jpg';
@@ -17,6 +18,7 @@ import Cartoon7 from './cartoon7.jpg';
 import Cartoon8 from './cartoon8.jpg';
 import Cartoon9 from './cartoon9.jpg';
 import Cartoon10 from './cartoon10.jpg';
+import Cartoon12 from './cartoon12.jpg';
 import Actor1 from './actor1.jpg';
 import Actor2 from './actor2.jpg';
 import DvdImg from './dvd-image.jpg';
@@ -30,4 +32,4 @@ import DvdImg2 from './dvdImg.jpg';
 import AvtarImg from './avtar2.gif';
 import AddUserImg from './add.png';
 import CrossImg from './cross.png';
-export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, AvtarImg, DvdImg, DvdImg2, AddUserImg, CrossImg, NavCompassIcon, SearchIcon2, video,LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg, Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10}
+export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, AvtarImg, DvdImg, DvdImg2, AddUserImg, CrossImg, NavCompassIcon, SearchIcon2, video,LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg,Cartoon, Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10, Cartoon12}

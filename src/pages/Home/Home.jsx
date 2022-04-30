@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import './home.css'
 import SideNav from '../../components/SideNav/SideNav';
 import { SlidingCard } from '../../components/Dashboard';
-import { Cartoon4, NavCompassIcon } from '../../assets/images';
+import { Cartoon, Cartoon10, Cartoon3, Cartoon4, Cartoon5, Cartoon7, Cartoon8, NavCompassIcon } from '../../assets/images';
 
 
 function Home() {
-
+  const location = useLocation().pathname;
+  let topCoverImage = (location.includes('catelog'))? Cartoon3 : (location.includes('members')) ? Cartoon:Cartoon4
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(localStorage.getItem('is_login'));
 
@@ -58,7 +59,7 @@ function Home() {
       <SideNav HandlerNavbarVisible={HandlerNavbarVisible} />
  
       <div id='main' >
-        <section className='top-img' style={{backgroundImage:`url(${Cartoon4})`}}>
+        <section className='top-img' style={{backgroundImage:`url(${topCoverImage})`}}>
           <div>
             <span className='ps-4' style={{ display:'flex', justifyContent:'space-between'}}>
               <p className='p-0 m-0 fs-3'>DVD Store</p>
@@ -76,7 +77,11 @@ function Home() {
           </div>
         </section>
 
-        <SlidingCard/>
+
+        {(location === '/')&&(
+          <SlidingCard/>
+        )}
+        
         
         {/* it handles nested routes */}
         <Outlet/>
