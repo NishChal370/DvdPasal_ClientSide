@@ -80,6 +80,24 @@
       border-radius: 1rem 1rem 0rem 0rem;
 }
 
-.dvd-card>.card-body>article>p:nth-child(2){
+/* .dvd-card>.card-body>article>p:nth-child(2){
       color: rgb(185, 184, 184);
+} */
+
+.error {
+      position: relative;
+      box-shadow: 0 4px 2px -2px rgb(236, 52, 52) !important;
+      animation: shake .1s linear infinite;
+      animation-iteration-count: 3;
+      
+}
+  
+@keyframes shake {
+      0% { left: -5px; }
+      100% { right: -5px; }
+}
+
+.page-not-found{
+      width: 100%;
+      margin-left: 190%;
 }

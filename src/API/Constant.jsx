@@ -15,7 +15,12 @@ const AXIOS = axios.create({
 
 const URL_GET_DVD_DETAIL ='DVDTitle/details';
 
+const URL_GET_DVD = 'DVDTitle';
 const URL_POST_DVD = 'DVDTitle';
+
+const URL_GET_DVD_BY_LASTNAME = 'DvdTitle/byLastName/';
+const URL_GET_AVAILABLE_DVD_BY_LASTNAME = 'DvdTitle/inStock/';
+
 
 const URL_GET_PRODUCETS_NAMES = 'Producer';
 const URL_GET_STUDIO_NAMES = 'Studio';
@@ -26,8 +31,15 @@ const URL_GET_DVD_CATEGORY_NAMES = 'DvdCategory';
 
 export{
       AXIOS,
+
       URL_GET_DVD_DETAIL,
+
+      URL_GET_DVD,
       URL_POST_DVD,
+
+      URL_GET_DVD_BY_LASTNAME,
+      URL_GET_AVAILABLE_DVD_BY_LASTNAME,
+
       URL_GET_PRODUCETS_NAMES,
       URL_GET_STUDIO_NAMES,
       URL_GET_ACTORS_NAMES,
