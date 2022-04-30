@@ -11,6 +11,10 @@
       place-items: center;
 }
 
+.dvd-image{
+      height: 50%;     
+      object-fit: cover;
+}
 
 .catelog-dvd-card {
       background-color: transparent;
