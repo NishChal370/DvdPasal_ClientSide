@@ -109,13 +109,12 @@ function AddDVD() {
       const addActorHandler = (type) => {
             if (type === 'less') {
                   numberOFActors = (numberOFActors > 1) ? numberOFActors - 1 : numberOFActors;
+                  
+                  if(numberOFActors > 1){
+                        delete inputNewStatus['actor'][numberOFActors];
 
-                  console.log(numberOFActors);
-                  console.log(dvdData);
-                  console.log(inputNewStatus['actor'][numberOFActors]);
-                  delete inputNewStatus['actor'][numberOFActors];
-
-                  (numberOFActors >= 1) && (dvdData.actors.pop())
+                        dvdData.actors.pop();
+                  }
 
             }
             else {
