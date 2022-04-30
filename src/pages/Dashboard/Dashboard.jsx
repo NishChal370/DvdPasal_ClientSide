@@ -16,6 +16,10 @@ function Dashboard({HandlerNavbarVisible}) {
                         <aside>
                               <input type="text" name="" id=""  placeholder='Search...'/>
                               <img src={SearchIcon2} alt="" />
+                              <div className='d-flex gap-2 justify-content-end'>
+                                    <input className='mt-1' type="checkbox" name="" id="" />
+                                    <p className='p-0 m-0'>Availables</p>
+                              </div>
                         </aside>
                   </nav>
                   

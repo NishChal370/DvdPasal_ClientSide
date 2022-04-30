@@ -14,8 +14,8 @@
 
 .catelog-dvd-card {
       background-color: transparent;
-      width: 300px;
-      height: 21rem;
+      width: 80%;
+      height: 28rem;
       perspective: 1000px;
 }
 
@@ -59,3 +59,21 @@
       color: white;
 }
 
+
+.pagination--button{
+      text-align: center;
+}
+.pagination--button>img:nth-child(2){
+      transform: rotate(180deg);
+}
+.pagination--button>img{
+      text-align: center;
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+}
+
+.pagination--button>img:hover{
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
