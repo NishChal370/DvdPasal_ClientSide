@@ -20,7 +20,7 @@ function SideNav({HandlerNavbarVisible}) {
       return (
             <nav id='side-nav' className= 'sideNav hideSideNav'>
                   <button onClick={HandlerNavbarVisible}>Close Me</button>
-                  <div>
+                  <div id='nav-div' className='side-nav-contents'>
                         {/* <p><FaRegDotCircle/>Catelog</p> */}
                         {/* {['Dashboard', 'Catelog', 'Members', ]} */}
                         <ul>
@@ -32,7 +32,7 @@ function SideNav({HandlerNavbarVisible}) {
 
                               <li className={`nav-item curser--on-hover ${(location.includes('catelog'))? 'active':''}`} name='catelog' onClick={()=>changePageHandler('catelog')}>
                                     <a className={`nav-link`}>
-                                          <span>Catelog</span>
+                                          <span>Catalog</span>
                                     </a>
                               </li>
                               <li className={`nav-item curser--on-hover ${(location.includes('members'))? 'active':''}`} name='members' onClick={()=>changePageHandler('members')}>

@@ -20,6 +20,14 @@
 .moving-text---effect{
       animation: moving 8s ease-in-out infinite;
 }
+
+
+.dvd-image{
+      max-height: 250px;
+      height: 50%;     
+      object-fit: cover;
+    }
+
 @keyframes moving{
       0%{
            padding-left: 0%;
