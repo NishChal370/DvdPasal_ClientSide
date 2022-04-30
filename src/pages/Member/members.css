@@ -1,0 +1,116 @@
+#members-wrapper{
+      padding: 0rem 3rem;
+      margin-bottom: 10rem;
+}
+
+#members-wrapper> nav{
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      place-items: center;
+      justify-content: space-between;
+}
+#members-wrapper> nav>*{
+      padding: 0px;
+      margin: 0px;
+}
+
+#members-wrapper>nav>aside>input{
+      border: 0rem;
+      border-bottom: 1px solid black !important;
+}
+#members-wrapper>nav>aside>input:focus{
+      outline: none;
+      box-shadow: 0 4px 2px -2px #0ff;
+
+}
+
+#members-wrapper>nav>aside>img{
+      width: 3rem;
+      margin-bottom: 1.4rem;
+      padding: 0rem 0rem 0rem 0rem;
+      border-bottom: 1px solid black !important;
+}
+
+#members-wrapper>nav>aside>img:hover{
+      cursor: pointer;
+      box-shadow: 0 4px 2px -2px #0ff;
+
+}
+#members-wrapper>nav>aside>div{
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      justify-content: end;
+      gap: 1rem;
+}
+#members-wrapper>nav>aside>div>input{
+      margin-top: 0.2rem;
+}
+
+#members-wrapper>hr{
+      padding: 0px;
+      margin: 0px 0px 2rem 0px;
+}
+
+.status--ok{
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      background-color: green !important;
+      margin: 0rem;
+      margin-top: 0.3rem;
+      padding: 0rem 2.2rem;
+      border-radius: 0.6rem;
+}
+
+.status--danger{
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      background-color: red !important;
+      margin: 0rem;
+      margin-top: 0.3rem;
+      padding: 0rem 1.4rem;
+      border-radius: 0.6rem;
+}
+
+tbody>tr{
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+tbody>tr>td{
+      text-align: center !important;
+      margin: 0rem;
+      padding: 0rem;
+}
+tbody>tr>td:last-child{
+      margin: 0rem;
+      padding: 0rem;
+      font-size:1.4rem !important;
+}
+tbody>tr>td:last-child>span:hover{
+      color: red;
+      cursor: pointer;
+      font-size:1.3rem !important;
+}
+tbody>tr>td:nth-child(1)>img{
+      width: 1rem !important;
+}
+table{
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      text-align: center;
+}
+tbody>tr:hover{
+      transform: scaleX(1.04)
+}
+    
+
+th, td {
+      padding: 0px !important;
+      padding: 0px !important;
+}

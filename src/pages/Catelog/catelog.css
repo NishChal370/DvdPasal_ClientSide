@@ -1,7 +1,6 @@
 
 #catelog-wrapper{
       padding: 0rem 2.6rem;
-      /* height: 40rem; */
       margin-bottom: 10rem;
 }
 
@@ -48,7 +47,7 @@
 }
 
 .catelog-dvd-card-back {
-      background-color: #2980b9;
+      background-color: #40637a;
       color: white;
       padding: 1rem 0.3rem;
       transform: rotateY(180deg);

@@ -22,6 +22,7 @@ function SideNav({HandlerNavbarVisible}) {
                   <button onClick={HandlerNavbarVisible}>Close Me</button>
                   <div>
                         {/* <p><FaRegDotCircle/>Catelog</p> */}
+                        {/* {['Dashboard', 'Catelog', 'Members', ]} */}
                         <ul>
                               <li className={`nav-item curser--on-hover ${(location === '/')? 'active':''}`} name='dashboard' onClick={()=>changePageHandler('dashboard')}>
                                     <a className={`nav-link`}>
@@ -32,6 +33,16 @@ function SideNav({HandlerNavbarVisible}) {
                               <li className={`nav-item curser--on-hover ${(location.includes('catelog'))? 'active':''}`} name='catelog' onClick={()=>changePageHandler('catelog')}>
                                     <a className={`nav-link`}>
                                           <span>Catelog</span>
+                                    </a>
+                              </li>
+                              <li className={`nav-item curser--on-hover ${(location.includes('members'))? 'active':''}`} name='members' onClick={()=>changePageHandler('members')}>
+                                    <a className={`nav-link`}>
+                                          <span>Members</span>
+                                    </a>
+                              </li>
+                              <li className={`nav-item curser--on-hover ${(location.includes('add-dvd'))? 'active':''}`} name='members' onClick={()=>changePageHandler('add-dvd')}>
+                                    <a className={`nav-link`}>
+                                          <span>DVD</span>
                                     </a>
                               </li>
                         </ul>
