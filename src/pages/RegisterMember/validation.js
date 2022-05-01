@@ -2,18 +2,38 @@
 
 const showErrorMessage= (inputId, message) =>{
       if(message === 'number'){
-            document.getElementById(`${inputId}-tooltip`).innerHTML = '  * should be only alphabet';
+            if(inputId === 'inputcategorydescription'){ // if for new cateogary added
+                  document.getElementById(`inputmcategoryNumber-tooltip`).innerHTML = '  * should be only alphabet';
+            }
+            else{
+                  document.getElementById(`${inputId}-tooltip`).innerHTML = '  * should be only alphabet';
+            }
+            
       }
       else if(message === 'empty'){
-            document.getElementById(`${inputId}-tooltip`).innerHTML = '  * should not be empty';
+            if(inputId === 'inputcategorydescription'){ // if for new cateogary added
+                  document.getElementById(`inputmcategoryNumber-tooltip`).innerHTML = '  * should not be empty';
+            }
+            else{
+                  document.getElementById(`${inputId}-tooltip`).innerHTML = '  * should not be empty';
+            }
+            
       }
       else if(message === 'limit'){
-            document.getElementById(`${inputId}-tooltip`).innerHTML = '  * should  be between 1 to 30';
+            document.getElementById(`inputmcategoryNumber-tooltip`).innerHTML = '  * should  be between 1 to 30';
       }
 
       document.getElementById(`${inputId}`).focus();
       document.getElementById(`${inputId}`).classList.add('error');
-      document.getElementById(`${inputId}-tooltip`).style.display ='unset';
+
+      if(inputId === 'inputcategorydescription'|| inputId === 'inputcategorytotalLoans'){// if for new cateogary added
+            document.getElementById(`inputmcategoryNumber-tooltip`).style.display ='unset';
+      }
+      else{
+            document.getElementById(`${inputId}-tooltip`).style.display ='unset';
+      }
+      
+      
 
 
       setTimeout(function(){ 
@@ -24,16 +44,25 @@ const showErrorMessage= (inputId, message) =>{
 }
 
 export const removeValidationMessage=(inputId)=>{
-      document.getElementById(`${inputId}-tooltip`).style.display ='none';
+
+      if(inputId === 'inputcategorydescription' || inputId === 'inputcategorytotalLoans'){// if for new cateogary added
+            document.getElementById(`inputmcategoryNumber-tooltip`).style.display ='none';
+
+      }
+      else{
+            document.getElementById(`${inputId}-tooltip`).style.display ='none';
+      }
 
       (document.getElementById(`${inputId}`).classList.contains('error') ) &&(
             document.getElementById(`${inputId}`).classList.remove('error')
       )
+
+      
 }
 
 const ALPHABET_REGEX = new RegExp('^[a-zA-Z\\s]*$');
 
-export const checkValidation=(registerDetail)=>{
+export const checkValidation=(registerDetail, isNewCateogary)=>{
       const {fristName, lastName, address, membershipCategory, dateOfBirth, profileImage} = registerDetail;
       const {description, totalLoans}  = membershipCategory;
 
@@ -80,11 +109,29 @@ export const checkValidation=(registerDetail)=>{
 
       else if(description === '---'|| description===''){
             isValid = false;
-            showErrorMessage('inputmcategoryNumber', 'empty');
+            if(!isNewCateogary){
+                   // validate if wnat to add exiting cateogary
+                  showErrorMessage('inputmcategoryNumber', 'empty');
+            }
+            else{
+                  if(description === '---'|| description===''){
+                        // validate if wnat to add new cateogary
+                        showErrorMessage('inputcategorydescription', 'empty');
+                  }
+            }
+            
       }
       else if(!ALPHABET_REGEX.test(description)){
             isValid = false;
-            showErrorMessage('inputmcategoryNumber', 'number');
+
+            if(!isNewCateogary){
+                  // validate if wnat to add exiting cateogary
+                  showErrorMessage('inputmcategoryNumber', 'number');
+            }
+            else{
+                  // validate if wnat to add new cateogary
+                  showErrorMessage('inputcategorydescription', 'number');
+            }
       }
 
       else if(totalLoans<=0 || totalLoans>30 || totalLoans === ''){

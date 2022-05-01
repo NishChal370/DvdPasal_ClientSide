@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import './registerMember.css';
 import { checkValidation, removeValidationMessage } from './validation';
 import { Get_Membership_Type_List, Post_New_Member } from '../../API/UserService';
+import { AddUserImg, CrossImg } from '../../assets/images';
 
 const data = {
       "fristName": "",
@@ -19,12 +20,13 @@ const data = {
 
 function RegisterMember() {
       const [registerDetail, setRegisterDetail] = useState({...data});
+      const [isNewCateogary, setIsNewCateogary] = useState(false);
       const [memebershipTypeList, setMemebershipTypeList] = useState([]);
-
+      
       const get_membership_type_list=()=>{
             Get_Membership_Type_List()
                   .then(({data})=>{
-                        console.log(data);
+
                         setMemebershipTypeList([...data])
                   })
                   .catch(({response})=>{
@@ -55,10 +57,29 @@ function RegisterMember() {
 
       const selectInputHandler=({name, value, tagName, selectedOptions})=>{
             
-            (tagName === 'SELECT')&&(
-                  registerDetail['membershipCategory']['description'] = selectedOptions[0].text
-            )
-            registerDetail['membershipCategory'][name] = value;
+            if(! isNewCateogary){
+                  (tagName === 'SELECT')&&(
+                        registerDetail['membershipCategory']['description'] = selectedOptions[0].text
+                  )
+                  registerDetail['membershipCategory'][name] = value;
+                  registerDetail['membershipCategory']['totalLoans'] = 1;
+            }
+            else{
+                  // if user want to add new cateogary
+                  if(name === 'totalLoans'){
+                        registerDetail['membershipCategory']['totalLoans'] = value;
+                  }
+                  else{
+                        registerDetail['membershipCategory']['description'] = value;
+                        // make cateogary number to zero when adding new cateogary
+                        registerDetail['membershipCategory']['mcategoryNumber'] = 0;
+                  }
+                  
+            }
+
+            
+
+            
       }
 
       const inputChangeHandler=({target})=>{
@@ -71,6 +92,8 @@ function RegisterMember() {
                   : registerDetail[name] = value;
 
             setRegisterDetail({...registerDetail});
+
+            console.log(registerDetail);
       }
 
       const addImage = (e) => {
@@ -89,14 +112,12 @@ function RegisterMember() {
             reader.onerror = function (error) {
                   console.log("Error converting image: ", error);
             }
-
-            console.log(registerDetail);
       }
 
       const submitHandler=(e)=>{
             e.preventDefault();
 
-            checkValidation(registerDetail) && (
+            checkValidation(registerDetail, isNewCateogary) && (
                   post_new_member()
             )
       }
@@ -112,10 +133,23 @@ function RegisterMember() {
                         "totalLoans": 0
                   },
                   "dateOfBirth": '',
-                  "profileImage": ""
+                  "profileImage": "",
             }
 
             setRegisterDetail({...registerDetail});
+            setIsNewCateogary(false); // make allow create new acteigary to false.
+      }
+
+      const handlerAllowAddNewCateogary=()=>{
+            setIsNewCateogary(!isNewCateogary);
+            // reset cateogary detail when user want to change add new cateogary  to add existing cateogary or vice-verse
+            registerDetail['membershipCategory'] ={
+                  mcategoryNumber: 0,
+                  description: "",
+                  totalLoans: 0
+            }
+
+            setRegisterDetail(registerDetail);
       }
 
       useEffect(()=>{
@@ -163,25 +197,40 @@ function RegisterMember() {
                                           <input type="file" className="form-control input--design" id="inputprofileImage" name='profileImage' placeholder='select image...' onChange={(e) => addImage(e)}/>
                                     </div>
 
+
                                     <div className="col-md-6">
                                           <label for="inputPassword4" className="form-label">Memebership type</label>
                                           <span id='inputmcategoryNumber-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <select className="form-select input--design" aria-label=".form-select-sm example" id='inputmcategoryNumber' name='mcategoryNumber' value={registerDetail.membershipCategory.mcategoryNumber} onChange={inputChangeHandler}>
-                                                <option value={''}>---</option>
-                                                {memebershipTypeList.map(({mcategoryNumber, description},index)=>{return(
-                                                      <option value={mcategoryNumber} key={`memebertype${index}`}>{description}</option>
-                                                )})}
+                                          <div className='d-flex gap-3'>
+                                                {!isNewCateogary
+                                                      ?(
+                                                            <>
+                                                            {/* if want to existing */}
+                                                            <select className="form-select input--design" aria-label=".form-select-sm example" id='inputmcategoryNumber' name='mcategoryNumber' value={registerDetail.membershipCategory.mcategoryNumber} onChange={inputChangeHandler}>
+                                                                  <option value={''}>---</option>
+                                                                  {memebershipTypeList.map(({mcategoryNumber, description},index)=>{return(
+                                                                        <option value={mcategoryNumber} key={`memebertype${index}`}>{description}</option>
+                                                                  )})}
+                                                            </select>
+                                                            <img className='circle-img--button ' src={AddUserImg} alt=""  onClick={handlerAllowAddNewCateogary}/>
+                                                            </>
+                                                      )
+                                                      :(
+                                                            <>
+                                                            {/* if want to add new catogary */}
+                                                            <input className="form-control input--design" name='inputdescription' id="inputcategorydescription" placeholder='insert cateogary name....' value={registerDetail.membershipCategory.description} onChange={inputChangeHandler}/>
+                                                            <input type="number" className="form-control input--design" id="inputcategorytotalLoans" name='totalLoans' placeholder='enter loan limit...' value={registerDetail.membershipCategory.totalLoans} onChange={inputChangeHandler}/>
+                                                            <img className='circle-img--button' src={CrossImg} alt="" onClick={handlerAllowAddNewCateogary}/>
+                                                            </>
+                                                      )} 
+                                                            
                                                 
-                                          </select>
+                                          </div>
+                                          
                                     </div>
 
-                                    <div className="col-md-6">
-                                          <label for="inputtotalLoans" className="form-label">Total Loans</label>
-                                          <span id='inputcategorytotalLoans-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <input type="number" className="form-control input--design" id="inputcategorytotalLoans" name='totalLoans' placeholder='enter loan limit...' value={registerDetail.membershipCategory.totalLoans} onChange={inputChangeHandler}/>
-                                    </div>
-                                    
-                                    <div className="col-md-6 mt-5 d-flex gap-5" style={{ height: '2.6rem' }}>
+                                    <div className="col-md-6"></div>
+                                    <div className="col-md-6 mt-5 d-flex gap-5 justify-content-end" style={{ height: '2.6rem' }}>
                                           <button type="submit" className="save-dvd-btn btn btn-primary">Submit</button>
                                           <button type="reset" className=" save-dvd-btn btn btn-danger">Reset</button>
                                     </div>
@@ -193,3 +242,26 @@ function RegisterMember() {
 }
 
 export default RegisterMember
+
+
+
+
+                                    // {/* <div className="col-md-6">
+                                    //       <label for="inputPassword4" className="form-label">Memebership type</label>
+                                    //       <span id='inputmcategoryNumber-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
+                                    //       <select className="form-select input--design" aria-label=".form-select-sm example" id='inputmcategoryNumber' name='mcategoryNumber' value={registerDetail.membershipCategory.mcategoryNumber} onChange={inputChangeHandler}>
+                                    //             <option value={''}>---</option>
+                                    //             {memebershipTypeList.map(({mcategoryNumber, description},index)=>{return(
+                                    //                   <option value={mcategoryNumber} key={`memebertype${index}`}>{description}</option>
+                                    //             )})}
+                                                
+                                    //       </select>
+                                    // </div> */}
+
+
+                                    
+                                    // {/* <div className="col-md-6">
+                                    //       <label for="inputtotalLoans" className="form-label">Total Loans</label>
+                                    //       <span id='inputcategorytotalLoans-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
+                                    //       <input type="number" className="form-control input--design" id="inputcategorytotalLoans" name='totalLoans' placeholder='enter loan limit...' value={registerDetail.membershipCategory.totalLoans} onChange={inputChangeHandler}/>
+                                    // </div> */}
