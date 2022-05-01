@@ -10,5 +10,6 @@ import DVDCopies from './DVDCopies/DVDCopies'
 
 import LoanDetail from './LoanDetail/LoanDetail'
 import AddLoan from './AddLoan/AddLoan'
+import InactiveMemberDetail from './InactiveMemberDetail/InactiveMemberDetail'
 
-export { Home, Dashboard, Login, Catelog, Members, RegisterMember, MemberDetail, AddDVD, DVDCopies, LoanDetail, AddLoan }
+export { Home, Dashboard, Login, Catelog, Members, RegisterMember, MemberDetail, AddDVD, DVDCopies, LoanDetail, AddLoan, InactiveMemberDetail }

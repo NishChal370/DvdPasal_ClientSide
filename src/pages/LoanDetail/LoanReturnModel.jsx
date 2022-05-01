@@ -18,7 +18,7 @@ function LoanReturnModel({returnLoanDetail}) {
                                     <button type="button" className="btn-close" id='loanReturnModelBtn' data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div className="modal-body text-start fs-5">
-                                    {console.log(returnLoanDetail)}
+
                                     {returnLoanDetail !== undefined &&(
                                           <>
                                           <p><span className='fw-bold fs-5'>DVD Title:  </span><span className="fw-normal">{returnLoanDetail.dvdTitle}</span></p>

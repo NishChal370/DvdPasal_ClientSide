@@ -46,6 +46,7 @@ function SideNav({HandlerNavbarVisible}) {
                                     <ul>
                                           <li className={` ${(location==='/members')? 'sub-active':''}`} onClick={()=>changePageHandler('members')}><a><i>Members</i></a></li>
                                           <li className={` ${(location === '/members/register')? 'sub-active':''}`} onClick={()=>changePageHandler('members/register')}><a><i>Register Member</i></a></li>
+                                          <li className={` ${(location === '/members/inactive')? 'sub-active':''}`} onClick={()=>changePageHandler('members/inactive')}><a><i>Inactive Member</i></a></li>
                                     </ul>
                                     </span>
                               </li>
