@@ -71,7 +71,26 @@ function RegisterMember() {
                   : registerDetail[name] = value;
 
             setRegisterDetail({...registerDetail});
+      }
 
+      const addImage = (e) => {
+            var uploadedImages = e.currentTarget.files;
+            var iBase64 = "";
+
+            let reader = new FileReader();
+
+            reader.readAsDataURL(uploadedImages[0]);
+
+            reader.onload = function () {
+                  iBase64 = reader.result;
+                  registerDetail.profileImage = iBase64;
+            }
+
+            reader.onerror = function (error) {
+                  console.log("Error converting image: ", error);
+            }
+
+            console.log(registerDetail);
       }
 
       const submitHandler=(e)=>{
@@ -141,7 +160,7 @@ function RegisterMember() {
                                     <div className="col-md-6">
                                           <label for="inputprofileImage" className="form-label">Profile</label>
                                           <span id='inputprofileImage-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <input type="file" className="form-control input--design" id="inputprofileImage" name='profileImage' placeholder='select image...' value={registerDetail.profileImage} onChange={inputChangeHandler}/>
+                                          <input type="file" className="form-control input--design" id="inputprofileImage" name='profileImage' placeholder='select image...' onChange={(e) => addImage(e)}/>
                                     </div>
 
                                     <div className="col-md-6">
