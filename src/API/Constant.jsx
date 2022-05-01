@@ -43,7 +43,10 @@ const URL_GET_ACTORS_NAMES = 'Actor';
 const URL_GET_DVD_CATEGORY_NAMES = 'DvdCategory';
 
 
+const URL_MEMBER_WITH_LOANS = 'Member/memberWithLoans';
 const ULR_GET_DVD_NAME_LIST = 'DvdTitle/forCopy';
+
+
 
 
 export{
@@ -76,5 +79,6 @@ export{
       URL_GET_DVD_CATEGORY_NAMES,
 
       ULR_GET_DVD_NAME_LIST,
+      URL_MEMBER_WITH_LOANS
 
 }
