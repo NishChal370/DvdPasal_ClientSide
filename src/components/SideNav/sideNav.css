@@ -36,14 +36,44 @@
       padding: 2rem 0rem;
       text-align: left;
       color: white;
+}
 
+.side-nav-contents {
 
+      animation: 0.5s fadeOut;
+      animation-fill-mode: forwards;
+}
+
+.side-nav-hidden-contents{
+      animation: 1.2s fadeIn;
+      animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+      0% {
+            opacity: 0;
+      }
+
+      100% {
+            visibility: visible;
+            opacity: 1;
+      }
+}
+
+@keyframes fadeOut {
+      0% {
+            opacity: 1;
+      }
+
+      100% {
+            visibility: hidden;
+            opacity: 0;
+      }
 }
 
 #side-nav>div>ul {
       list-style-type: none;
       padding: 0rem 1rem;
-
 }
 
 #side-nav>div>ul>.nav-item>.nav-link {
