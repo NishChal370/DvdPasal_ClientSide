@@ -110,7 +110,7 @@
       display:  unset;
       cursor: pointer;
 }
-.show-side-subnav> ul>.sub-active{
+.sub-active{
       color: skyblue !important;
       text-decoration: underline;
 }

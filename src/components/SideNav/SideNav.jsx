@@ -68,6 +68,18 @@ function SideNav({HandlerNavbarVisible}) {
                                     </ul>
                                     </span>
                               </li>
+
+                              <li className={`nav-item curser--on-hover `} name='loan' >
+                                    <a className={`nav-link ${(location.includes('loan'))? 'active':''}`} onClick={()=>changePageHandler('loan/detail')}>
+                                          <span>Loan</span>
+                                    </a>
+                                    <span  className={` ${(location.includes('loan'))? 'show-side-subnav':'hide-side-subnav'}`}>
+                                    <ul>
+                                          <li className={` ${(location==='loan/detail')? 'sub-active':''}`} onClick={()=>changePageHandler('loan/detail')}><a><i>Loan Detail</i></a></li>
+                                          <li className={` ${(location==='loan/add')? 'sub-active':''}`} onClick={()=>changePageHandler('loan/add')}><a><i>Add Loan</i></a></li>
+                                    </ul>
+                                    </span>
+                              </li>
                         </ul>
                   </div>
             </nav>

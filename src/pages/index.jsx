@@ -8,4 +8,7 @@ import RegisterMember from './RegisterMember/RegisterMember'
 import Dashboard from './Dashboard/Dashboard'
 import DVDCopies from './DVDCopies/DVDCopies'
 
-export { Home, Dashboard, Login, Catelog, Members, RegisterMember, MemberDetail, AddDVD, DVDCopies }
+import LoanDetail from './LoanDetail/LoanDetail'
+import AddLoan from './AddLoan/AddLoan'
+
+export { Home, Dashboard, Login, Catelog, Members, RegisterMember, MemberDetail, AddDVD, DVDCopies, LoanDetail, AddLoan }

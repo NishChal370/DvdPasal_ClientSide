@@ -23,7 +23,6 @@ function DVDCopies() {
       }
 
       const delete_dvd_by_id =(dvdId)=>{
-            alert(dvdId);
             Delete_Dvd_Copy_By_Id(dvdId)
                   .then(({data})=>{
                         Swal.fire(
