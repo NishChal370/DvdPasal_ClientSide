@@ -44,9 +44,10 @@ function AddLoan() {
                               'Added Sucessfully!',
                               data,
                               'success'
-                        ) 
+                        )
 
                         resetHandler(index);
+                        
                   })
                   .catch(({response})=>{
                         Swal.fire(
