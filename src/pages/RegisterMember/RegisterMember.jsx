@@ -82,7 +82,7 @@ function RegisterMember() {
             reader.readAsDataURL(uploadedImages[0]);
 
             reader.onload = function () {
-                  iBase64 = reader.result;
+                  iBase64 = reader.result.split(',').pop();
                   registerDetail.profileImage = iBase64;
             }
 

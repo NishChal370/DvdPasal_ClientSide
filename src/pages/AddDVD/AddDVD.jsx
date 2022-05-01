@@ -195,7 +195,7 @@ function AddDVD() {
                         imageList.push({
                               "dvDimageId": 0,
                               "dvDnumber": 0,
-                              "image64": iBase64
+                              "image64": iBase64.split(',').pop()
                         });
                   }
 
