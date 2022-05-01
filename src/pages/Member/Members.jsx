@@ -47,7 +47,7 @@ function Members() {
 
                   <hr />
 
-                  <section>
+                  <section id='loan-section'>
                         <div class="accordion">
                               {memberData.map(alphabetList => (
 

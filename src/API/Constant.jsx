@@ -52,7 +52,7 @@ const URL_GET_DVD_CATEGORY_NAMES = 'DvdCategory';
 const URL_MEMBER_WITH_LOANS = 'Member/memberWithLoans';
 const ULR_GET_DVD_NAME_LIST = 'DvdTitle/forCopy';
 
-
+const URL_CURRENT_LOANS = 'Loan/notReturned';
 
 
 export{
@@ -93,5 +93,7 @@ export{
 
     URL_GET_LAST_LOAN_BY_ID,
     URL_POST_LOAN_RETURN_BY_ID,
+
+    URL_CURRENT_LOANS,
 
 }

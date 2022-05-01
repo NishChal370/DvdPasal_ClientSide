@@ -37,7 +37,13 @@ function SideNav({HandlerNavbarVisible}) {
                                           <span>Catalog</span>
                                     </a>
                               </li>
-                              
+
+                              <li className={`nav-item curser--on-hover ${(location.includes('currentLoans'))? 'active':''}`} name='catelog' onClick={()=>changePageHandler('currentLoans')}>
+                                    <a className={`nav-link`}>
+                                          <span>Current Loans</span>
+                                    </a>
+                              </li>
+
                               <li className={`nav-item curser--on-hover `} name='members' >
                                     <a className={`nav-link ${(location.includes('members'))? 'active':''}`} onClick={()=>changePageHandler('members')}>
                                           <span>Members</span>
