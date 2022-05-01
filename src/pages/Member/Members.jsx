@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Actor1, Actor2, AvtarImg, SearchIcon2 } from '../../assets/images'
 import './members.css'
 import { FaUserEdit } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 import { CgMoreO } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
+import { Get_Members_Detail_List } from '../../API/UserService';
 
 function Members() {
       const navtigate = useNavigate();
+
+      const get_memebers_detail_list=()=>{
+            Get_Members_Detail_List()
+                  .then(({data})=>{
+                        console.log(data);
+                  })
+                  .catch(({response})=>{
+                        console.log(response);
+                        console.log("error in memebers list get");
+                  })
+      }
+
+      useEffect(()=>{
+            get_memebers_detail_list();
+      },[])
 
       return (
             <div id='members-wrapper'>
@@ -49,7 +65,7 @@ function Members() {
                                           <td>Otto</td>
                                           <td>@mdo</td>
                                           <td> <span className='d-flex justify-content-center'> <p className='status--ok'> Ok </p></span></td>
-                                          <td><span><FaUserEdit/></span> <span><MdDelete/></span> <span onClick={()=>navtigate('detail')}><CgMoreO/></span></td>
+                                          <td><span><FaUserEdit/></span> <span><MdDelete/></span> <span onClick={()=>navtigate('detail', { state: { id: 7, color: 'green' } })}><CgMoreO/></span></td>
                                     </tr>
                                     <tr>
                                           <th scope="row">2</th>

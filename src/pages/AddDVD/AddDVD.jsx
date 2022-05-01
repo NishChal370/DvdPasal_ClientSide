@@ -371,7 +371,7 @@ function AddDVD() {
             <div id='add-dvd'>
                   <section id='add-dvd-wrapper'>
                         <nav>
-                              <p className='fw-bolder fs-1 moving-text---effect'>DVDs in store</p>
+                              <p className='fw-bolder fs-1 moving-text---effect'>Register DVDs</p>
                         </nav>
 
                         <hr />
@@ -383,7 +383,7 @@ function AddDVD() {
                               {/* DVD name */}
                               <div className="col-md-6">
                                     <label htmlFor="inputDvdName" className="form-label">DvD Name</label>
-                                    <input type="text" className="form-control input--design" id="inputDvdName" name='dvdName' value={dvdData.dvdName} onChange={inputChangeHandler} required />
+                                    <input type="text" className="form-control input--design" id="inputDvdName" name='dvdName' placeholder='Add Dvd name...'  value={dvdData.dvdName} onChange={inputChangeHandler} required />
                               </div>
                               {/* release date */}
                               <div className="col-md-6">

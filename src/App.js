@@ -4,14 +4,14 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Catelog, Dashboard, Home, Login, Members } from "./pages";
-import AddDVD from "./pages/AddDVD/AddDVD";
-import MemberDetail from "./pages/Member/MemberDetail";
+import { AddDVD, Catelog, Dashboard, Home, Login, MemberDetail, Members, RegisterMember } from "./pages";
+// import AddDVD from "./pages/AddDVD/AddDVD";
+// import MemberDetail from "./pages/Member/MemberDetail";
 
 
 function App() {
 
-  
+  console.log("HELLO")
   return (
     
     <Router>
@@ -27,6 +27,7 @@ function App() {
             <Route path="catelog" element={<Catelog />} />
             <Route path="members" element={<Members />} />
             <Route path="members/detail" element={<MemberDetail />} />
+            <Route path="members/register" element={<RegisterMember/>} />
             <Route path="add-dvd" element={<AddDVD/>} />
             </>
           )}
