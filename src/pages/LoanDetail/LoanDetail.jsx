@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './loanDetail.css';
 import { ReturnIcon } from '../../assets/images'
+import { useNavigate } from 'react-router-dom';
+import LoanReturnModel from './LoanReturnModel';
 
 function LoanDetail() {
-      
+      const navigate = useNavigate();
       return (
             <div id='loanDetail' style={{marginTop:'2rem'}}>
                   <section id='loan-detail-wrrapper'>
@@ -28,15 +30,14 @@ function LoanDetail() {
                                     <tbody>
                                           <tr>
                                                 <th scope="row">1</th>
-                                                {/* <td></td> */}
                                                 <td></td>
                                                 <td>Mark</td>
                                                 <td><span className={`badge rounded-pill bg-danger`}>Otto</span></td>
                                                 <td>@mdo</td>
                                                 <td></td>
-                                                <td><span className='delete-icon-image'><img src={ReturnIcon} alt="return-btn" /></span></td>
+                                                <td data-bs-toggle="modal" data-bs-target="#loanReturnModel" data-bs-whatever="@mdo"><span className='delete-icon-image'><img src={ReturnIcon} alt="return-btn"/></span></td>
                                           </tr>
-                                          
+                                          <LoanReturnModel/>
                                     </tbody>
                               </table>
                         </section>
