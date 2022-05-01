@@ -6,5 +6,6 @@ import MemberDetail from './Member/MemberDetail'
 import AddDVD from './AddDVD/AddDVD'
 import RegisterMember from './RegisterMember/RegisterMember'
 import Dashboard from './Dashboard/Dashboard'
+import DVDCopies from './DVDCopies/DVDCopies'
 
-export { Home, Dashboard, Login, Catelog, Members, RegisterMember, MemberDetail, AddDVD }
+export { Home, Dashboard, Login, Catelog, Members, RegisterMember, MemberDetail, AddDVD, DVDCopies }

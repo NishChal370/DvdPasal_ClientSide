@@ -1,4 +1,4 @@
-import { AXIOS, URL_GET_ACTORS_NAMES, URL_GET_AVAILABLE_DVD_BY_LASTNAME, URL_GET_DVD, URL_GET_DVD_BY_LASTNAME, URL_GET_DVD_CATEGORY_NAMES, URL_GET_DVD_DETAIL, URL_GET_MEMBERSHIP_TYPE, URL_GET_MEMBERS_DETAIL_LIST, URL_GET_PRODUCETS_NAMES, URL_GET_STUDIO_NAMES, URL_POST_DVD, URL_POST_NEWMEMBER } from "./Constant";
+import { AXIOS, ULR_GET_DVD_NAME_LIST, URL_DELETE_NEW_DVD_COPY, URL_GET_ACTORS_NAMES, URL_GET_ALL_DVD_COPIES, URL_GET_AVAILABLE_DVD_BY_LASTNAME, URL_GET_DVD, URL_GET_DVD_BY_LASTNAME, URL_GET_DVD_CATEGORY_NAMES, URL_GET_DVD_DETAIL, URL_GET_MEMBERSHIP_TYPE, URL_GET_MEMBERS_DETAIL_LIST, URL_GET_PRODUCETS_NAMES, URL_GET_STUDIO_NAMES, URL_POST_DVD, URL_POST_NEWMEMBER, URL_POST_NEW_DVD_COPY } from "./Constant";
 
 
 export const Get_DVD_Details = async ()=>{
@@ -15,6 +15,22 @@ export const Get_Dvd_By_Lastname = async (lastname)=>{
 
 export const Get_Available_Dvd_By_Lastname = async (lastname)=>{
       return await AXIOS.get(URL_GET_AVAILABLE_DVD_BY_LASTNAME+lastname);
+}
+
+
+export const Get_All_Dvd_Copies = async ()=>{
+      return await AXIOS.get(URL_GET_ALL_DVD_COPIES);
+}
+
+export const Post_New_Dvd_Copy = async (newDvdData)=>{
+      return await AXIOS.post(URL_POST_NEW_DVD_COPY, newDvdData);
+}
+export const Delete_Dvd_Copy_By_Id = async (dvdId)=>{
+      return await AXIOS.delete(URL_DELETE_NEW_DVD_COPY+dvdId);
+}
+
+export const Get_Dvd_Name_List = async ()=>{
+      return await AXIOS.get(ULR_GET_DVD_NAME_LIST);
 }
 
 export const Post_Dvd_Title = async (dvdData)=>{

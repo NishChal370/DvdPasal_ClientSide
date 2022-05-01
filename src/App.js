@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { AddDVD, Catelog, Dashboard, Home, Login, MemberDetail, Members, RegisterMember } from "./pages";
+import { AddDVD, Catelog, Dashboard, DVDCopies, Home, Login, MemberDetail, Members, RegisterMember } from "./pages";
 // import AddDVD from "./pages/AddDVD/AddDVD";
 // import MemberDetail from "./pages/Member/MemberDetail";
 
@@ -29,6 +29,7 @@ function App() {
             <Route path="members/detail" element={<MemberDetail />} />
             <Route path="members/register" element={<RegisterMember/>} />
             <Route path="add-dvd" element={<AddDVD/>} />
+            <Route path="inventory/dvdcopies" element={<DVDCopies/>} />
             </>
           )}
           

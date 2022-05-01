@@ -3,6 +3,7 @@ import './catelog.css'
 import { DvdImg2, RightIcon } from '../../assets/images'
 import { Get_DVD_Details } from '../../API/UserService';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 
 function Catelog() {
@@ -10,10 +11,12 @@ function Catelog() {
       const [dvdDetails, setDvdDetails] = useState();
 
       const get_dvd_details = () => {
+
             Get_DVD_Details()
                   .then(({ data }) => {
                         setDvdDetails(data);
                         console.log(data.length);
+                        console.log(data);
                         itemIndex.end = (data.length >= 8) ? 8 : data.length;
                         setItemIndex({ ...itemIndex });
                   })
@@ -23,6 +26,8 @@ function Catelog() {
                               response.data.title,
                               'error'
                         )
+                        console.log("error");
+                        console.log("eroorr");
                   })
       }
 
@@ -56,7 +61,8 @@ function Catelog() {
 
       useEffect(() => {
             get_dvd_details();
-      }, [])
+            console.log("HERE in catelog");
+      })
       return (
             <div id='catelog-wrapper'>
                   <section>
@@ -123,7 +129,7 @@ function Catelog() {
                               </section>
                         </>
                   )}
-
+                  
             </div>
 
 

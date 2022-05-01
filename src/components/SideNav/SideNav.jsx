@@ -37,6 +37,7 @@ function SideNav({HandlerNavbarVisible}) {
                                           <span>Catalog</span>
                                     </a>
                               </li>
+                              
                               <li className={`nav-item curser--on-hover `} name='members' >
                                     <a className={`nav-link ${(location.includes('members'))? 'active':''}`} onClick={()=>changePageHandler('members')}>
                                           <span>Members</span>
@@ -53,6 +54,19 @@ function SideNav({HandlerNavbarVisible}) {
                                     <a className={`nav-link ${(location.includes('add-dvd'))? 'active':''}`} onClick={()=>changePageHandler('add-dvd')}>
                                           <span>DVD</span>
                                     </a>
+                              </li>
+
+                              <li className={`nav-item curser--on-hover `} name='inventory' >
+                                    <a className={`nav-link ${(location.includes('inventory'))? 'active':''}`} onClick={()=>changePageHandler('inventory/dvdcopies')}>
+                                          <span>Inventory</span>
+                                    </a>
+                                    <span  className={` ${(location.includes('inventory'))? 'show-side-subnav':'hide-side-subnav'}`}>
+                                    <ul>
+                                          <li className={` ${(location==='inventory/dvdcopies')? 'sub-active':''}`} onClick={()=>changePageHandler('inventory/dvdcopies')}><a><i>DVD copies Detail</i></a></li>
+                                          <li className={` ${(location==='inventory/dvdcopies')? 'sub-active':''}`} onClick={()=>changePageHandler('inventory/dvdcopies')}><a><i>Search DVD Copy</i></a></li>
+                                          <li className={` ${(location==='inventory/dvdcopies')? 'sub-active':''}`} onClick={()=>changePageHandler('inventory/dvdcopies')}><a><i>Old DvD Stock</i></a></li>
+                                    </ul>
+                                    </span>
                               </li>
                         </ul>
                   </div>

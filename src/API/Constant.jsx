@@ -22,6 +22,10 @@ const URL_GET_DVD_BY_LASTNAME = 'DvdTitle/byLastName/';
 const URL_GET_AVAILABLE_DVD_BY_LASTNAME = 'DvdTitle/inStock/';
 
 
+const URL_GET_ALL_DVD_COPIES ='DvdCopy';
+const URL_POST_NEW_DVD_COPY = 'DvdCopy';
+const URL_DELETE_NEW_DVD_COPY = 'DvdCopy?copyId=';
+
 const URL_GET_MEMBERSHIP_TYPE ='MemberType';
 const URL_POST_NEWMEMBER = 'Member';
 
@@ -32,6 +36,8 @@ const URL_GET_STUDIO_NAMES = 'Studio';
 const URL_GET_ACTORS_NAMES = 'Actor';
 const URL_GET_DVD_CATEGORY_NAMES = 'DvdCategory';
 
+
+const ULR_GET_DVD_NAME_LIST = 'DvdTitle/forCopy';
 
 
 export{
@@ -45,6 +51,10 @@ export{
       URL_GET_DVD_BY_LASTNAME,
       URL_GET_AVAILABLE_DVD_BY_LASTNAME,
 
+      URL_GET_ALL_DVD_COPIES,
+      URL_POST_NEW_DVD_COPY,
+      URL_DELETE_NEW_DVD_COPY,
+
       URL_GET_MEMBERSHIP_TYPE,
       URL_POST_NEWMEMBER,
 
@@ -54,5 +64,7 @@ export{
       URL_GET_STUDIO_NAMES,
       URL_GET_ACTORS_NAMES,
       URL_GET_DVD_CATEGORY_NAMES,
+
+      ULR_GET_DVD_NAME_LIST,
 
 }
