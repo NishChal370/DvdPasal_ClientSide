@@ -24,3 +24,39 @@
       padding: 0px;
       margin: 0px;
 }
+
+#loan-detail-wrrapper> nav{
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      place-items: center;
+      justify-content: space-between;
+}
+
+#loan-detail-wrrapper> nav>*{
+      padding: 0px;
+      margin: 0px;
+}
+
+
+#loan-detail-wrrapper>nav>aside>input{
+      border: 0rem;
+      border-bottom: 1px solid black !important;
+}
+#loan-detail-wrrapper>nav>aside>input:focus{
+      outline: none;
+      box-shadow: 0 4px 2px -2px #0ff;
+}
+
+#loan-detail-wrrapper>nav>aside>img{
+      width: 3rem;
+      margin-bottom: 1.1rem;
+      padding: 0rem 0rem 0rem 0rem !important;
+      border-bottom: 1px solid black !important;
+}
+
+
+#loan-detail-wrrapper>hr{
+      padding: 0px;
+      margin: 0px 0px 2rem 0px;
+}

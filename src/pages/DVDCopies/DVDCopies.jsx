@@ -54,7 +54,7 @@ function DVDCopies() {
             let date = new Date(dateStr);
             const year = date.getFullYear()
             const month = monthsList[date.getMonth()];
-            const day = date.getDay();
+            const day = date.getDate();
 
             return day + " " + month + " " + year
       }

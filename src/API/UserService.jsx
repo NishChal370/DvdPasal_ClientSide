@@ -2,7 +2,7 @@ import{ AXIOS, ULR_GET_DVD_NAME_LIST, URL_DELETE_NEW_DVD_COPY, URL_GET_ACTORS_NA
        URL_GET_ALL_DVD_COPIES, URL_GET_AVAILABLE_DVD_BY_LASTNAME, URL_GET_DVD, URL_GET_DVD_BY_LASTNAME, 
        URL_GET_DVD_CATEGORY_NAMES, URL_GET_DVD_COPY_FOR_LOAN, URL_GET_DVD_DETAIL, URL_GET_LOAN_TYPE_LIST, 
        URL_GET_MEMBERSHIP_TYPE, URL_GET_MEMBERS_DETAIL_LIST, URL_GET_PRODUCETS_NAMES, URL_GET_STUDIO_NAMES, 
-       URL_POST_DVD, URL_POST_NEWMEMBER, URL_POST_NEW_DVD_COPY, URL_MEMBER_WITH_LOANS, URL_POST_LOAN
+       URL_POST_DVD, URL_POST_NEWMEMBER, URL_POST_NEW_DVD_COPY, URL_MEMBER_WITH_LOANS, URL_POST_LOAN, URL_GET_LAST_LOAN_BY_ID, URL_GET_LOANS, URL_POST_LOAN_RETURN_BY_ID
       } from "./Constant";
 
 
@@ -47,6 +47,14 @@ export const Post_Loan = async (loanData)=>{
       return await AXIOS.post(URL_POST_LOAN, loanData);
 }
 
+export const Get_Loans = async ()=>{
+      return await AXIOS.get(URL_GET_LOANS);
+}
+
+export const Post_Loan_Return_By_Id= async (loanId)=>{
+      return await AXIOS.post(URL_POST_LOAN_RETURN_BY_ID+loanId);
+}
+
 export const Get_Dvd_Name_List = async ()=>{
       return await AXIOS.get(ULR_GET_DVD_NAME_LIST);
 }
@@ -84,4 +92,9 @@ export const Get_DVD_Cateogaries_Name = async ()=>{
 
 export const Get_member_with_loans = async () => {
       return await AXIOS.get(URL_MEMBER_WITH_LOANS);
+}
+
+
+export const Get_Last_Loan_By_Id = async (copyId) => {
+      return await AXIOS.get(URL_GET_LAST_LOAN_BY_ID+copyId);
 }
