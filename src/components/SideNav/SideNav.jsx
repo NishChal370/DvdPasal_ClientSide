@@ -65,7 +65,7 @@ function SideNav({HandlerNavbarVisible}) {
                                     <ul>
                                           <li className={` ${(location==='inventory/dvdcopies')? 'sub-active':''}`} onClick={()=>changePageHandler('inventory/dvdcopies')}><a><i>DVD copies Detail</i></a></li>
                                           <li className={` ${(location==='inventory/dvdcopies')? 'sub-active':''}`} onClick={()=>changePageHandler('inventory/dvdcopies')}><a><i>Search DVD Copy</i></a></li>
-                                          <li className={` ${(location==='inventory/dvdcopies')? 'sub-active':''}`} onClick={()=>changePageHandler('inventory/dvdcopies')}><a><i>Old DvD Stock</i></a></li>
+                                          <li className={` ${(location==='inventory/oldDvds')? 'sub-active':''}`} onClick={()=>changePageHandler('inventory/oldDvds')}><a><i>Old DvD Stock</i></a></li>
                                     </ul>
                                     </span>
                               </li>

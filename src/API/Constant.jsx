@@ -26,6 +26,8 @@ const URL_GET_ALL_DVD_COPIES ='DvdCopy';
 const URL_POST_NEW_DVD_COPY = 'DvdCopy';
 const URL_DELETE_NEW_DVD_COPY = 'DvdCopy?copyId=';
 
+const URL_GET_ALL_OLD_DVDS = 'DvdCopy/old';
+const URL_DELET_ALL_OLD_DVDS = 'DvdCopy/deleteAllOld';
 
 const URL_GET_DVD_COPY_FOR_LOAN =  '/DvdCopy/forLoan';
 const URL_GET_LOAN_TYPE_LIST = 'LoanType/forLoan';
@@ -68,6 +70,9 @@ export{
     URL_POST_NEW_DVD_COPY,
     URL_DELETE_NEW_DVD_COPY,
 
+    URL_GET_ALL_OLD_DVDS,
+    URL_DELET_ALL_OLD_DVDS,
+    
     URL_GET_DVD_COPY_FOR_LOAN,
     URL_GET_LOAN_TYPE_LIST,
     URL_POST_LOAN,
