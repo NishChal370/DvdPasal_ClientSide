@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './dashboard.css'
-import { DvdImg, PageNotFoundImg, SearchIcon2 } from '../../assets/images'
+import { DataNotFoundImg, DvdImg, PageNotFoundImg, SearchIcon2 } from '../../assets/images'
 import { Get_Available_Dvd_By_Lastname, Get_Dvd_By_Lastname, Get_Dvd_Title } from '../../API/UserService';
 
 
@@ -131,7 +131,8 @@ function Dashboard({HandlerNavbarVisible}) {
 
                         {/* not found img */}
                         {(dvdDetails !== undefined)&&(dvdDetails.length<=0)&&(
-                              <img  className="page-not-found" src={PageNotFoundImg} alt="div" />
+                              // <img  className="page-not-found" src={PageNotFoundImg} alt="div" />
+                              <img style={{width:'30rem', marginLeft:'40%'}} src={DataNotFoundImg} alt="div" />
                         )}
 
                   </div>

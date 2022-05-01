@@ -36,4 +36,5 @@ import RightIcon from './arrow-right.png';
 import PageNotFoundImg from './page-not-found.jpg'
 import DeleteIcon from './delete-icon.png'
 import ReturnIcon from './return-box.png';
-export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, ReturnIcon, AvtarImg, DvdImg, DvdImg2, AddUserImg, CrossImg, NavCompassIcon, RightIcon, SearchIcon2, video,LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg,Cartoon, Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10, Cartoon12, PageNotFoundImg, DeleteIcon}
+import DataNotFoundImg from './data-not-found.jpg'
+export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, ReturnIcon, AvtarImg, DvdImg, DvdImg2, AddUserImg, DataNotFoundImg, CrossImg, NavCompassIcon, RightIcon, SearchIcon2, video,LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg,Cartoon, Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10, Cartoon12, PageNotFoundImg, DeleteIcon}

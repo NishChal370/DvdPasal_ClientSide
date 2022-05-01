@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
 import './oldDvdDetails.css'
 import { Delete_All_Old_Dvds, Delete_Dvd_Copy_By_Id, Get_All_Old_Dvds } from '../../API/UserService'
-import { DeleteIcon } from '../../assets/images';
+import { DataNotFoundImg, DeleteIcon, PageNotFoundImg } from '../../assets/images';
 
 
 function OldDvdDetail() {
@@ -112,7 +112,7 @@ function OldDvdDetail() {
                                           </tr>
                                     </thead>
                                     <tbody>
-                                          {console.log(oldDvdList)}
+                              
                                           {oldDvdList !== undefined &&(
                                                 
                                                 oldDvdList.map(({dvdName, datePurchase, copyId, totalLoans, price}, index)=>{return(
@@ -128,9 +128,20 @@ function OldDvdDetail() {
                                                 )})
                                           )}
 
+                                         
+                                          
                                     </tbody>
                               </table>
+                              
+                        
+                              {(oldDvdList !== undefined)&&(oldDvdList.length<=0)&&(
+                                          <img style={{width:'30rem', marginLeft:'40%'}} src={DataNotFoundImg} alt="div" />
+                              )}
+
+                              
                         </section>
+
+                        
 
                   </section>
             </div>
