@@ -54,7 +54,7 @@ function Catelog() {
             let date = new Date(dateStr);
             const year = date.getFullYear()
             const month = monthsList[date.getMonth()];
-            const day = date.getDay();
+            const day = date.getDate();
 
             return day + " " + month + " " + year
       }
@@ -62,7 +62,7 @@ function Catelog() {
       useEffect(() => {
             get_dvd_details();
             console.log("HERE in catelog");
-      })
+      },[])
       return (
             <div id='catelog-wrapper'>
                   <section>
@@ -81,13 +81,13 @@ function Catelog() {
                                                             <div className="card-body p-1">
                                                                   <p className='fs-3 fw-bold mb-1'>{dvdName}</p>
                                                                   <div style={{ textAlign: 'left', paddingLeft: '1rem' }}>
-                                                                        <p className='p-0 m-0 '>Producer: {dvdProducer['producerName']}</p>
-                                                                        <p className='p-0 m-0'>Studio: {dvdStudio['studioName']}</p>
-                                                                        <p className='p-0 m-0'>Release Date: {dateConverter(dateReleased)}</p>
-                                                                        <p className='p-0 m-0'>Category: {dvdCategory.categoryDescription}</p>
-                                                                        <p className='p-0 m-0' >Age Limit: <span className={`badge rounded-pill ${(dvdCategory.ageRestricted) ? 'bg-danger' : 'bg-success'}`}>{(dvdCategory.ageRestricted) ? 'Adults' : 'Family'}</span></p>
-                                                                        <p className='p-0 m-0' >Penalty: {penaltyCharge}</p>
-                                                                        <p className='p-0 m-0'>Price: {standardCharge}</p>
+                                                                        <p className='p-0 m-0 '><span style={{fontWeight:'bold'}}>Producer:</span> {dvdProducer['producerName']}</p>
+                                                                        <p className='p-0 m-0'><span style={{fontWeight:'bold'}}>Studio:</span> {dvdStudio['studioName']}</p>
+                                                                        <p className='p-0 m-0'><span style={{fontWeight:'bold'}}>Release Date:</span> {dateConverter(dateReleased)}</p>
+                                                                        <p className='p-0 m-0'><span style={{fontWeight:'bold'}}>Category:</span> {dvdCategory.categoryDescription}</p>
+                                                                        <p className='p-0 m-0' ><span style={{fontWeight:'bold'}}>Age Limit:</span> <span className={`badge rounded-pill ${(dvdCategory.ageRestricted) ? 'bg-danger' : 'bg-success'}`}>{(dvdCategory.ageRestricted) ? 'Adults' : 'Family'}</span></p>
+                                                                        <p className='p-0 m-0' ><span style={{fontWeight:'bold'}}>Penalty:</span> {penaltyCharge}</p>
+                                                                        <p className='p-0 m-0'><span style={{fontWeight:'bold'}}>Price:</span> {standardCharge}</p>
 
                                                                         {/* <p className='p-0 m-0'>age Restriced: {dvdCategory.ageRestricted}</p> */}
                                                                   </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './inactiveMemberDetail.css'
 import { Get_Inactive_Members_Detail_List } from '../../API/UserService'
+import { DataNotFoundImg } from '../../assets/images';
 
 
 function InactiveMemberDetail() {
@@ -72,6 +73,9 @@ function InactiveMemberDetail() {
                                           
                                     </tbody>
                               </table>
+                              {(inactiveMembers !== undefined)&&(inactiveMembers.length<=0)&&(
+                                          <img style={{width:'30rem', marginLeft:'40%'}} src={DataNotFoundImg} alt="div" />
+                              )}
                         </section>
                   </section>
             </div>

@@ -77,7 +77,7 @@ function AddDvdFormModel({refreshPage}) {//exampleModal
                   <div class="modal-dialog">
                         <div class="modal-content">
                               <div class="modal-header">
-                                    <h2 class="modal-title font-weight-bold" id="exampleModalLabel">Add new Dvd</h2>
+                                    <h2 class="modal-title fs-2 moving-text---effect" id="exampleModalLabel">Create copies</h2>
                                     <button type="button" class="btn-close" id='model-close-button' data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body">

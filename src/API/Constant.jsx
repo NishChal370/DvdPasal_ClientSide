@@ -30,6 +30,9 @@ const URL_GET_ALL_OLD_DVDS = 'DvdCopy/old';
 const URL_DELET_ALL_OLD_DVDS = 'DvdCopy/deleteAllOld';
 
 const URL_GET_DVD_COPY_FOR_LOAN =  '/DvdCopy/forLoan';
+
+const URL_GET_DVD_UNPOPULAR = 'DvdTitle/unpopular';
+
 const URL_GET_LOAN_TYPE_LIST = 'LoanType/forLoan';
 
 const URL_POST_LOAN = 'Loan';
@@ -95,5 +98,7 @@ export{
     URL_POST_LOAN_RETURN_BY_ID,
 
     URL_CURRENT_LOANS,
+
+    URL_GET_DVD_UNPOPULAR,
 
 }

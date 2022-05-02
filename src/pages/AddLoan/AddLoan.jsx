@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
 import './addLoan.css';
-import { DvdImg } from '../../assets/images';
+import { DataNotFoundImg, DvdImg } from '../../assets/images';
 import { removeValidationMessage, validateData } from './validation';
 import { Get_Dvd_Copy_For_Loan, Get_Loan_Type_List, Post_Loan } from '../../API/UserService';
 
@@ -179,6 +179,9 @@ function AddLoan() {
                               )})
                         )}
 
+                        {(loanTypeList !== undefined)&&(loanTypeList.length<=0)&&(
+                              <img style={{width:'30rem', marginLeft:'50rem'}} src={DataNotFoundImg} alt="div" />
+                        )}
                   </section>
             </section>
       </div>

@@ -86,6 +86,8 @@
       border-radius: 1rem;
       margin-top: 1rem;
       cursor: pointer;
+      display: flex;
+      justify-content: space-between;
 }
 
 #side-nav>div>ul>.nav-item>.nav-link:hover {
@@ -104,11 +106,18 @@
       /* border-radius: 2rem; */
       background-color: rgba(255, 255, 255, 0.3);
       color: black;
+      border-radius: 1rem;
 }
 
 .show-side-subnav{
       display:  unset;
       cursor: pointer;
+      text-align: end !important;
+      
+}
+.show-side-subnav ul{
+      margin-right: 2rem !important;
+      text-decoration:  none !important;
 }
 .sub-active{
       color: skyblue !important;
@@ -117,4 +126,22 @@
 
 .hide-side-subnav{
       display:  none;
+}
+
+
+#side-nav-icon{
+      margin-left: 60%;
+      width: 1.6rem;
+      -webkit-filter: brightness(0) invert(1);
+      filter: brightness(0) invert(1);
+}
+
+.icon---up{
+      transform: rotate(180deg);
+}
+
+.sidenav-icon{
+      width: 1.6rem;
+      -webkit-filter: brightness(0) invert(1);
+      filter: brightness(0) invert(1);
 }

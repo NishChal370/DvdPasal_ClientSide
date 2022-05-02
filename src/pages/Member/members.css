@@ -5,7 +5,7 @@
 
 #members-wrapper> nav{
       padding: 0px;
-      margin: 0px;
+      margin: 1rem 0rem 0rem 0rem;
       display: flex;
       place-items: center;
       justify-content: space-between;
@@ -15,37 +15,37 @@
       margin: 0px;
 }
 
-#members-wrapper>nav>aside>input{
+#members-wrapper>nav>aside>span>span>input{
       border: 0rem;
       border-bottom: 1px solid black !important;
 }
-#members-wrapper>nav>aside>input:focus{
+#members-wrapper>nav>aside>span>input:focus{
       outline: none;
       box-shadow: 0 4px 2px -2px #0ff;
 
 }
 
-#members-wrapper>nav>aside>img{
-      width: 3rem;
-      margin-bottom: 1.4rem;
+#members-wrapper>nav>aside>span>span>img{
+      width: 2rem;
+      margin-bottom: 0.4rem;
       padding: 0rem 0rem 0rem 0rem;
       border-bottom: 1px solid black !important;
 }
 
-#members-wrapper>nav>aside>img:hover{
+#members-wrapper>nav>aside>span>span>img:hover{
       cursor: pointer;
       box-shadow: 0 4px 2px -2px #0ff;
 
 }
-#members-wrapper>nav>aside>div{
+#members-wrapper>nav>aside>span>span>div{
       padding: 0px;
       margin: 0px;
       display: flex;
       justify-content: end;
       gap: 1rem;
 }
-#members-wrapper>nav>aside>div>input{
-      margin-top: 0.2rem;
+#members-wrapper>nav>aside>span>span>input{
+      margin-top: 1rem !important;
 }
 
 #members-wrapper>hr{
@@ -107,10 +107,4 @@ table{
 }
 tbody>tr:hover{
       transform: scaleX(1.009)
-}
-    
-
-th, td {
-      padding: 0px !important;
-      padding: 0px !important;
 }

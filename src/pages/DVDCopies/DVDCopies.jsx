@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
 import { Delete_Dvd_Copy_By_Id, Get_All_Dvd_Copies } from '../../API/UserService'
-import { DeleteIcon } from '../../assets/images';
+import { DataNotFoundImg, DeleteIcon } from '../../assets/images';
 import AddDvdFormModel from './AddDvdFormModel';
 import './dvdCopies.css'
 
@@ -70,7 +70,7 @@ function DVDCopies() {
                         <nav>
                               <p className='fw-bolder fs-1 moving-text---effect'>Available DVDs</p>
                               <aside>          
-                                    <button className=" add-dvd-button" role="button"type="button"data-bs-toggle="modal" data-bs-target="#dvdCopiesModel" data-bs-whatever="@mdo">Add new DVD</button>                           
+                                    <button className=" add-dvd-button" role="button"type="button"data-bs-toggle="modal" data-bs-target="#dvdCopiesModel" data-bs-whatever="@mdo">Create Copies</button>                           
                               </aside> 
                         </nav>
                         <hr />
@@ -103,6 +103,9 @@ function DVDCopies() {
                                           
                                     </tbody>
                               </table>
+                              {(allDvdCopyDetail !== undefined)&&(allDvdCopyDetail.length<=0)&&(
+                                          <img style={{width:'30rem', marginLeft:'40%'}} src={DataNotFoundImg} alt="div" />
+                              )}
                         </section>
                   </section>
             </div>

@@ -1,7 +1,9 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); */
 
 #available-dvds-wrapper{
       padding: 0rem 2.6rem;
       /* height: 40rem; */
+      
 }
 
 
@@ -15,12 +17,13 @@
 #available-dvds-wrapper> nav>*{
       padding: 0px;
       margin: 0px;
+      font-family: 'Roboto', sans-serif !important;
 }
 
-.moving-text---effect{
+/* .moving-text---effect{
       animation: moving 8s ease-in-out infinite;
 }
-
+ */
 
 .dvd-image{
       max-height: 250px;
@@ -28,7 +31,7 @@
       object-fit: cover;
     }
 
-@keyframes moving{
+/* @keyframes moving{
       0%{
            padding-left: 0%;
       }
@@ -38,34 +41,45 @@
       100%{
             padding-left: 0%;
       }
-}
+} */
 
-#available-dvds-wrapper>hr{
+
+
+/***/
+
+hr{
       padding: 0px;
       margin: 0px 0px 2rem 0px;
 }
 
-
-#available-dvds-wrapper>nav>aside>input{
+#available-dvds-wrapper>nav>aside>span{
+      justify-content: center;
+}
+#available-dvds-wrapper>nav>aside>span{
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+}
+#available-dvds-wrapper>nav>aside>span>span>input{
       border: 0rem;
       border-bottom: 1px solid black !important;
 }
 
-#available-dvds-wrapper>nav>aside>input:focus{
+#available-dvds-wrapper>nav>aside>span>span>input:focus{
       outline: none;
       box-shadow: 0 4px 2px -2px #0ff;
 
 }
 
 
-#available-dvds-wrapper>nav>aside>img{
-      width: 3rem;
-      margin-bottom: 1.6rem;
-      padding: 0rem 0rem 0.2rem 0rem;
+#available-dvds-wrapper>nav>aside>span>span>img{
+      width: 2rem;
+      margin-bottom: 0.4rem;
+      padding: 0rem 0rem 0.rem 0rem;
       border-bottom: 1px solid black !important;
 }
 
-#available-dvds-wrapper>nav>aside>img:hover{
+#available-dvds-wrapper>nav>aside>span>span>img:hover{
       cursor: pointer;
       box-shadow: 0 4px 2px -2px #0ff;
 
@@ -75,6 +89,7 @@
 .dvd-card{
       border-radius: 1rem;
       border: none;
+      
       box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
@@ -91,21 +106,3 @@
 /* .dvd-card>.card-body>article>p:nth-child(2){
       color: rgb(185, 184, 184);
 } */
-
-.error {
-      position: relative;
-      box-shadow: 0 4px 2px -2px rgb(236, 52, 52) !important;
-      animation: shake .1s linear infinite;
-      animation-iteration-count: 3;
-      
-}
-  
-@keyframes shake {
-      0% { left: -5px; }
-      100% { right: -5px; }
-}
-
-.page-not-found{
-      width: 100%;
-      margin-left: 190%;
-}

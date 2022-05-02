@@ -1,3 +1,9 @@
 #loan-section{
     margin: 2em;
+    min-height: 30rem;
+}
+
+#loan-section table{
+    font-weight: 100;
+    font-size: 1.2rem;
 }

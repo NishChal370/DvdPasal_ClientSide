@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './dashboard.css'
-import { DataNotFoundImg, DvdImg, PageNotFoundImg, SearchIcon2 } from '../../assets/images'
+import { DataNotFoundImg, DvdImg, FilterIcon, PageNotFoundImg, SearchIcon2 } from '../../assets/images'
 import { Get_Available_Dvd_By_Lastname, Get_Dvd_By_Lastname, Get_Dvd_Title } from '../../API/UserService';
 
 
 //Get_Dvd_Title
 function Dashboard({HandlerNavbarVisible}) {
       const [dvdDetails, setDvdDetails] = useState();
+      const [showFilter, setShowFilter] = useState(false);
       const [search, setSearch] = useState({lastname:'', showAvailable: false});
 
       const get_dvd_title=()=>{
@@ -26,7 +27,7 @@ function Dashboard({HandlerNavbarVisible}) {
             let date = new Date(dateStr);
             const year = date.getFullYear()
             const month = monthsList[date.getMonth()];
-            const day = date.getDay();
+            const day = date.getDate();
 
             return day+" "+month+" "+year
       }
@@ -87,6 +88,10 @@ function Dashboard({HandlerNavbarVisible}) {
                         : get_dvd_by_lastName();
       }
 
+      const showFilterHandler=()=>{
+            setShowFilter(!showFilter);
+      }
+
       useEffect(()=>{
             get_dvd_title();
       },[])
@@ -96,13 +101,24 @@ function Dashboard({HandlerNavbarVisible}) {
             <section id='available-dvds-wrapper'>
                   <nav>
                         <p className='fw-bolder fs-1 moving-text---effect'>DVDs in store</p>
-                        <aside>
-                              <input type="text" name="lastname" id="lastname-input"  placeholder='Search...' value={search.lastname} onChange={searchInputHandler}/>
-                              <img src={SearchIcon2} alt=""  onClick={submitSearchHandler}/>
-                              <div className='d-flex gap-2 justify-content-end'>
-                                    <input className='mt-1' type="checkbox" name="showAvailable" id="showAvailable-chekbox"  value={search.showAvailable} onChange={searchInputHandler}/>
-                                    <p className='p-0 m-0'>Availables DvDs</p>
+                        <aside  style={{display:'flex', flexDirection:'column',justifyContent:'flex-end'}}>
+                              {/* <h3>Filter</h3> */}
+                              <div className='filter---button' onClick={showFilterHandler}>
+                                    <img src={FilterIcon} alt="" />
+                                    <h4>Filter</h4>
                               </div>
+                              
+                              <span className={`filter--inputs-${showFilter?'show':'hide'}`}>
+                                    <div style={{display:'flex',marginTop: 'auto', gap:'0.2rem', backgroundColor:'white'}}>
+                                          <input className='mt-1' type="checkbox" name="showAvailable" id="showAvailable-chekbox"  value={search.showAvailable} onChange={searchInputHandler}/>
+                                          <p className='p-0 m-0 fw-bold mb-2'>Availables DvDs</p>
+                                    </div>
+                                    <span>
+                                          <input type="text" name="lastname" id="lastname-input"  placeholder='Search...' value={search.lastname} onChange={searchInputHandler}/>
+                                          <img src={SearchIcon2} alt=""  onClick={submitSearchHandler}/>
+                                    </span>
+                                    
+                              </span>
                         </aside>
                   </nav>
                   
@@ -112,7 +128,7 @@ function Dashboard({HandlerNavbarVisible}) {
                   <div style={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap:'3rem', minHeight:'40rem'}}>
 
                         {(dvdDetails !== undefined) &&(dvdDetails.map(({dvdName, dateReleased,dvDimages, standardCharge, dvdCategory, actors})=>{return(
-                              <div className="card dvd-card" style={{maxHeight:'40rem'}}>
+                              <div className="card dvd-card" style={{maxHeight:'30rem'}}>
                                     <div className="card-body p-0">
                                     <img src={dvDimages[0].image64} onError={(e) => e.target.src = DvdImg} className="dvd-image card-img-top img-fluid" alt="dvd-img" />
                                           <article className='p-3'>
@@ -131,8 +147,7 @@ function Dashboard({HandlerNavbarVisible}) {
 
                         {/* not found img */}
                         {(dvdDetails !== undefined)&&(dvdDetails.length<=0)&&(
-                              // <img  className="page-not-found" src={PageNotFoundImg} alt="div" />
-                              <img style={{width:'30rem', marginLeft:'40%'}} src={DataNotFoundImg} alt="div" />
+                              <img style={{width:'30rem', marginLeft:'120%'}} src={DataNotFoundImg} alt="div" />
                         )}
 
                   </div>

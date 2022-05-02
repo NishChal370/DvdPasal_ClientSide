@@ -1,0 +1,26 @@
+
+#unpopular-dvd-wrrapper>div{
+      padding: 2.6rem;
+      margin: 0rem 2rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#unpopular-dvd-wrrapper{
+      padding: 0rem 2.6rem;
+      font-size: 1.4rem;
+      min-height: 40rem;
+      font-family: 'Varela Round', sans-serif !important
+}
+
+
+#unpopular-dvd-wrrapper> nav{
+      padding: 0px;
+      margin: 0px;
+      display: flex;
+      place-items: center;
+      justify-content: space-between;
+}
+#unpopular-dvd-wrrapper> nav>*{
+      padding: 0px;
+      margin: 0px;
+}

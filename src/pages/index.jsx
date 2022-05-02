@@ -13,5 +13,5 @@ import LoanDetail from './LoanDetail/LoanDetail'
 import AddLoan from './AddLoan/AddLoan'
 import OldDvdDetail from './OldDvdDetail/OldDvdDetail'
 import InactiveMemberDetail from './InactiveMemberDetail/InactiveMemberDetail'
-
-export { Home, Dashboard, Login, Catelog, CurrentLoans, Members, RegisterMember, MemberDetail, AddDVD, OldDvdDetail, DVDCopies, LoanDetail, AddLoan, InactiveMemberDetail }
+import UnpopularDvd from './UnpopularDvd/UnpopularDvd'
+export { Home, Dashboard, Login, Catelog, CurrentLoans, Members, RegisterMember, MemberDetail, AddDVD, OldDvdDetail, DVDCopies, LoanDetail, AddLoan, InactiveMemberDetail, UnpopularDvd }

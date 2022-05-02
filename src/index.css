@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200&family=Poppins&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *{
-  font-family: 'Bai Jamjuree', sans-serif !important;
-  font-family: 'Poppins', sans-serif !important;
+  /* font-family: 'Bai Jamjuree', sans-serif !important;
+  font-family: 'Poppins', sans-serif !important; */
+  font-family: 'Roboto', sans-serif !important;
+ 
 }
 body {
   
@@ -9,14 +13,101 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-    font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+    /* font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-*{
+/* *{
   font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+
+.error {
+  position: relative;
+  box-shadow: 0 4px 2px -2px rgb(236, 52, 52) !important;
+  animation: shake .1s linear infinite;
+  animation-iteration-count: 3;
+  
+}
+
+@keyframes shake {
+  0% { left: -5px; }
+  100% { right: -5px; }
+}
+
+.page-not-found{
+  width: 100%;
+  margin-left: 200%;
+}
+
+.moving-text---effect
+{
+  font-size: 3rem ;
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 190px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+.filter---button>img{
+  width: 2rem;
+  background-image: none;
+}
+.filter---button{
+  display: flex;
+  width: fit-content;
+  margin-left: auto !important;
+  margin: 0rem ;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  border: 0.1rem solid #231557;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px !important;
+}
+
+.filter---button>h4{
+  margin: 0rem;
+  font-weight: 600 !important;
+}
+
+.filter---button:hover{
+  cursor: pointer;
+}
+
+
+.filter--inputs-hide{
+  height: 0rem !important;
+  opacity: 0;
+  transition:  0s linear;
+
+}
+.filter--inputs-show{
+  height: fit-content;
+  display: unset;
+  visibility: visible;
+  opacity: 1;
 }
