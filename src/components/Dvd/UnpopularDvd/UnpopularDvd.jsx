@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Get_Dvd_Unpopular } from '../../API/UserService'
-import { DataNotFoundImg } from '../../assets/images';
 import './unpopular.css'
+import { DataNotFoundImg } from '../../../assets/images';
+import { Get_Dvd_Unpopular } from '../../../API/UserService';
+
+// import { Get_Dvd_Unpopular } from '../../API/UserService'
+// import { DataNotFoundImg } from '../../assets/images';
+
 
 function UnpopularDvd() {
 

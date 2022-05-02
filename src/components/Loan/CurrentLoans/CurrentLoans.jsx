@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './CurrentLoan.css'
-import { useNavigate } from 'react-router-dom';
-import { Get_current_loans } from '../../API/UserService';
 import md5 from 'md5';
+import { Get_current_loans } from '../../../API/UserService';
 
 function CurrentLoans(){
-    const navigate = useNavigate();
 
     const[allLoanData, setLoanData] = useState([]);
 

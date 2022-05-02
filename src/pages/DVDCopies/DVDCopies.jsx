@@ -70,7 +70,7 @@ function DVDCopies() {
                         <nav>
                               <p className='fw-bolder fs-1 moving-text---effect'>Available DVDs</p>
                               <aside>          
-                                    <button className=" add-dvd-button" role="button"type="button"data-bs-toggle="modal" data-bs-target="#dvdCopiesModel" data-bs-whatever="@mdo">Create Copies</button>                           
+                                    <button className=" add-dvd-button" role="button" type="button" data-bs-toggle="modal" data-bs-target="#dvdCopiesModel" data-bs-whatever="@mdo">Create Copies</button>                           
                               </aside> 
                         </nav>
                         <hr />

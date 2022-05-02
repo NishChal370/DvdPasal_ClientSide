@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import './inactiveMemberDetail.css'
-import { Get_Inactive_Members_Detail_List } from '../../API/UserService'
-import { DataNotFoundImg } from '../../assets/images';
+import React, { useEffect, useState } from 'react';
+import './inactiveMemberDetail.css';
+import { DataNotFoundImg } from '../../../assets/images';
+import { Get_Inactive_Members_Detail_List } from '../../../API/UserService';
+
+
 
 
 function InactiveMemberDetail() {

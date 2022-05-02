@@ -98,7 +98,6 @@
 #side-nav>div>ul>li>.active {
       background-color: rgba(255, 255, 255, 0.3);
       color: black;
-      /* border-radius: 1rem 1rem 0rem 0rem !important; */
 }
 .active {
       list-style-type: none;

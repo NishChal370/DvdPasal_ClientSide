@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import './home.css'
-import SideNav from '../../components/SideNav/SideNav';
+// import SideNav from '../../components/SideNav/SideNav';
+import { SideNav } from '../../components';
 import { SlidingCard } from '../../components/Dashboard';
-import { Cartoon, Cartoon10, Cartoon3, Cartoon4, Cartoon5, Cartoon7, Cartoon8, NavCompassIcon } from '../../assets/images';
+import { Cartoon, Cartoon3, Cartoon4, NavCompassIcon } from '../../assets/images';
 
 
 function Home() {

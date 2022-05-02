@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
 import './registerMember.css';
+import { AddUserImg, CrossImg } from '../../../assets/images';
 import { checkValidation, removeValidationMessage } from './validation';
-import { Get_Membership_Type_List, Post_New_Member } from '../../API/UserService';
-import { AddUserImg, CrossImg } from '../../assets/images';
+import { Get_Membership_Type_List, Post_New_Member } from '../../../API/UserService';
 
 const data = {
       "fristName": "",

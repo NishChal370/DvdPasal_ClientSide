@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './sideNav.css';
-import { CatelogIcon, DownIcon, HomeImg } from '../../assets/images';
+import { DownIcon, HomeImg } from '../../../assets/images';
 
 
 function SideNav({HandlerNavbarVisible}) {
@@ -52,7 +52,8 @@ function SideNav({HandlerNavbarVisible}) {
                                     <span  className={` ${(location.includes('members'))? 'show-side-subnav':'hide-side-subnav'}`}>
                                           <ul>
                                                 {[{link:'/members', name:'members', title:'Members'},
-                                                {link:'/members/register', name:'members/register', title:'Register Member'}].map(({link, name, title}, index)=>{return(
+                                                {link:'/members/register', name:'members/register', title:'Register Member'},
+                                                {link:'/members/inactive', name:'members/inactive', title:'Inactive Members'},].map(({link, name, title}, index)=>{return(
                                                       
                                                       <li key={`memeberSubNav${index}`} className={`${(location===link)? 'sub-active':''}`} onClick={()=>changePageHandler({pageName :name, closeSideNav :true})}>
                                                             <a><i>{title}</i></a>

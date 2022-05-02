@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import './catelog.css'
-import { DvdImg2, RightIcon } from '../../assets/images'
-import { Get_DVD_Details } from '../../API/UserService';
+import React, { useEffect, useState } from 'react';
+import './catelog.css';
 import Swal from 'sweetalert2';
-import axios from 'axios';
+import { Get_DVD_Details } from '../../API/UserService';
+import { DvdImg2, RightIcon } from '../../assets/images';
 
 
 function Catelog() {
@@ -66,7 +65,7 @@ function Catelog() {
       return (
             <div id='catelog-wrapper'>
                   <section>
-                        <h1 className='fw-bolder fs-1 moving-text---effect'>Catelog</h1>
+                        <h1 className='fw-bolder fs-1 moving-text---effect'>Catalogue</h1>
                   </section>
                   <hr />
 
@@ -88,11 +87,7 @@ function Catelog() {
                                                                         <p className='p-0 m-0' ><span style={{fontWeight:'bold'}}>Age Limit:</span> <span className={`badge rounded-pill ${(dvdCategory.ageRestricted) ? 'bg-danger' : 'bg-success'}`}>{(dvdCategory.ageRestricted) ? 'Adults' : 'Family'}</span></p>
                                                                         <p className='p-0 m-0' ><span style={{fontWeight:'bold'}}>Penalty:</span> {penaltyCharge}</p>
                                                                         <p className='p-0 m-0'><span style={{fontWeight:'bold'}}>Price:</span> {standardCharge}</p>
-
-                                                                        {/* <p className='p-0 m-0'>age Restriced: {dvdCategory.ageRestricted}</p> */}
                                                                   </div>
-
-                                                                  {/* <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> */}
                                                             </div>
                                                       </div>
                                                       <div className="catelog-dvd-card-back">
@@ -101,7 +96,7 @@ function Catelog() {
                                                             <div>
                                                                   {actors.map(({ actorName, actorLastName }, index) => {
                                                                         return (
-                                                                              <p>{`${actorName} ${actorLastName}`}</p>
+                                                                              <p key={`actors${index}`}>{`${actorName} ${actorLastName}`}</p>
                                                                         )
                                                                   })}
                                                             </div>
@@ -113,20 +108,21 @@ function Catelog() {
                               })
                         )}
                   </section>
+
                   {dvdDetails !== undefined && (
                         <>
-                              <hr />
-                              <section className='d-flex justify-content-end'>
-                                    <span className='d-flex gap-2 pagination--button'>
-                                          <i class="fas fa-arrow-alt-circle-left"></i>
-                                          <img src={RightIcon} name='back' alt="back-icon" onClick={changePageHandler} />
-                                          {(itemIndex.end < dvdDetails.length) && (
-                                                <img src={RightIcon} name='front' alt="front-icon" onClick={changePageHandler} />
-                                          )}
+                        <hr />
+                        <section className='d-flex justify-content-end'>
+                              <span className='d-flex gap-2 pagination--button'>
+                                    <i class="fas fa-arrow-alt-circle-left"></i>
+                                    <img src={RightIcon} name='back' alt="back-icon" onClick={changePageHandler} />
+                                    {(itemIndex.end < dvdDetails.length) && (
+                                          <img src={RightIcon} name='front' alt="front-icon" onClick={changePageHandler} />
+                                    )}
 
-                                    </span>
+                              </span>
 
-                              </section>
+                        </section>
                         </>
                   )}
                   

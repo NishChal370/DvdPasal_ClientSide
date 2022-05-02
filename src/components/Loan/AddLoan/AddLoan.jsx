@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
 import './addLoan.css';
-import { DataNotFoundImg, DvdImg } from '../../assets/images';
+import { DataNotFoundImg, DvdImg } from '../../../assets/images';
 import { removeValidationMessage, validateData } from './validation';
-import { Get_Dvd_Copy_For_Loan, Get_Loan_Type_List, Post_Loan } from '../../API/UserService';
+import { Get_Dvd_Copy_For_Loan, Get_Loan_Type_List, Post_Loan } from '../../../API/UserService';
 
 
 function AddLoan() {

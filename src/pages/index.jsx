@@ -4,14 +4,9 @@ import Catelog from './Catelog/Catelog'
 import Members from './Member/Members'
 import MemberDetail from './Member/MemberDetail'
 import AddDVD from './AddDVD/AddDVD'
-import RegisterMember from './RegisterMember/RegisterMember'
 import Dashboard from './Dashboard/Dashboard'
 import DVDCopies from './DVDCopies/DVDCopies'
-import CurrentLoans from './CurrentLoans/CurrentLoans'
-
 import LoanDetail from './LoanDetail/LoanDetail'
-import AddLoan from './AddLoan/AddLoan'
-import OldDvdDetail from './OldDvdDetail/OldDvdDetail'
-import InactiveMemberDetail from './InactiveMemberDetail/InactiveMemberDetail'
-import UnpopularDvd from './UnpopularDvd/UnpopularDvd'
-export { Home, Dashboard, Login, Catelog, CurrentLoans, Members, RegisterMember, MemberDetail, AddDVD, OldDvdDetail, DVDCopies, LoanDetail, AddLoan, InactiveMemberDetail, UnpopularDvd }
+
+
+export { Home, Dashboard, Login, Catelog, Members, MemberDetail, AddDVD, DVDCopies, LoanDetail }

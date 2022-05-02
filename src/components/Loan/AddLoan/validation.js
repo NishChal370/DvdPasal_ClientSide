@@ -2,7 +2,7 @@ export const validateData =(selectInputDetail, index)=>{
       let isValid = true;
       let {memberNumber, loanType} = selectInputDetail;
       
-      if(memberNumber==='' || memberNumber==0){
+      if(memberNumber === '' || memberNumber === 0){
             document.getElementById(`memberNumber${index}`).focus();
             document.getElementById(`memberNumber${index}`).classList.add('error');
 

@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
-import './oldDvdDetails.css'
-import { Delete_All_Old_Dvds, Delete_Dvd_Copy_By_Id, Get_All_Old_Dvds } from '../../API/UserService'
-import { DataNotFoundImg, DeleteIcon, PageNotFoundImg } from '../../assets/images';
+import './oldDvdDetails.css';
+import { DataNotFoundImg, DeleteIcon } from '../../../assets/images';
+import { Delete_All_Old_Dvds, Delete_Dvd_Copy_By_Id, Get_All_Old_Dvds } from '../../../API/UserService';
+
+
+// import { Delete_All_Old_Dvds, Delete_Dvd_Copy_By_Id, Get_All_Old_Dvds } from '../../API/UserService'
+// import { DataNotFoundImg, DeleteIcon, PageNotFoundImg } from '../../assets/images';
 
 
 function OldDvdDetail() {

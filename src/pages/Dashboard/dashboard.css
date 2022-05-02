@@ -1,9 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap'); */
 
 #available-dvds-wrapper{
-      padding: 0rem 2.6rem;
-      /* height: 40rem; */
-      
+      padding: 0rem 2.6rem;     
 }
 
 
@@ -20,32 +17,13 @@
       font-family: 'Roboto', sans-serif !important;
 }
 
-/* .moving-text---effect{
-      animation: moving 8s ease-in-out infinite;
-}
- */
 
 .dvd-image{
       max-height: 250px;
       height: 50%;     
       object-fit: cover;
-    }
+}
 
-/* @keyframes moving{
-      0%{
-           padding-left: 0%;
-      }
-      50%{
-            padding-left: 6%;
-      }
-      100%{
-            padding-left: 0%;
-      }
-} */
-
-
-
-/***/
 
 hr{
       padding: 0px;
@@ -102,7 +80,3 @@ hr{
 .dvd-card>.card-body>img{
       border-radius: 1rem 1rem 0rem 0rem;
 }
-
-/* .dvd-card>.card-body>article>p:nth-child(2){
-      color: rgb(185, 184, 184);
-} */

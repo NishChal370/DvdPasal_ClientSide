@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { Actor1, Actor2, AvtarImg, FilterIcon, SearchIcon2 } from '../../assets/images'
-import './members.css'
-import { FaUserEdit } from 'react-icons/fa';
-import { MdDelete } from 'react-icons/md';
-import { CgMoreO } from 'react-icons/cg';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import './members.css';
+import { FilterIcon, SearchIcon2 } from '../../assets/images';
 import { Get_member_with_loans } from '../../API/UserService';
 
 function Members() {
-      const navtigate = useNavigate();
       const [showFilter, setShowFilter] = useState(false);
       const [memberData, setMemberData] = useState([]);
 
@@ -35,19 +30,6 @@ function Members() {
 
       return (
             <div id='members-wrapper'>
-                  {/* <nav>
-                        <p className='fw-bolder fs-1 moving-text---effect'>Our Members</p>
-                        <aside>
-                              <input type="text" name="" id="" placeholder='Search...' />
-                              <img src={SearchIcon2} alt="" />
-
-                              <div>
-                                    <input type="checkbox" />
-                                    <label htmlFor="checkBox">Get by member Id</label>
-                              </div>
-
-                        </aside>
-                  </nav> */}
                   <nav>
                         <p className='fw-bolder fs-1 moving-text---effect'>Our Members</p>
                         <aside  style={{display:'flex', flexDirection:'column',justifyContent:'flex-end'}}>
