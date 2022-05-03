@@ -4,7 +4,7 @@ import'./login.css';
 
 
 let initialLoginDetail = {email:'', password:''};
-function Login() {
+function Login({setLoggeedIn}) {
   const navigate = useNavigate();
   const [loginDetail, setLoginDetail] = useState(initialLoginDetail);
 
@@ -21,6 +21,8 @@ function Login() {
     console.log(loginDetail);
 
     localStorage.setItem('is_login', true);
+    setLoggeedIn(true);
+
     navigate('/');
     resetInput();
   }

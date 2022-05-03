@@ -42,4 +42,9 @@ import FilterIcon from './funnel.gif';
 import HomeImg from './home-img.png';
 import CatelogIcon from './catelog-icon.png';
 import DvdIcon from './dvd-icon.png';
-export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, DownIcon, ReturnIcon, DvdIcon, CatelogIcon, HomeImg, AvtarImg, FilterIcon, DvdImg, DvdImg2, AddUserImg, DataNotFoundImg, CrossImg, NavCompassIcon, RightIcon, SearchIcon2, video,LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg,Cartoon, Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10, Cartoon12, PageNotFoundImg, DeleteIcon}
+import PageNotFoundGif from './image_processing20191008-30851-fhz5mc.jpg';
+
+export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, DownIcon, ReturnIcon, DvdIcon, PageNotFoundGif, CatelogIcon, HomeImg,
+       AvtarImg, FilterIcon, DvdImg, DvdImg2, AddUserImg, DataNotFoundImg, CrossImg, NavCompassIcon, RightIcon, SearchIcon2, video,
+       LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg,Cartoon, 
+       Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10, Cartoon12, PageNotFoundImg, DeleteIcon}

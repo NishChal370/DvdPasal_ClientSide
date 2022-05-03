@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -5,23 +6,25 @@ import {
 } from "react-router-dom";
 
 import { UnpopularDvd, RegisterMember, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail } from "./components";
-import { AddDVD, Catelog, Dashboard, DVDCopies, Home, LoanDetail, Login, MemberDetail, Members } from "./pages";
+import { AddDVD, Catelog, Dashboard, DVDCopies, Home, LoanDetail, Login, MemberDetail, Members, PageNotFound } from "./pages";
 
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('is_login'));
 
-  console.log("HELLO")
+  const setLoggeedIn = () => setIsLoggedIn(true);
+  
   return (
 
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login  setLoggeedIn={setLoggeedIn}/>} />
 
         <Route path="/" element={<Home />}>
 
           <Route index element={<Dashboard />} />
-
-          {localStorage.getItem('is_login') && (
+          
+          {isLoggedIn && (
             <>
             <Route path="catelog" element={<Catelog />} />
             <Route path="members" element={<Members />} />
@@ -39,7 +42,10 @@ function App() {
             </>
           )}
 
+          
         </Route>
+
+        <Route path="*" element={<PageNotFound/>}/>
       </Routes>
     </Router>
 

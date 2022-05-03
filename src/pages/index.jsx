@@ -7,6 +7,7 @@ import AddDVD from './AddDVD/AddDVD'
 import Dashboard from './Dashboard/Dashboard'
 import DVDCopies from './DVDCopies/DVDCopies'
 import LoanDetail from './LoanDetail/LoanDetail'
+import PageNotFound from './PageNotFound/PageNotFound'
 
 
-export { Home, Dashboard, Login, Catelog, Members, MemberDetail, AddDVD, DVDCopies, LoanDetail }
+export { Home, Dashboard, Login, Catelog, Members, MemberDetail, AddDVD, DVDCopies, LoanDetail, PageNotFound }
