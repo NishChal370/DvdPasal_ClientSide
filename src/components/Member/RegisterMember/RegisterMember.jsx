@@ -61,15 +61,18 @@ function RegisterMember() {
                   (tagName === 'SELECT')&&(
                         registerDetail['membershipCategory']['description'] = selectedOptions[0].text
                   )
+
                   registerDetail['membershipCategory'][name] = value;
                   registerDetail['membershipCategory']['totalLoans'] = 1;
             }
             else{
                   // if user want to add new cateogary
                   if(name === 'totalLoans'){
+                       
                         registerDetail['membershipCategory']['totalLoans'] = value;
                   }
                   else{
+                        
                         registerDetail['membershipCategory']['description'] = value;
                         // make cateogary number to zero when adding new cateogary
                         registerDetail['membershipCategory']['mcategoryNumber'] = 0;
@@ -137,11 +140,13 @@ function RegisterMember() {
             }
 
             setRegisterDetail({...registerDetail});
+            
             setIsNewCateogary(false); // make allow create new acteigary to false.
       }
 
       const handlerAllowAddNewCateogary=()=>{
             setIsNewCateogary(!isNewCateogary);
+           
             // reset cateogary detail when user want to change add new cateogary  to add existing cateogary or vice-verse
             registerDetail['membershipCategory'] ={
                   mcategoryNumber: 0,
@@ -205,7 +210,7 @@ function RegisterMember() {
                                                 {!isNewCateogary
                                                       ?(
                                                             <>
-                                                            {/* if want to existing */}
+                                                            {/* if want to add existing cateogary*/}
                                                             <select className="form-select input--design" aria-label=".form-select-sm example" id='inputmcategoryNumber' name='mcategoryNumber' value={registerDetail.membershipCategory.mcategoryNumber} onChange={inputChangeHandler}>
                                                                   <option value={''}>---</option>
                                                                   {memebershipTypeList.map(({mcategoryNumber, description},index)=>{return(
