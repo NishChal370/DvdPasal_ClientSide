@@ -318,9 +318,9 @@ function AddDVD() {
       const submitButtonHandler = (e) => {
             e.preventDefault();
 
-            checkValidation({newDvdDetail: dvdData, numberOfActors: inputNewStatus.actor});
-            // post_Dvd_Title();
-            // console.log(dvdData);
+            (checkValidation({newDvdDetail: dvdData, numberOfActors: inputNewStatus.actor})) &&(
+                  post_Dvd_Title()
+            )
       }
 
       const resetButtonHandler = () => {
