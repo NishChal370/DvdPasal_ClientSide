@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { Get_All_Users_Detail } from '../../../API/UserService'
 import { ChangePasswordIcon, DataNotFoundImg, EditIcon } from '../../../assets/images';
 import { dateConverter } from '../../Common/dateConverter';
 import './userDetail.css'
 
 function UserDetail() {
+      const navigate = useNavigate();
+      
       const [usersDetail, setUsersDetail] = useState();
 
       const get_all_users_detail = () =>{
@@ -16,6 +19,11 @@ function UserDetail() {
                         console.log(response);
                         console.log("ERROR ON get_all_users_detail");
                   })
+      }
+
+      const changePasswordButtonHandler=(userDetail)=>{
+            // navigate('admin/changePassword')
+            navigate("/admin/changePassword", { state: userDetail });
       }
 
       useEffect(()=>{
@@ -53,8 +61,8 @@ function UserDetail() {
                                                             <td>{dateConverter(dateOfBirth)}</td>
                                                             <td>{gender}</td>
                                                             <td className='d-flex gap-4 justify-content-center'>
-                                                                  <img id='change-password-icon' src={ChangePasswordIcon} alt="change-password" />
-                                                                  <img id='change-password-icon' src={EditIcon} alt="change-password" />
+                                                                  <img id='change-password-icon' src={ChangePasswordIcon} alt="change-password" onClick={()=>changePasswordButtonHandler({ userId: userId, name: firstName })} />
+                                                                  {/* <img id='change-password-icon' src={EditIcon} alt="change-password" /> */}
                                                                   
                                                             </td>
                                                       </tr>

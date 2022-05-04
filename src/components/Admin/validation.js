@@ -85,6 +85,9 @@ const showErrorMessage= ({inputName, errorMessage}) =>{
       else if(errorMessage === 'date'){
             document.getElementById(`input${inputName}-tooltip`).innerHTML = '  * invalid date'
       }
+      else if(errorMessage === 'notMatch'){
+            document.getElementById(`input${inputName}-tooltip`).innerHTML = '  * password doesnot match'
+      }
 
       document.getElementById(`input${inputName}`).focus();
       document.getElementById(`input${inputName}`).classList.add('error');
@@ -104,4 +107,37 @@ export const removeValidationMessage=({inputName})=>{
       (document.getElementById(`input${inputName}`).classList.contains('error') ) &&(
             document.getElementById(`input${inputName}`).classList.remove('error')
       )
+}
+
+
+
+/*********************************CHANGE PASSWORD VALIDATION******************************************** */
+
+export const validateNewPassword=({newPassword, newPassword2, oldPassword, checkoldPassword})=>{
+      let isValid = true;
+      console.log("CHECK TIS")
+      console.log(oldPassword)
+      console.log(checkoldPassword)
+      if(oldPassword.trim() === '' && checkoldPassword){
+            isValid = false;
+            showErrorMessage({inputName: 'oldPassword', errorMessage: 'empty'})
+      }
+      else if(newPassword.trim() === ''){
+            isValid = false;
+            showErrorMessage({inputName: 'newPassword', errorMessage: 'empty'})
+      }
+      else if (!PASSWORD_REGEX.test(newPassword)){
+            isValid = false;
+            showErrorMessage({inputName: 'newPassword', errorMessage: 'password'})
+      }
+      else if(newPassword2.trim() === ''){
+            isValid = false;
+            showErrorMessage({inputName: 'newPassword2', errorMessage: 'empty'})
+      }
+      else if(newPassword2.trim() !== newPassword.trim()){
+            isValid = false;
+            showErrorMessage({inputName: 'newPassword2', errorMessage: 'notMatch'})
+      }
+
+      return isValid;
 }

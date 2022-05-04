@@ -5,6 +5,7 @@ import './home.css'
 import { SideNav } from '../../components';
 import { SlidingCard } from '../../components/Dashboard';
 import { Cartoon, Cartoon3, Cartoon4, NavCompassIcon } from '../../assets/images';
+import { AXIOS } from '../../API/Constant';
 
 
 function Home() {
@@ -40,11 +41,16 @@ function Home() {
   }
 
   const logoutHandler = () => {
-    localStorage.clear();
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('is_login');
+    AXIOS.defaults.headers['Authorization'] = null;
+
     //move to dashboard
     navigate('/');
     setIsLogin(false);
     closeSideNav();
+
   }
 
 

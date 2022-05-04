@@ -1,4 +1,6 @@
-
+#registerStaff{
+      min-height: 40rem;
+}
 #register-staff-wrrapper>div{
       padding: 2.6rem;
       margin: 0rem 2rem;

@@ -4,8 +4,8 @@ import axios from "axios";
 const AXIOS = axios.create({
     baseURL: "https://localhost:7091/api/",
     headers:{
-        Authorization: localStorage.getItem('access_token')
-            ?'Bearer '+ localStorage.getItem('access_token')
+        Authorization: localStorage.getItem('token')
+            ?'Bearer '+ localStorage.getItem('token')
             :null,
         'Content-Type': 'application/json',
         accept:'application/json',
@@ -64,6 +64,11 @@ const URL_GET_LAST_31_DAYS_LOAN_By_ID = 'Member/'
 const URL_POST_NEW_REGISTER_USER ='user/register'
 const URL_GET_ALL_USERS_DETAIL = 'user'
 
+const URL_CHANGE_PASSWORD_BY_ADMIN = 'user/changePasswordAdmin'
+const URL_POST_CHANGE_OWN_PASSWORD = 'user/changeUserPassword'
+
+const URL_POST_LOGIN = 'user/login'
+
 export{
     AXIOS,
 
@@ -112,4 +117,9 @@ export{
 
     URL_POST_NEW_REGISTER_USER,
     URL_GET_ALL_USERS_DETAIL,
+
+    URL_CHANGE_PASSWORD_BY_ADMIN,
+    URL_POST_CHANGE_OWN_PASSWORD,
+
+    URL_POST_LOGIN,
 }

@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
+
+import jwt_decode from "jwt-decode";
 
 import { AdminContainer, Catelog, Dashboard, DvdContainer, Home, InventoryContainer, LoanContainer, Login, MemberContainer, PageNotFound } from "./pages";
 import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies, RegisterUser, ChangePassword, UserDetail } from "./components";
@@ -11,9 +13,23 @@ import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoa
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('is_login'));
+  const [loginStatus, setLoginStatus] = useState({isloggedIn :localStorage.getItem('is_login'), userType: ''});
 
-  const setLoggeedIn = () => setIsLoggedIn(true);
+  const setLoggeedIn = ({isLogin, userType}) =>{
+    loginStatus.isloggedIn = isLogin;
+    loginStatus.userType = userType;
+
+    setLoginStatus({...loginStatus});
+  }
+
+  useEffect(()=>{
+    if(localStorage.getItem('token') !== null){
+      loginStatus.userType = jwt_decode(localStorage.getItem('token'))['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
+
+      setLoginStatus({...loginStatus});
+    }
+    
+  },[])
   
   return (
 
@@ -24,14 +40,13 @@ function App() {
         <Route path="/" element={<Home />}>
 
           <Route index element={<Dashboard />} />
-          
-          {isLoggedIn && (
+
+          {localStorage.getItem('token') !== null && (
             <>
             <Route path="catelog" element={<Catelog />} />
 
             <Route path="members" element={<MemberContainer/>}>
               <Route index element={<Members />} />
-              {/* <Route path="detail" element={<MemberDetail />} /> */}
               <Route path="inactive" element={<InactiveMemberDetail/>} />
               <Route path="register" element={<RegisterMember/>} />
             </Route>
@@ -51,12 +66,16 @@ function App() {
             <Route path="inventory" element={<InventoryContainer/>}>
               <Route path="dvdcopies" element={<DVDCopies/>} />
             </Route>
+
+            {(loginStatus.userType === 'Admin')&&(
+              <Route path="admin" element={<AdminContainer/>}>
+                <Route path="registerUser" element={<RegisterUser/>} />
+                <Route path="changePassword" element={<ChangePassword/>} />
+                <Route path="userDetail" element={<UserDetail/>}>
+                </Route>
+              </Route>
+            )}
             
-            <Route path="admin" element={<AdminContainer/>}>
-              <Route path="registerUser" element={<RegisterUser/>} />
-              <Route path="changePassword" element={<ChangePassword/>} />
-              <Route path="userDetail" element={<UserDetail/>} />
-            </Route>
             </>
           )}
 
