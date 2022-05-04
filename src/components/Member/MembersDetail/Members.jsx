@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './members.css';
-import { FilterIcon, SearchIcon2 } from '../../assets/images';
-import { Get_member_with_loans } from '../../API/UserService';
+import { FilterIcon, SearchIcon2 } from '../../../assets/images';
+import { Get_member_with_loans } from '../../../API/UserService';
 
 function Members() {
       const [showFilter, setShowFilter] = useState(false);

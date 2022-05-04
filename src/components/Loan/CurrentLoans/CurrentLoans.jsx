@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './CurrentLoan.css'
 import md5 from 'md5';
 import { Get_current_loans } from '../../../API/UserService';
+import { dateConverter } from '../../Common/dateConverter';
 
 function CurrentLoans(){
 
@@ -19,15 +20,15 @@ function CurrentLoans(){
     };
 
 
-    const dateConverter=(dateStr)=>{
-        const  monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-        let date = new Date(dateStr);
-        const year = date.getFullYear()
-        const month = monthsList[date.getMonth()];
-        const day = (date.getDate()<10) ?0+""+date.getDate() :date.getDate();
+    // const dateConverter=(dateStr)=>{
+    //     const  monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    //     let date = new Date(dateStr);
+    //     const year = date.getFullYear()
+    //     const month = monthsList[date.getMonth()];
+    //     const day = (date.getDate()<10) ?0+""+date.getDate() :date.getDate();
 
-        return month+" "+day+" "+year
-  }
+    //     return month+" "+day+" "+year
+    // }
 
     useEffect(() => {
         get_current_loan();

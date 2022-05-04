@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
-import { Get_Dvd_Name_List, Post_New_Dvd_Copy } from '../../API/UserService';
 import { removeValidationMessage, validateModel } from './validation';
+import { Get_Dvd_Name_List, Post_New_Dvd_Copy } from '../../../API/UserService';
 
-function AddDvdFormModel({refreshPage}) {//exampleModal
+
+function AddDvdFormModel({refreshPage}) {
       const [newDvdDetail, setNewDvdDetail] = useState({dvdId:'', datePurchased: '', dvdCount: 1});
       
       const [dvdNameList, setDvdNameList] = useState();

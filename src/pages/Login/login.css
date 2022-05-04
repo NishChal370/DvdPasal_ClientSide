@@ -145,9 +145,11 @@
 }
 
 .login-wrapper>#login-form>.button-wrapper>button:hover{
-      box-shadow: 0 0 20px #a8eb12, 0 0 40px #00E4B6;
-      border: 4px solid #a8eb12;
-      background-color: #a8eb12;
-      color: #000;
-      transition: box-shadow 7s, border 3s, background-color 3s, color 3s;
+      animation: pulsate 1s ease-in-out;
+}
+
+@keyframes pulsate{
+      0%{
+            box-shadow: 0 0 25px rgb(93, 2, 105), 0 0 50px rgb(93, 2, 105);
+      }
 }

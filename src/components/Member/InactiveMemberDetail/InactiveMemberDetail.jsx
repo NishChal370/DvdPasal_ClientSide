@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './inactiveMemberDetail.css';
 import { DataNotFoundImg } from '../../../assets/images';
 import { Get_Inactive_Members_Detail_List } from '../../../API/UserService';
+import { dateConverter } from '../../Common/dateConverter';
 
 
 
@@ -21,15 +22,15 @@ function InactiveMemberDetail() {
                   })
       }
 
-      const dateConverter = (dateStr) => {
-            const monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-            let date = new Date(dateStr);
-            const year = date.getFullYear()
-            const month = monthsList[date.getMonth()];
-            const day = date.getDate();
+      // const dateConverter = (dateStr) => {
+      //       const monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      //       let date = new Date(dateStr);
+      //       const year = date.getFullYear()
+      //       const month = monthsList[date.getMonth()];
+      //       const day = date.getDate();
 
-            return day + " " + month + " " + year
-      }
+      //       return day + " " + month + " " + year
+      // }
 
       useEffect(()=>{
             get_inactive_memebers();

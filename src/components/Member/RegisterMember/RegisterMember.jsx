@@ -247,26 +247,3 @@ function RegisterMember() {
 }
 
 export default RegisterMember
-
-
-
-
-                                    // {/* <div className="col-md-6">
-                                    //       <label for="inputPassword4" className="form-label">Memebership type</label>
-                                    //       <span id='inputmcategoryNumber-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                    //       <select className="form-select input--design" aria-label=".form-select-sm example" id='inputmcategoryNumber' name='mcategoryNumber' value={registerDetail.membershipCategory.mcategoryNumber} onChange={inputChangeHandler}>
-                                    //             <option value={''}>---</option>
-                                    //             {memebershipTypeList.map(({mcategoryNumber, description},index)=>{return(
-                                    //                   <option value={mcategoryNumber} key={`memebertype${index}`}>{description}</option>
-                                    //             )})}
-                                                
-                                    //       </select>
-                                    // </div> */}
-
-
-                                    
-                                    // {/* <div className="col-md-6">
-                                    //       <label for="inputtotalLoans" className="form-label">Total Loans</label>
-                                    //       <span id='inputcategorytotalLoans-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                    //       <input type="number" className="form-control input--design" id="inputcategorytotalLoans" name='totalLoans' placeholder='enter loan limit...' value={registerDetail.membershipCategory.totalLoans} onChange={inputChangeHandler}/>
-                                    // </div> */}

@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './dashboard.css'
 import { DataNotFoundImg, DvdImg, FilterIcon, SearchIcon2 } from '../../assets/images'
 import { Get_Available_Dvd_By_Lastname, Get_Dvd_By_Lastname, Get_Dvd_Title } from '../../API/UserService';
+import { dateConverter } from '../../components';
 
 
 //Get_Dvd_Title
-function Dashboard({HandlerNavbarVisible}) {
+function Dashboard() {
       const [dvdDetails, setDvdDetails] = useState();
       const [showFilter, setShowFilter] = useState(false);
       const [search, setSearch] = useState({lastname:'', showAvailable: false});
@@ -22,15 +23,15 @@ function Dashboard({HandlerNavbarVisible}) {
                   })
       }
 
-      const dateConverter=(dateStr)=>{
-            const  monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-            let date = new Date(dateStr);
-            const year = date.getFullYear()
-            const month = monthsList[date.getMonth()];
-            const day = date.getDate();
+      // const dateConverter=(dateStr)=>{
+      //       const  monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+      //       let date = new Date(dateStr);
+      //       const year = date.getFullYear()
+      //       const month = monthsList[date.getMonth()];
+      //       const day = date.getDate();
 
-            return day+" "+month+" "+year
-      }
+      //       return day+" "+month+" "+year
+      // }
 
 
       const searchInputHandler=({target})=>{

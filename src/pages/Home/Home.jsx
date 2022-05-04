@@ -76,7 +76,7 @@ function Home() {
           <section className='top-img' style={{ backgroundImage: `url(${topCoverImage})` }}>
             <div>
               <span className='ps-4' style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <p className='p-0 m-0 fs-3'>DVD Store</p>
+                <p className='p-0 m-0 fs-3'>DvD Store</p>
 
                 {(localStorage.getItem('is_login'))
                   ? (
@@ -107,12 +107,3 @@ function Home() {
 }
 
 export default Home
-
-/**<div style={{display: 'flex'}}>
-      <nav id='side-nav' className= 'sideNav hideSideNav'>
-        <button onClick={HandlerNavbarVisible}>CLICK</button>
-        <p>Iam nav</p>
-      </nav>
-      
-      <Dashboard HandlerNavbarVisible={HandlerNavbarVisible}/>
-    </div> */

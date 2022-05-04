@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
-import { Delete_Dvd_Copy_By_Id, Get_All_Dvd_Copies } from '../../API/UserService'
-import { DataNotFoundImg, DeleteIcon } from '../../assets/images';
+import './dvdCopies.css';
 import AddDvdFormModel from './AddDvdFormModel';
-import './dvdCopies.css'
+import { Delete_Dvd_Copy_By_Id, Get_All_Dvd_Copies } from '../../../API/UserService';
+import { DataNotFoundImg, DeleteIcon } from '../../../assets/images';
 
 
 

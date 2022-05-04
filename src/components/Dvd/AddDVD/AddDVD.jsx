@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import './addDvD.css';
-import { AddUserImg, CrossImg } from '../../assets/images';
-import { Get_Actors_Name, Get_DVD_Cateogaries_Name, Get_Producets_Name, Get_Studios_Name, Post_Dvd_Title } from '../../API/UserService';
 import { checkValidation } from './validation';
+import { AddUserImg, CrossImg } from '../../../assets/images';
+import { Get_Actors_Name, Get_DVD_Cateogaries_Name, Get_Producets_Name, Get_Studios_Name, Post_Dvd_Title } from '../../../API/UserService';
+
 
 
 let data = {
@@ -399,13 +400,13 @@ function AddDVD() {
                                     <span id='dateReleased-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                     <input type="date" className="form-control input--design" id="dateReleased" name='dateReleased' value={dvdData.dateReleased} onChange={inputChangeHandler} />
                               </div>
-                              {/* price  min={1} pattern="[1-9]+"*/}
+                              {/* price */}
                               <div className="col-md-6">
                                     <label htmlFor="inputPrice" className="form-label">Price</label>
                                     <span id='standardCharge-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                     <input type="number" className="form-control input--design" id="standardCharge" name='standardCharge' placeholder='Add price...' value={dvdData.standardCharge}   onChange={inputChangeHandler}  />
                               </div>
-                              {/* penalty   min={0} max={dvdData.standardCharge - 1} pattern="[0-9]+"*/}
+                              {/* penalty */}
                               <div className="col-md-6">
                                     <label htmlFor="inputPenalty" className="form-label">Penalty</label>
                                     <span id='penaltyCharge-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
@@ -581,197 +582,3 @@ function AddDVD() {
 }
 
 export default AddDVD
-
-
-
-
-
-// <form id="add-dvd-form" className="row g-3" onSubmit={submitButtonHandler} onReset={resetButtonHandler}>
-//                               {/* DVD name */}
-//                               <div className="col-md-6">
-//                                     <label htmlFor="inputDvdName" className="form-label">DvD Name</label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-//                                     <input type="text" className="form-control input--design" id="inputDvdName" name='dvdName' placeholder='Add Dvd name...'  value={dvdData.dvdName} onChange={inputChangeHandler} required />
-//                               </div>
-//                               {/* release date */}
-//                               <div className="col-md-6">
-//                                     <label htmlFor="inputReleaseDate" className="form-label">Release Date</label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'unset', fontSize:'1rem'}}>  * show not be empty</span>
-//                                     <input type="date" className="form-control input--design" id="inputReleaseDate" name='dateReleased' value={dvdData.dateReleased} onChange={inputChangeHandler} required />
-//                               </div>
-//                               {/* price */}
-//                               <div className="col-md-6">
-//                                     <label htmlFor="inputPrice" className="form-label">Price</label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'unset', fontSize:'1rem'}}>  * show not be empty</span>
-//                                     <input type="number" className="form-control input--design" id="inputPrice" name='standardCharge' placeholder='Add price...'  onChange={inputChangeHandler} min={1} pattern="[1-9]+" required />
-//                               </div>
-//                               {/* penalty */}
-//                               <div className="col-md-6">
-//                                     <label htmlFor="inputPenalty" className="form-label">Penalty</label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'unset', fontSize:'1rem'}}>  * show not be empty</span>
-//                                     <input type="number" className="form-control input--design" id="inputPenalty" name='penaltyCharge' placeholder='Add penalty amount...' onChange={inputChangeHandler} min={0} max={dvdData.standardCharge - 1} pattern="[0-9]+" required />
-//                               </div>
-
-//                               {/* producer */}
-//                               <section className="col-md-6" >
-//                                     <label htmlFor="inputProducer" className="form-label">Producer</label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'unset', fontSize:'1rem'}}>  * show not be empty</span>
-//                                     <div className='d-flex gap-3'>
-//                                           {(!inputNewStatus.producer)
-//                                                 ? (
-//                                                       <>
-//                                                             {/* existing producer */}
-//                                                             <select className="form-select input--design" name='producerNumber' id="dvdProducer" value={dvdData.dvdProducer.producerNumber} onChange={inputChangeHandler} required>
-//                                                                   <option value={''}>---</option>
-//                                                                   {nameList.producers.map(({ producerNumber, producerName }, index) => {
-//                                                                         return (
-//                                                                               <option value={producerNumber}>{producerName}</option>
-//                                                                         )
-//                                                                   })}
-//                                                             </select>
-//                                                             <img className='circle-img--button ' src={AddUserImg} alt="" onClick={() => handlerAddingNew('producer')} />
-//                                                       </>
-//                                                 )
-//                                                 : (<>
-//                                                       {/* new producer */}
-//                                                       <input className="form-control input--design" name='producerName' id="dvdProducer" placeholder='insert producer name....' value={dvdData.dvdProducer.producerName} onChange={inputChangeHandler} required />
-//                                                       <img className='circle-img--button' src={CrossImg} alt="" onClick={() => handlerAddingNew('producer')} />
-//                                                 </>
-//                                                 )
-//                                           }
-//                                     </div>
-//                               </section>
-
-//                               {/* studio */}
-//                               <section className="col-md-6" >
-//                                     <label htmlFor="inputProducer" className="form-label">Studio</label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'unset', fontSize:'1rem'}}>  * show not be empty</span>
-//                                     <div className='d-flex gap-3'>
-//                                           {(!inputNewStatus.studio)
-//                                                 ? (
-//                                                       <>
-//                                                             {/* existing studio */}
-//                                                             <select className="form-select input--design" name='studioNumber' id="dvdStudio" value={dvdData.dvdStudio.studioNumber} onChange={inputChangeHandler} required>
-//                                                                   <option value={''}>---</option>
-//                                                                   {nameList.studios.map(({ studioNumber, studioName }, index) => {
-//                                                                         return (
-//                                                                               <option value={studioNumber}>{studioName}</option>
-//                                                                         )
-//                                                                   })}
-//                                                             </select>
-
-//                                                             <img className='circle-img--button' src={AddUserImg} alt="" onClick={() => handlerAddingNew('studio')} />
-//                                                       </>
-
-//                                                 )
-//                                                 : (
-//                                                       <>
-//                                                             {/* new studio */}
-//                                                             <input className="form-control input--design" name='studioName' id="dvdStudio" placeholder='insert studio name...' value={dvdData.dvdStudio.studioName} onChange={inputChangeHandler} required />
-//                                                             <img className='circle-img--button' src={CrossImg} alt="" onClick={() => handlerAddingNew('studio')} />
-//                                                       </>
-//                                                 )
-//                                           }
-//                                     </div>
-//                               </section>
-
-//                               {/* actor */}
-//                               <section className="col-md-6" >
-//                                     <label htmlFor="inputActor" className="form-label">
-//                                           Actor
-//                                           <a style={{ color: 'blue', paddingBottom: '0rem', paddingLeft: '0.2rem', cursor: 'pointer', fontSize: '0.9rem' }} onClick={() => addActorHandler('more')}> add more</a>
-//                                           <a style={{ color: 'blue', paddingBottom: '0rem', paddingLeft: '0.2rem', cursor: 'pointer', fontSize: '0.9rem' }} onClick={() => addActorHandler('less')}> add Less</a>
-//                                     </label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'unset', fontSize:'1rem'}}>  * show not be empty</span>   
-
-//                                     {/* loop to add multiple actor */}
-//                                     {[...Array(numberOFActors)].map((a, index) => {
-//                                           return (
-//                                                 <div className={`d-flex gap-3 ${(index > 0) && 'mt-2'}`} key={`actorInput${index}`}>
-//                                                       {(!inputNewStatus.actor[index])
-//                                                             ? (
-//                                                                   <>
-//                                                                         {/* existing actor */}
-//                                                                         <select className="form-select input--design" name='actorNumber' id="actors" value={dvdData.actors[index].actorNumber} onChange={(e) => inputChangeHandler(e, index)} required>
-//                                                                               <option value={''}>---</option>
-//                                                                               {nameList.actors.map(({ actorId, actorName }, index) => {
-//                                                                                     return (
-//                                                                                           <option value={actorId}>{actorName}</option>
-//                                                                                     )
-//                                                                               })}
-//                                                                         </select>
-//                                                                         <img className='circle-img--button' src={AddUserImg} alt="" onClick={() => handlerAddingNew('actor', index)} />
-//                                                                   </>
-//                                                             )
-//                                                             : (
-//                                                                   <>
-//                                                                         {/* new actor */}
-//                                                                         <input className="form-control input--design" name='actorName' id="actors" placeholder='insert Name....' value={dvdData.actors[index].actorName} onChange={(e) => inputChangeHandler(e, index)} required />
-//                                                                         <input className="form-control input--design" name='actorLastName' id="actors" placeholder='insert last Name....' value={dvdData.actors[index].actorLastName} onChange={(e) => inputChangeHandler(e, index)} required />
-//                                                                         <input className="form-control input--design" name='profileUrl' id="actors" placeholder='insert url....' value={dvdData.actors[index].profileUrl} onChange={(e) => inputChangeHandler(e, index)} />
-
-//                                                                         <img className='circle-img--button' src={CrossImg} alt="" onClick={() => handlerAddingNew('actor', index)} />
-//                                                                   </>
-//                                                             )
-//                                                       }
-//                                                 </div>
-//                                           )
-//                                     })}
-
-//                               </section>
-
-
-//                               {/* category */}
-//                               <section className="col-md-6" >
-//                                     <label htmlFor="inputCateogary" className="form-label">Cateogary</label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'unset', fontSize:'1rem'}}>  * show not be empty</span>
-//                                     <div className='d-flex gap-3'>
-//                                           {(!inputNewStatus.cateogary)
-//                                                 ? (
-//                                                       <>
-//                                                             {/* existing cateogary */}
-//                                                             <select className="form-select input--design" name='categoryNumber' id="dvdCategory" value={dvdData.dvdCategory.categoryNumber} onChange={inputChangeHandler} required>
-//                                                                   <option value={''}>---</option>
-//                                                                   {nameList.cateogary.map(({ categoryNumber, categoryDescription }, index) => {
-//                                                                         return (
-//                                                                               <option value={categoryNumber}>{categoryDescription}</option>
-//                                                                         )
-//                                                                   })}
-//                                                             </select>
-//                                                             <img className='circle-img--button' src={AddUserImg} alt="" onClick={() => handlerAddingNew('cateogary')} />
-//                                                       </>
-//                                                 )
-//                                                 : (
-//                                                       <>
-//                                                             {/* new cateogary */}
-//                                                             <input className="form-contro input--design" name='categoryDescription' id="dvdCategory" placeholder='insert category name..' style={{ width: '69.6%' }} value={dvdData.dvdCategory.categoryDescription} onChange={inputChangeHandler} required />
-
-//                                                             <input className='mt-2 input--design' type="checkbox" name='ageRestricted' id="dvdCategory" checked={dvdData.dvdCategory.ageRestricted} onChange={inputChangeHandler} />
-//                                                             <label htmlFor="checkBox">Is age restricted</label>
-//                                                             <img className='circle-img--button input--design' src={CrossImg} alt="" onClick={() => handlerAddingNew('cateogary')} />
-//                                                       </>
-//                                                 )
-//                                           }
-//                                     </div>
-//                               </section>
-
-//                               {/* image */}
-//                               <section className="col-md-6" >
-//                                     <label htmlFor="inputImage" className="form-label">
-//                                           Image
-//                                     </label>
-//                                     <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'unset', fontSize:'1rem'}}>  * show not be empty</span>
-
-//                                     <div className={`d-flex gap-3 'mt-2'}`} key={`imageInput`}>
-//                                           <input type="file" accept="image/*" className="form-control input--design" name='image64' id="dvDimages" placeholder='Add images...' multiple onChange={(e) => addImage(e)} />
-//                                     </div>
-//                               </section>
-
-//                               {/* buttons */}
-//                               <div className="col-md-6 mt-5  d-flex gap-5" style={{ height: '2.6rem' }}>
-//                                     <button type="submit" className="save-dvd-btn btn btn-primary">Submit</button>
-//                                     <button type="reset" className=" save-dvd-btn btn btn-danger">Reset</button>
-//                               </div>
-
-
-//                         </form>
