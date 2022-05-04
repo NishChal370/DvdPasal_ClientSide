@@ -139,7 +139,8 @@ function SideNav({HandlerNavbarVisible}) {
                                     <span  className={` ${(showSubNav.admin)? 'show-side-subnav':'hide-side-subnav'}`}>
                                           <ul>
                                                 {[{link:'/admin/registerUser', name: 'admin/registerUser', title:'Register User'},
-                                                {link:'/admin/changePassword', name: 'admin/changePassword', title:'Change Password'}
+                                                {link:'/admin/userDetail', name: 'admin/userDetail', title:'Users Detail'},
+                                                {link:'/admin/changePassword', name: 'admin/changePassword', title:'Change Password'},
                                                 ].map(({link, name, title}, index)=>{return(
                                                       <li key={`laonSideNav${index}`} className={` ${(location===link)? 'sub-active':''}`} onClick={()=>changePageHandler({pageName :name})}>
                                                             <a><i>{title}</i></a>

@@ -62,6 +62,7 @@ const URL_GET_LAST_31_DAYS_LOAN_BY_LASTNAME = 'Member/search/'
 const URL_GET_LAST_31_DAYS_LOAN_By_ID = 'Member/'
 
 const URL_POST_NEW_REGISTER_USER ='user/register'
+const URL_GET_ALL_USERS_DETAIL = 'user'
 
 export{
     AXIOS,
@@ -110,4 +111,5 @@ export{
     URL_GET_LAST_31_DAYS_LOAN_By_ID,
 
     URL_POST_NEW_REGISTER_USER,
+    URL_GET_ALL_USERS_DETAIL,
 }

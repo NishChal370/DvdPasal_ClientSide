@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 import { AdminContainer, Catelog, Dashboard, DvdContainer, Home, InventoryContainer, LoanContainer, Login, MemberContainer, PageNotFound } from "./pages";
-import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies, RegisterUser, ChangePassword } from "./components";
+import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies, RegisterUser, ChangePassword, UserDetail } from "./components";
 
 
 
@@ -55,6 +55,7 @@ function App() {
             <Route path="admin" element={<AdminContainer/>}>
               <Route path="registerUser" element={<RegisterUser/>} />
               <Route path="changePassword" element={<ChangePassword/>} />
+              <Route path="userDetail" element={<UserDetail/>} />
             </Route>
             </>
           )}
