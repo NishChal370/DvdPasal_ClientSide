@@ -76,7 +76,7 @@ function Home() {
           <section className='top-img' style={{ backgroundImage: `url(${topCoverImage})` }}>
             <div>
               <span className='ps-4' style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <p className='p-0 m-0 fs-3'>DvD Store</p>
+                <p className='p-0 m-0 fs-3'>Ropey DvD Store</p>
 
                 {(localStorage.getItem('is_login'))
                   ? (

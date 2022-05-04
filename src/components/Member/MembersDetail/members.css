@@ -108,3 +108,8 @@ table{
 tbody>tr:hover{
       transform: scaleX(1.009)
 }
+
+.colored-toast.swal2-icon-error {
+      background-color: #f27474 !important;
+}
+    

@@ -58,6 +58,9 @@ const ULR_GET_DVD_NAME_LIST = 'DvdTitle/forCopy';
 const URL_CURRENT_LOANS = 'Loan/notReturned';
 
 
+const URL_GET_LAST_31_DAYS_LOAN_BY_LASTNAME = 'Member/search/'
+const URL_GET_LAST_31_DAYS_LOAN_By_ID = 'Member/'
+
 export{
     AXIOS,
 
@@ -101,4 +104,6 @@ export{
 
     URL_GET_DVD_UNPOPULAR,
 
+    URL_GET_LAST_31_DAYS_LOAN_BY_LASTNAME,
+    URL_GET_LAST_31_DAYS_LOAN_By_ID,
 }
