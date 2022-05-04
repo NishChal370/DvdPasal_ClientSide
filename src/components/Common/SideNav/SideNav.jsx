@@ -7,7 +7,7 @@ import { DownIcon, HomeImg } from '../../../assets/images';
 function SideNav({HandlerNavbarVisible}) {
       const navigate = useNavigate();
       const location = useLocation().pathname;
-      const [showSubNav, setShowSideNav] = useState({members :false, dvd :false, inventory :false, loan :false});
+      const [showSubNav, setShowSideNav] = useState({members :false, dvd :false, inventory :false, loan :false, admin:false});
       
 
       const changePageHandler=({pageName})=>{
@@ -123,6 +123,24 @@ function SideNav({HandlerNavbarVisible}) {
                                                 {link:'/loan/add', name: 'loan/add', title:'Add Loan'}, 
                                                 {link:'/loan/currentLoans', name: 'loan/currentLoans', title:'Current Loans'}].map(({link, name, title}, index)=>{return(
 
+                                                      <li key={`laonSideNav${index}`} className={` ${(location===link)? 'sub-active':''}`} onClick={()=>changePageHandler({pageName :name})}>
+                                                            <a><i>{title}</i></a>
+                                                      </li>
+                                                )})}
+                                          </ul>
+                                    </span>
+                              </li>
+
+                              <li className={`nav-item curser--on-hover `} name='loan' >
+                                    <a className={`nav-link ${(location.includes('loan') || showSubNav.admin)? 'active':''}`} onClick={()=>showSubNavHandler({navbarName:'admin'})}>
+                                          <span>Admin</span>
+                                          <img id='side-nav-icon'  className={` ${(showSubNav.admin)?'icon---up':''}`} src={DownIcon} alt=""/>
+                                    </a>
+                                    <span  className={` ${(showSubNav.admin)? 'show-side-subnav':'hide-side-subnav'}`}>
+                                          <ul>
+                                                {[{link:'/admin/registerUser', name: 'admin/registerUser', title:'Register User'},
+                                                {link:'/admin/changePassword', name: 'admin/changePassword', title:'Change Password'}
+                                                ].map(({link, name, title}, index)=>{return(
                                                       <li key={`laonSideNav${index}`} className={` ${(location===link)? 'sub-active':''}`} onClick={()=>changePageHandler({pageName :name})}>
                                                             <a><i>{title}</i></a>
                                                       </li>

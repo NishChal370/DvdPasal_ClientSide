@@ -5,8 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Catelog, Dashboard, DvdContainer, Home, InventoryContainer, LoanContainer, Login, MemberContainer, PageNotFound } from "./pages";
-import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies } from "./components";
+import { AdminContainer, Catelog, Dashboard, DvdContainer, Home, InventoryContainer, LoanContainer, Login, MemberContainer, PageNotFound } from "./pages";
+import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies, RegisterUser, ChangePassword } from "./components";
 
 
 
@@ -50,6 +50,11 @@ function App() {
 
             <Route path="inventory" element={<InventoryContainer/>}>
               <Route path="dvdcopies" element={<DVDCopies/>} />
+            </Route>
+            
+            <Route path="admin" element={<AdminContainer/>}>
+              <Route path="registerUser" element={<RegisterUser/>} />
+              <Route path="changePassword" element={<ChangePassword/>} />
             </Route>
             </>
           )}

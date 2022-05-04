@@ -7,5 +7,6 @@ import MemberContainer from './Member/MemberContainer'
 import LoanContainer from './Loan/LoanContainer'
 import DvdContainer from './Dvd/DvdContainer'
 import InventoryContainer from './Inventory/InventoryContainer'
+import AdminContainer from './Admin/AdminContainer'
 
-export { Home, Dashboard, Login, Catelog, InventoryContainer, PageNotFound, MemberContainer, LoanContainer, DvdContainer }
+export { Home, Dashboard, Login, Catelog, InventoryContainer, PageNotFound, MemberContainer, LoanContainer, DvdContainer, AdminContainer }
