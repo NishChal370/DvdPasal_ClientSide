@@ -28,8 +28,9 @@ function ChangePassword() {
                               data,
                               'success'
                         )
-
+                        
                         resetHandler();
+                        navigate('/admin/userDetail');
                   })
                   .catch(({response})=>{
                         console.log(response.data);
@@ -82,14 +83,10 @@ function ChangePassword() {
                   }
                   
             }
-            
-            
-
-            console.log(state);
-
       }
 
       useEffect(()=>{
+            console.log("IN HERE");
             if(state !== null){
 
                   setPasswordDetail({userID: (state.userId === undefined)? '':state.userId, type:state.name, newPassword: '', newPassword2: '',  oldPassword:''});

@@ -13,10 +13,10 @@ export const validateRegisterUser=({newUserDetail})=>{
             isValid = false;
             showErrorMessage({inputName: 'userName', errorMessage: 'empty'})
       }
-      else if(!ALPHABET_REGEX.test(userName)){
-            isValid = false;
-            showErrorMessage({inputName: 'userName', errorMessage: 'invalid'})
-      }
+      // else if(!ALPHABET_REGEX.test(userName)){
+      //       isValid = false;
+      //       showErrorMessage({inputName: 'userName', errorMessage: 'invalid'})
+      // }
 
       else if(firstName.trim() === ''){ 
             isValid = false;
@@ -59,7 +59,7 @@ export const validateRegisterUser=({newUserDetail})=>{
             isValid = false;
             showErrorMessage({inputName: 'dateOfBirth', errorMessage: 'empty'})
       }
-      else if(dateConverter(todaysDate) < dateConverter(dateOfBirth)){
+      else if(new Date(dateConverter(todaysDate)) < new Date(dateConverter(dateOfBirth))){
             isValid = false;
             showErrorMessage({inputName: 'dateOfBirth', errorMessage: 'date'})
       }
