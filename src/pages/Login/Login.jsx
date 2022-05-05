@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./login.css";
 import Swal from "sweetalert2";
+import jwt_decode from "jwt-decode";
 import { AXIOS } from "../../API/Constant";
 import { Post_Login } from "../../API/UserService";
-import "./login.css";
-import jwt_decode from "jwt-decode";
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 800,
+  timerProgressBar: false,
+});
 
 let initialLoginDetail = { username: "", password: "" };
 function Login({ setLoggeedIn }) {
@@ -24,7 +32,10 @@ function Login({ setLoggeedIn }) {
       password: loginDetail.password,
     })
       .then(({ data }) => {
-        Swal.fire("Logged in!", "Welcome", "success");
+        Toast.fire({
+          icon: 'success',
+          title: 'Logged in !!!'
+        });
 
         localStorage.setItem("token", data.token);
         localStorage.setItem("is_login", true);
@@ -71,7 +82,6 @@ function Login({ setLoggeedIn }) {
         <form id="login-form" onSubmit={submitHandler}>
           <div className="login-form-group">
             <label htmlFor="formUsernameInput">User name</label>
-            {/* <input type="text" className="form-control" id="email" placeholder="Email input" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" value={loginDetail.email} onChange={inputChangeHandler}  required/> */}
             <input
               type="text"
               className="form-control"
@@ -81,7 +91,6 @@ function Login({ setLoggeedIn }) {
               onChange={inputChangeHandler}
               required
             />
-            {/* <input type="text" className="form-control" id="formEmailInput" placeholder="Email input"  value={loginDetail.email} onChange={inputChangeHandler}  required/> */}
           </div>
           <br />
           <div className="login-form-group">
@@ -105,6 +114,18 @@ function Login({ setLoggeedIn }) {
             />
             <label className="login-form-check-label" htmlFor="rememberMeCheck">
               Remember me
+            </label>
+          </div>
+
+          <div className="login-form-check">
+            <label htmlFor="">
+              Don't have account?
+            </label>
+
+            <label htmlFor="" style={{fontSize:'1.4rem', textDecoration:'underline', marginTop:'0.2rem', cursor:'pointer'}}
+              onClick={()=>navigate('/registration')}  
+            >
+              Click Here
             </label>
           </div>
 

@@ -7,7 +7,7 @@ import {
 
 import jwt_decode from "jwt-decode";
 
-import { AdminContainer, Catelog, Dashboard, DvdContainer, Home, InventoryContainer, LoanContainer, Login, MemberContainer, PageNotFound, SettingContainer } from "./pages";
+import { AdminContainer, Catelog, Dashboard, DvdContainer, Home, InventoryContainer, LoanContainer, Login, MemberContainer, PageNotFound, RegisterMe, SettingContainer } from "./pages";
 import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies, RegisterUser, ChangePassword, UserDetail, Profile } from "./components";
 
 
@@ -36,6 +36,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login  setLoggeedIn={setLoggeedIn}/>} />
+        <Route path="/registration" element={<RegisterMe/>} />
 
         <Route path="/" element={<Home />}>
 

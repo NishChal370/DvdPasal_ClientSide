@@ -17,5 +17,4 @@ root.render(
 // reportWebVitals();
 
 
-// TODO user register 
 // TODO rember not me

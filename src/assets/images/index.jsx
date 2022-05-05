@@ -30,6 +30,7 @@ import NavCompassIcon from './compasses.png';
 import LoginBackgroungImg from './login-backgoround7.jpg';
 import DvdImg2 from './dvdImg.jpg';
 import AvtarImg from './avtar2.gif';
+import AvtarImg2 from './avtar3.gif';
 import AddUserImg from './add.png';
 import CrossImg from './cross.png';
 import RightIcon from './arrow-right.png';
@@ -45,8 +46,9 @@ import DvdIcon from './dvd-icon.png';
 import PageNotFoundGif from './image_processing20191008-30851-fhz5mc.jpg';
 import ChangePasswordIcon from './secure.png';
 import EditIcon from './edit.png';
+
 export {SliderImg1, SliderImg2, SliderImg3, SearchIcon1, DownIcon, ReturnIcon, DvdIcon, PageNotFoundGif, CatelogIcon, HomeImg,
-       AvtarImg, FilterIcon, DvdImg, DvdImg2, AddUserImg, DataNotFoundImg, CrossImg, NavCompassIcon, RightIcon, SearchIcon2, video,
+       AvtarImg, AvtarImg2, FilterIcon, DvdImg, DvdImg2, AddUserImg, DataNotFoundImg, CrossImg, NavCompassIcon, RightIcon, SearchIcon2, video,
        LoginBackgroungImg, logo, RangersImg, Actor1,Actor2, GostBalloonImg, ExclusivesImg, PlaylistsImg, BeatsImg, TrialImg,Cartoon, 
        Cartoon1, Cartoon3, Cartoon4, Cartoon5, Cartoon6,Cartoon7,Cartoon8,Cartoon9, Cartoon10, Cartoon12, PageNotFoundImg, DeleteIcon,
        ChangePasswordIcon, EditIcon}

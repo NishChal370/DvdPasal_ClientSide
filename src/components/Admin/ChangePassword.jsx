@@ -125,20 +125,20 @@ function ChangePassword() {
                                           <div className="col-md-12">
                                                 <label for="inputoldPassword" className="form-label">Old Password</label>
                                                 <span id='inputoldPassword-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                                <input type="text" className="form-control input--design" id="inputoldPassword" name='oldPassword' placeholder='Enter new password...' value={passwordDetail.oldPassword} onChange={inputChangeHandler}/>
+                                                <input type="password" className="form-control input--design" id="inputoldPassword" name='oldPassword' placeholder='Enter new password...' value={passwordDetail.oldPassword} onChange={inputChangeHandler}/>
                                           </div>
                                     )}
                                                 
                                     <div className="col-md-12">
                                           <label for="inputuserName" className="form-label">New Password</label>
                                           <span id='inputnewPassword-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <input type="text" className="form-control input--design" id="inputnewPassword" name='newPassword' placeholder='Enter new password...' value={passwordDetail.newPassword} onChange={inputChangeHandler}/>
+                                          <input type="password" className="form-control input--design" id="inputnewPassword" name='newPassword' placeholder='Enter new password...' value={passwordDetail.newPassword} onChange={inputChangeHandler}/>
                                     </div>
 
                                     <div className="col-md-12">
                                           <label for="inputuserName" className="form-label">Confirm New Password</label>
                                           <span id='inputnewPassword2-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <input type="text" className="form-control input--design" id="inputnewPassword2" name='newPassword2' placeholder='Re-enter new password...' value={passwordDetail.newPassword2} onChange={inputChangeHandler}/>
+                                          <input type="password" className="form-control input--design" id="inputnewPassword2" name='newPassword2' placeholder='Re-enter new password...' value={passwordDetail.newPassword2} onChange={inputChangeHandler}/>
                                     </div>
 
                                     <div className="col-md-12 mt-5 d-flex gap-5 justify-content-end" style={{ height: '2.6rem' }}>

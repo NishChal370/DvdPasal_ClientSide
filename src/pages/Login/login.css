@@ -6,13 +6,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@600&display=swap');
 
 #login{
-      background-image: url('../../assets/images/login-backgoround13.jpg');
+      background-image: url('../../assets/images/login-backgoround14.jpg');
       background-size: 100% 100%;
       background-position: center;
       background-repeat: no-repeat;
       height: 100vh;   
       display: flex;
       justify-content: right;
+      object-fit: cover;
       font-family: 'Square Peg', cursive !important;
 }
 

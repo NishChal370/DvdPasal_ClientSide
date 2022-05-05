@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2';
-import { Get_Current_User_Profile, Post_Current_User_Profile } from '../../../API/UserService'
-import { AvtarImg } from '../../../assets/images'
-import './profile.css'
+import './profile.css';
 import { validateProfileDetail } from './validation';
+import { AvtarImg, AvtarImg2 } from '../../../assets/images';
+import { Get_Current_User_Profile, Post_Current_User_Profile } from '../../../API/UserService';
+
 
 export default function Profile() {
       const [userDetail, setUserDetail] = useState();
+      const imgList  = [AvtarImg, AvtarImg2]
+      const Avtar = imgList[Math.floor(Math.random()*imgList.length)];
 
       const inputChangeHandler = ({target})=>{
             const {name, value} = target;
@@ -76,7 +79,7 @@ export default function Profile() {
 
                         <section className='d-flex' style={{gap:'4rem', margin:'0rem 8rem'}}>
                               <div class="card" style={{width: '30rem', height:'fit-content'}}>
-                                    <img src={AvtarImg} class="card-img-top m-0 p-0" alt="..."/>
+                                    <img src={Avtar} class="card-img-top m-0 p-0" alt="..."/>
                                     <div class="card-body text-center pt-0">
                                           <p class="card-text p-0 m-0 extra--font">Welcome !!</p>
                                           <p class="card-text p-0 m-0 extra--font">Its' your own profile..</p>

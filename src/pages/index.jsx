@@ -9,4 +9,5 @@ import DvdContainer from './Dvd/DvdContainer'
 import InventoryContainer from './Inventory/InventoryContainer'
 import AdminContainer from './Admin/AdminContainer'
 import SettingContainer from './Setting/SettingContainer'
-export { Home, Dashboard, Login, Catelog, InventoryContainer, PageNotFound, MemberContainer, LoanContainer, DvdContainer, AdminContainer, SettingContainer }
+import RegisterMe from './Login/RegisterMe'
+export { Home, Dashboard, Login, Catelog, InventoryContainer, PageNotFound, MemberContainer, LoanContainer, DvdContainer, AdminContainer, SettingContainer, RegisterMe }
