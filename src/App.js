@@ -8,7 +8,7 @@ import {
 import jwt_decode from "jwt-decode";
 
 import { AdminContainer, Catelog, Dashboard, DvdContainer, Home, InventoryContainer, LoanContainer, Login, MemberContainer, PageNotFound, SettingContainer } from "./pages";
-import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies, RegisterUser, ChangePassword, UserDetail } from "./components";
+import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies, RegisterUser, ChangePassword, UserDetail, Profile } from "./components";
 
 
 
@@ -71,16 +71,17 @@ function App() {
               <Route path="admin" element={<AdminContainer/>}>
                 <Route path="registerUser" element={<RegisterUser/>} />
                 <Route path="changePassword" element={<ChangePassword/>} />
-                <Route path="userDetail" element={<UserDetail/>}>
-                </Route>
+                <Route path="userDetail" element={<UserDetail/>}/>
+                <Route path="profile" element={<Profile/>}/>
               </Route>
             )}
 
             {(loginStatus.userType !== 'Admin')&&(
               <Route path="setting" element={<SettingContainer/>}>
                 <Route path="changePassword" element={<ChangePassword/>} />
+                <Route path="profile" element={<Profile/>} />
               </Route>
-            )}
+            )}Profile
             
             </>
           )}

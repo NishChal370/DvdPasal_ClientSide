@@ -152,6 +152,7 @@ function SideNav({HandlerNavbarVisible}) {
                                                       {[{link:'/admin/registerUser', name: 'admin/registerUser', title:'Add User'},
                                                       {link:'/admin/userDetail', name: 'admin/userDetail', title:'Users Detail'},
                                                       {link:'/admin/changePassword', name: 'admin/changePassword', title:'Change Password'},
+                                                      {link:'/admin/profile', name: 'admin/profile', title:'My Profile'},
                                                       ].map(({link, name, title}, index)=>{return(
                                                             <li key={`laonSideNav${index}`} className={` ${(location===link)? 'sub-active':''}`} onClick={()=>changePageHandler({pageName :name})}>
                                                                   <a><i>{title}</i></a>
@@ -171,8 +172,9 @@ function SideNav({HandlerNavbarVisible}) {
                                           <span  className={` ${(showSubNav.setting)? 'show-side-subnav':'hide-side-subnav'}`}>
                                                 <ul>
                                                       {[{link:'/setting/changePassword', name: 'setting/changePassword', title:'Change Password'},
+                                                      {link:'/setting/profile', name: 'setting/profile', title:'My Profile'},
                                                       ].map(({link, name, title}, index)=>{return(
-                                                            <li key={`laonSideNav${index}`} className={` ${(location===link)? 'sub-active':''}`} onClick={()=>changePageHandler({pageName :name})}>
+                                                            <li key={`settingSideNav${index}`} className={` ${(location===link)? 'sub-active':''}`} onClick={()=>changePageHandler({pageName :name})}>
                                                                   <a><i>{title}</i></a>
                                                             </li>
                                                       )})}

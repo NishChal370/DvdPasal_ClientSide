@@ -12,9 +12,10 @@ import InactiveMemberDetail from "./Member/InactiveMemberDetail/InactiveMemberDe
 import DVDCopies from "./Inventory/DVDCopies/DVDCopies";
 import RegisterUser from "./Admin/RegisterUser";
 import ChangePassword from "./Admin/ChangePassword";
+import Profile from "./Common/Profile/Profile";
 import UserDetail from "./Admin/UserDetail/UserDetail";
 import { dateConverter } from "./Common/dateConverter";
 
 export {SideNav, RegisterMember, AddDVD, UnpopularDvd, OldDvdDetail, AddLoan, LoanDetail, CurrentLoans, InactiveMemberDetail, Members,
-      DVDCopies, RegisterUser, ChangePassword, UserDetail,
+      DVDCopies, RegisterUser, ChangePassword, UserDetail, Profile,
       dateConverter}
