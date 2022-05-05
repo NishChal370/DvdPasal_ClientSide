@@ -153,7 +153,7 @@ function LoanDetail() {
                                                             </td>
                                                             <td>{copyId}</td>
                                                             <td>{memberName}</td>
-                                                            <td>{(dateReturn !== "Not Returned") ?<span className="badge bg-danger">Retured</span> :(<span className='delete-icon-image' onClick={()=>returnLoanHandler(loanId)}><img src={ReturnIcon} alt="return-btn"/></span>)}</td>
+                                                            <td>{(dateReturn !== "Not Returned") ?<span className="badge bg-success">Returned</span> :(<span className='delete-icon-image' onClick={()=>returnLoanHandler(loanId)}><img src={ReturnIcon} alt="return-btn"/></span>)}</td>
                                                       </tr>
                                                 )})
                                           )}

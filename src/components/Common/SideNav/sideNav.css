@@ -13,6 +13,19 @@
       -webkit-backdrop-filter: blur(9.8px);
       border: 1px solid rgba(30, 26, 26, 0.3);
       position: absolute;
+      user-select: none;
+}
+
+.sideNav ul{
+      list-style-type: none;
+}
+
+.sideNav ul li{
+      margin: 4px 0 4px 0;
+}
+
+.show-side-subnav ul li :hover{
+      color: gold;
 }
 
 .hideSideNav {
@@ -119,7 +132,7 @@
       text-decoration:  none !important;
 }
 .sub-active{
-      color: skyblue !important;
+      color: gold !important;
       text-decoration: underline;
 }
 
