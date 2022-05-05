@@ -8,5 +8,5 @@ import LoanContainer from './Loan/LoanContainer'
 import DvdContainer from './Dvd/DvdContainer'
 import InventoryContainer from './Inventory/InventoryContainer'
 import AdminContainer from './Admin/AdminContainer'
-
-export { Home, Dashboard, Login, Catelog, InventoryContainer, PageNotFound, MemberContainer, LoanContainer, DvdContainer, AdminContainer }
+import SettingContainer from './Setting/SettingContainer'
+export { Home, Dashboard, Login, Catelog, InventoryContainer, PageNotFound, MemberContainer, LoanContainer, DvdContainer, AdminContainer, SettingContainer }

@@ -8,7 +8,7 @@ function SideNav({HandlerNavbarVisible}) {
       const navigate = useNavigate();
       const location = useLocation().pathname;
       const [userType, setUserType] = useState('');
-      const [showSubNav, setShowSideNav] = useState({members :false, dvd :false, inventory :false, loan :false, admin:false});
+      const [showSubNav, setShowSideNav] = useState({members :false, dvd :false, inventory :false, loan :false, admin:false, setting: false});
       
 
       const changePageHandler=({pageName})=>{
@@ -161,6 +161,26 @@ function SideNav({HandlerNavbarVisible}) {
                                           </span>
                                     </li>
                               )}
+
+                              {(userType !== 'Admin')&&(
+                                    <li className={`nav-item curser--on-hover `} name='loan' >
+                                          <a className={`nav-link ${(location.includes('setting') || showSubNav.setting)? 'active':''}`} onClick={()=>showSubNavHandler({navbarName:'setting'})}>
+                                                <span>Setting</span>
+                                                <img id='side-nav-icon'  className={` ${(showSubNav.setting)?'icon---up':''}`} src={DownIcon} alt=""/>
+                                          </a>
+                                          <span  className={` ${(showSubNav.setting)? 'show-side-subnav':'hide-side-subnav'}`}>
+                                                <ul>
+                                                      {[{link:'/setting/changePassword', name: 'setting/changePassword', title:'Change Password'},
+                                                      ].map(({link, name, title}, index)=>{return(
+                                                            <li key={`laonSideNav${index}`} className={` ${(location===link)? 'sub-active':''}`} onClick={()=>changePageHandler({pageName :name})}>
+                                                                  <a><i>{title}</i></a>
+                                                            </li>
+                                                      )})}
+                                                </ul>
+                                          </span>
+                                    </li>
+                              )}
+                              
                         </ul>
 
                   </div>

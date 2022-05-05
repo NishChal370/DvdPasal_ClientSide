@@ -4,10 +4,12 @@ import { Get_All_Users_Detail } from '../../../API/UserService'
 import { ChangePasswordIcon, DataNotFoundImg, EditIcon } from '../../../assets/images';
 import { dateConverter } from '../../Common/dateConverter';
 import './userDetail.css'
+import UserDetailModel from './UserDetailModel';
 
 function UserDetail() {
       const navigate = useNavigate();
-      
+      const [wantToRefresh, setWantToRefresh] = useState(false);
+      const [editingUserDetail, setEditingUserDetail] = useState({firstName:'', lastName:'', email:'', id:'', dateOfBirth:'', gender:''});
       const [usersDetail, setUsersDetail] = useState();
 
       const get_all_users_detail = () =>{
@@ -22,13 +24,20 @@ function UserDetail() {
       }
 
       const changePasswordButtonHandler=(userDetail)=>{
-            // navigate('admin/changePassword')
+            
             navigate("/admin/changePassword", { state: userDetail });
       }
 
+      const editUserDetailHandler=(selectedUserDetail)=>{
+            setEditingUserDetail(selectedUserDetail);
+
+            document.getElementById('openUserDetailModel1').click();
+      }
+      const refreshHandler = () => setWantToRefresh(!wantToRefresh)
+
       useEffect(()=>{
             get_all_users_detail();
-      },[])
+      },[wantToRefresh])
       return (
             <div id='loanDetail' style={{marginTop:'2rem'}}>
                   <section id='loan-detail-wrrapper'>
@@ -36,7 +45,7 @@ function UserDetail() {
                               <p className='fw-bolder fs-1 moving-text---effect'>Users Detail</p>
                         </nav>
                         <hr />
-
+                        <button id='openUserDetailModel1' data-bs-toggle="modal" data-bs-target="#editUserDetailModal" data-bs-whatever="@mdo" style={{display:'none'}}>OPEN</button>
                         <section>
                               <table class="table">
                                     <thead>
@@ -53,24 +62,27 @@ function UserDetail() {
                                     <tbody>
                                           {usersDetail !== undefined &&(
                                                 usersDetail.map(({firstName, lastName, email, userId, dateOfBirth, gender},index)=>{return(
+                                                      
                                                       <tr key={`loand${index}`}>
                                                             <td>{index+1}</td>
+                                                            {console.log(userId)}
                                                             <td>{firstName}</td>
                                                             <td>{lastName}</td>
                                                             <td>{email}</td>
                                                             <td>{dateConverter(dateOfBirth)}</td>
                                                             <td>{gender}</td>
                                                             <td className='d-flex gap-4 justify-content-center'>
-                                                                  <img id='change-password-icon' src={ChangePasswordIcon} alt="change-password" onClick={()=>changePasswordButtonHandler({ userId: userId, name: firstName })} />
-                                                                  {/* <img id='change-password-icon' src={EditIcon} alt="change-password" /> */}
+                                                                  <img id='change-password-icon' src={ChangePasswordIcon} alt="change-password" 
+                                                                        onClick={()=>changePasswordButtonHandler({ userId: userId, name: firstName })} 
+                                                                  />
+                                                                  <img id='change-password-icon' src={EditIcon} alt="edit-detail"
+                                                                        onClick={()=>editUserDetailHandler({firstName:firstName, lastName:lastName, email:email, id:userId, dateOfBirth:dateOfBirth, gender:gender})}
+                                                                  />
                                                                   
                                                             </td>
                                                       </tr>
                                                 )})
                                           )}
-
-                                          
-
                                     </tbody>
                               </table>
 
@@ -84,20 +96,12 @@ function UserDetail() {
                                     </div>
                               )}
 
+                              <UserDetailModel  selectedUserDetail={editingUserDetail} refreshHandler={refreshHandler}/>                              
                         </section>
                   </section>
+                  
             </div>
       )
 }
 
 export default UserDetail
-
-
-// {
-//       "firstName": "UserFirstF",
-//       "lastName": "UserFirstL",
-//       "email": "user@gmail.com",
-//       "userId": "6b4be6b0-a450-40e4-8b4a-8aecc49980db",
-//       "dateOfBirth": "2002-01-11T00:00:00",
-//       "gender": "male"
-//     },

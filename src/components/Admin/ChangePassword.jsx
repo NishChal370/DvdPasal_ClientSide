@@ -63,8 +63,13 @@ function ChangePassword() {
       }
 
       const resetHandler = ()=>{
-            setPasswordDetail({userID: '', type:'Admin', newPassword: '', newPassword2: '',  oldPassword:''});
-            navigate("/admin/changePassword", { state:{userID: '', name: jwt_decode(localStorage.getItem("token"))['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name']} });
+            const link  =
+                  (jwt_decode(localStorage.getItem("token"))['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] === 'Admin')
+                        ? "/admin/changePassword"
+                        : "/setting/changePassword";
+            
+            navigate(link, { state:{userID: '', name: jwt_decode(localStorage.getItem("token"))['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name']} });
+            setPasswordDetail({userID: '', type:jwt_decode(localStorage.getItem("token"))['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] , newPassword: '', newPassword2: '',  oldPassword:''});
       }
       
       const submitButtonHandler=(e)=>{

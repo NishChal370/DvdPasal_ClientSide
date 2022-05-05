@@ -67,6 +67,8 @@ const URL_GET_ALL_USERS_DETAIL = 'user'
 const URL_CHANGE_PASSWORD_BY_ADMIN = 'user/changePasswordAdmin'
 const URL_POST_CHANGE_OWN_PASSWORD = 'user/changeUserPassword'
 
+const URL_POST_CHANGE_INFO_BY_ADMIN = 'user/changeUserInfoAdmin';
+
 const URL_POST_LOGIN = 'user/login'
 
 export{
@@ -120,6 +122,8 @@ export{
 
     URL_CHANGE_PASSWORD_BY_ADMIN,
     URL_POST_CHANGE_OWN_PASSWORD,
+
+    URL_POST_CHANGE_INFO_BY_ADMIN,
 
     URL_POST_LOGIN,
 }
