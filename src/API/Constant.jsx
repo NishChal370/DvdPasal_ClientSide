@@ -70,6 +70,8 @@ const URL_POST_CHANGE_OWN_PASSWORD = 'user/changeUserPassword'
 const URL_POST_CHANGE_INFO_BY_ADMIN = 'user/changeUserInfoAdmin';
 
 const URL_POST_LOGIN = 'user/login'
+const URL_GET_CURRENT_USER_PROFILE_DETAIL = 'user/getCurrentUser'
+const URL_POST_CURRENT_USER_PROFILE_DETAIL = 'user/changeUserInfo'
 
 export{
     AXIOS,
@@ -126,4 +128,6 @@ export{
     URL_POST_CHANGE_INFO_BY_ADMIN,
 
     URL_POST_LOGIN,
+    URL_GET_CURRENT_USER_PROFILE_DETAIL,
+    URL_POST_CURRENT_USER_PROFILE_DETAIL,
 }
