@@ -87,7 +87,7 @@ function AddDvdFormModel({refreshPage}) {
                                                 <label for="dvdId" class="col-form-label">DvD Name:</label>
                                                 <span id='dvdId-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                                 <select class="form-select" aria-label="Default select example" id='dvdId' name='dvdId' value={newDvdDetail.dvdId} onChange={inputChangeHandler} required>
-                                                      <option value=''>Open this select dvd name</option>
+                                                      <option value=''>-- Select DvD name --</option>
                                                       {dvdNameList !== undefined &&(
                                                             dvdNameList.map(({dvdId, dvDName}, index)=>{return(
                                                                   <option key={index} value={dvdId}>{dvDName}</option>

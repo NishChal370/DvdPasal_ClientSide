@@ -41,7 +41,7 @@ function AddLoan() {
             Post_Loan(loanData)
                   .then(({data})=>{
                         Swal.fire(
-                              'Added Sucessfully!',
+                              'Added Successfully!',
                               data,
                               'success'
                         )
@@ -140,7 +140,7 @@ function AddLoan() {
                               loanDvdCopyDetail.map(({ageRestricted, category, copyId, dvdImage, dvdTitle, price}, index)=>{return(
 
                                     <div className="card" key={`addLoanCard${index}`}style={{width: '30rem'}}>
-                                          <img src={DvdImg} className="card-img-top" alt="..."/>
+                                          <img src={dvdImage} onError={(e) => e.target.src = DvdImg} class="dvd-img card-img-top img-fluid" alt="..."/>
 
                                           <div className="card-body" key={`addLoan${index}`}>
                                                 <h4 className="card-title">{dvdTitle}</h4>
@@ -155,12 +155,12 @@ function AddLoan() {
                                                       <>
                                                       <div className="mb-3 mt-2">
                                                             <label for="memberNumber" className="form-label">Member ID: </label>
-                                                            <input type="number" className="form-control" id={`memberNumber${index}`} name="memberNumber" placeholder="enter memeber id..." value={inputDetail[index].memberNumber} onChange={(e)=>inputChangeHandler(e,index)}/>
+                                                            <input type="number" className="form-control" id={`memberNumber${index}`} name="memberNumber" placeholder="Enter member id..." value={inputDetail[index].memberNumber} onChange={(e)=>inputChangeHandler(e,index)}/>
                                                       </div>
 
                                                       <label htmlFor="loanType">Loan Type: </label>
                                                       <select className="form-select" id={`loanType${index}`} aria-label="Default select example" name='loanTypeName' value={inputDetail[index].loanType.loanTypeNumber} onChange={(e)=>inputChangeHandler(e, index)}>
-                                                            <option value={0}>Open this select menu</option>
+                                                            <option value={0}> -- Select a loan type -- </option>
                                                             {loanTypeList!== undefined &&(
                                                                   loanTypeList.map(({loanTypeNumber, loanTypeName}, index)=>{return(
                                                                         <option key={`loanType${index}`} value={loanTypeNumber}>{loanTypeName}</option>

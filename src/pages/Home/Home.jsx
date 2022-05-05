@@ -29,10 +29,6 @@ function Home() {
     (nav.className.includes('hideSideNav'))
       ? nav.classList.replace('hideSideNav', 'showSideNav')
       : nav.classList.replace('showSideNav', 'hideSideNav')
-
-
-
-    // TODO Add ul animation.
   }
 
   const closeSideNav = () => {

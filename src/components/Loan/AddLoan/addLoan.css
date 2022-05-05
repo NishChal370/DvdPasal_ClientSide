@@ -112,3 +112,8 @@
   transition: 0s;
   transform: translate(0, 5%);
 }
+
+.dvd-img{
+      height: 300px;
+      object-fit: cover;
+}

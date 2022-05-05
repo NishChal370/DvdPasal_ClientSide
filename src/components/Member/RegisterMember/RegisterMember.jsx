@@ -39,7 +39,7 @@ function RegisterMember() {
             Post_New_Member(registerDetail)
                   .then(({data})=>{
                         Swal.fire(
-                              'Added Sucessfully!',
+                              'Added Successfully!',
                               data,
                               'success'
                         )
@@ -49,7 +49,7 @@ function RegisterMember() {
                   .catch(({response})=>{
                         Swal.fire(
                               'Invalid data!! ',
-                              response.data.title,
+                              response.data,
                               'error'
                         )
                   })
@@ -122,6 +122,7 @@ function RegisterMember() {
 
             checkValidation(registerDetail, isNewCateogary) && (
                   post_new_member()
+
             )
       }
 
@@ -138,6 +139,10 @@ function RegisterMember() {
                   "dateOfBirth": '',
                   "profileImage": "",
             }
+
+            // Clear the image input as well.
+            var imageInput = document.getElementById("inputprofileImage");
+            imageInput.value = "";
 
             setRegisterDetail({...registerDetail});
             
@@ -175,19 +180,19 @@ function RegisterMember() {
                                     <div className="col-md-6">
                                           <label for="inputfristName" className="form-label">First Name</label>
                                           <span id='inputfristName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <input type="text" className="form-control input--design" id="inputfristName" name='fristName' placeholder='enter first name...' value={registerDetail.fristName} onChange={inputChangeHandler} />
+                                          <input type="text" className="form-control input--design" id="inputfristName" name='fristName' placeholder='Enter first name...' value={registerDetail.fristName} onChange={inputChangeHandler} />
                                     </div>
 
                                     <div className="col-md-6">
                                           <label for="inputlastName" className="form-label">Last Name</label>
                                           <span id='inputlastName-tooltip'  style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <input type="text" className="form-control input--design" id="inputlastName" name='lastName'  placeholder='enter last name...' value={registerDetail.lastName} onChange={inputChangeHandler}/>
+                                          <input type="text" className="form-control input--design" id="inputlastName" name='lastName'  placeholder='Enter last name...' value={registerDetail.lastName} onChange={inputChangeHandler}/>
                                     </div>
 
                                     <div className="col-md-6">
                                           <label for="inputaddress" className="form-label">Address</label>
                                           <span id='inputaddress-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <input type="text" className="form-control input--design" id="inputaddress" name='address' placeholder='enter address...' value={registerDetail.address} onChange={inputChangeHandler}/>
+                                          <input type="text" className="form-control input--design" id="inputaddress" name='address' placeholder='Enter address...' value={registerDetail.address} onChange={inputChangeHandler}/>
                                     </div>
 
                                     <div className="col-md-6">
@@ -199,7 +204,7 @@ function RegisterMember() {
                                     <div className="col-md-6">
                                           <label for="inputprofileImage" className="form-label">Profile</label>
                                           <span id='inputprofileImage-tooltip' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                          <input type="file" className="form-control input--design" id="inputprofileImage" name='profileImage' placeholder='select image...' onChange={(e) => addImage(e)}/>
+                                          <input type="file" className="form-control input--design" id="inputprofileImage" name='profileImage' placeholder='Select image...' onChange={(e) => addImage(e)}/>
                                     </div>
 
 
@@ -223,8 +228,8 @@ function RegisterMember() {
                                                       :(
                                                             <>
                                                             {/* if want to add new catogary */}
-                                                            <input className="form-control input--design" name='inputdescription' id="inputcategorydescription" placeholder='insert cateogary name....' value={registerDetail.membershipCategory.description} onChange={inputChangeHandler}/>
-                                                            <input type="number" className="form-control input--design" id="inputcategorytotalLoans" name='totalLoans' placeholder='enter loan limit...' value={registerDetail.membershipCategory.totalLoans} onChange={inputChangeHandler}/>
+                                                            <input className="form-control input--design" name='inputdescription' id="inputcategorydescription" placeholder='Insert cateogary name....' value={registerDetail.membershipCategory.description} onChange={inputChangeHandler}/>
+                                                            <input type="number" className="form-control input--design" id="inputcategorytotalLoans" name='totalLoans' placeholder='Enter loan limit...' value={registerDetail.membershipCategory.totalLoans == 0 ? NaN : registerDetail.membershipCategory.totalLoans} onChange={inputChangeHandler}/>
                                                             <img className='circle-img--button' src={CrossImg} alt="" onClick={handlerAllowAddNewCateogary}/>
                                                             </>
                                                       )} 
