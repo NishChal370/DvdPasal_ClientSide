@@ -426,7 +426,7 @@ function AddDVD() {
                                                                   <option value={''}>---</option>
                                                                   {nameList.producers.map(({ producerNumber, producerName }, index) => {
                                                                         return (
-                                                                              <option value={producerNumber}>{producerName}</option>
+                                                                              <option value={producerNumber} key={`productOption${index}`}>{producerName}</option>
                                                                         )
                                                                   })}
                                                             </select>
@@ -497,7 +497,7 @@ function AddDVD() {
                                                                               <option value={''}>---</option>
                                                                               {nameList.actors.map(({ actorId, actorName }, index) => {
                                                                                     return (
-                                                                                          <option value={actorId}>{actorName}</option>
+                                                                                          <option value={actorId} key={`keyoption${index}`}>{actorName}</option>
                                                                                     )
                                                                               })}
                                                                         </select>

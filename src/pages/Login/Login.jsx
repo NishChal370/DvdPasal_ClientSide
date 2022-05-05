@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./login.css";
 import Swal from "sweetalert2";
@@ -17,6 +17,7 @@ const Toast = Swal.mixin({
 let initialLoginDetail = { username: "", password: "" };
 function Login({ setLoggeedIn }) {
   const navigate = useNavigate();
+  const [isRememberMe, setIsRememberMe] = useState(false);
   const [loginDetail, setLoginDetail] = useState(initialLoginDetail);
 
   const inputChangeHandler = ({ target }) => {
@@ -39,6 +40,7 @@ function Login({ setLoggeedIn }) {
 
         localStorage.setItem("token", data.token);
         localStorage.setItem("is_login", true);
+        // localStorage.setItem("is_checked", isRememberMe);
         AXIOS.defaults.headers["Authorization"] = "Bearer " + localStorage.getItem("token");
 
         setLoggeedIn({
@@ -87,6 +89,7 @@ function Login({ setLoggeedIn }) {
               className="form-control"
               id="username"
               placeholder="Enter username..."
+              style={{color:'white'}}
               value={loginDetail.username}
               onChange={inputChangeHandler}
               required
@@ -100,6 +103,7 @@ function Login({ setLoggeedIn }) {
               className="form-control"
               id="password"
               placeholder="Enter password..."
+              style={{color:'white'}}
               value={loginDetail.password}
               onChange={inputChangeHandler}
               required
@@ -111,6 +115,9 @@ function Login({ setLoggeedIn }) {
               type="checkbox"
               className="login-form-check-input"
               id="rememberMeCheck"
+              style={{color:'white'}}
+              checked={isRememberMe}
+              onChange={()=>setIsRememberMe(!isRememberMe)}
             />
             <label className="login-form-check-label" htmlFor="rememberMeCheck">
               Remember me

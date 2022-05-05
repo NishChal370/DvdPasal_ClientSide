@@ -78,7 +78,7 @@ function DVDCopies() {
                         <AddDvdFormModel refreshPage={refreshPage}/>
 
                         <section>
-                              <table class="table">
+                              <table className="table">
                                     <thead>
                                           <tr>
                                                 <th scope="col">#</th>
@@ -91,7 +91,7 @@ function DVDCopies() {
                                     <tbody>
                                           {allDvdCopyDetail !== undefined &&(
                                                 allDvdCopyDetail.map(({datePurchased, dvdTitle, copyId}, index)=>{return(
-                                                      <tr>
+                                                      <tr key={`dvdCopies${index}`}>
                                                             <th scope="row">{index}</th>
                                                             <td>{dateConverter(datePurchased)}</td>
                                                             <td>{dvdTitle}</td>

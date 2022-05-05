@@ -146,7 +146,7 @@ function Members() {
                   <nav>
                         <p className='fw-bolder fs-1 moving-text---effect'>Our Members</p>
                         <aside  style={{display:'flex', flexDirection:'column',justifyContent:'flex-end'}}>
-                              {/* <h3>Filter</h3> */}
+
                               <div className='filter---button' onClick={showFilterHandler}>
                                     <img src={FilterIcon} alt="" />
                                     <h4>Filter</h4>
@@ -169,20 +169,20 @@ function Members() {
 
                   <hr />
                   <section id='loan-section'>
-                        <div class="accordion">
+                        <div className="accordion">
                               {!showShearchData 
-                                    ?( memberData.map(alphabetList => (
-                                          <div class="accordion" id={alphabetList.alphabet + "parent"}>
-                                                <div class="accordion-item">
-                                                      <h2 class="accordion-header" id={alphabetList.alphabet + "-heading"}>
-                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={'#' + alphabetList.alphabet} aria-expanded="true" aria-controls={alphabetList.alphabet}>
+                                    ?( memberData.map((alphabetList,index) => (
+                                          <div className="accordion" id={alphabetList.alphabet + "parent"} key={`accordion${index}`}>
+                                                <div className="accordion-item">
+                                                      <h2 className="accordion-header" id={alphabetList.alphabet + "-heading"}>
+                                                            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={'#' + alphabetList.alphabet} aria-expanded="true" aria-controls={alphabetList.alphabet}>
                                                             <strong style={{marginLeft:'45%'}}>Members starting with '{alphabetList.alphabet}'</strong>
                                                             </button>
                                                       </h2>
-                                                      <div id={alphabetList.alphabet} class="accordion-collapse  collapse show" aria-labelledby="headingOne" data-bs-parent={alphabetList.alphabet + "parent"}>
+                                                      <div id={alphabetList.alphabet} className="accordion-collapse  collapse show" aria-labelledby="headingOne" data-bs-parent={alphabetList.alphabet + "parent"}>
 
-                                                            <div class="accordion-body">
-                                                                  <table class="table">
+                                                            <div className="accordion-body">
+                                                                  <table className="table">
                                                                         <thead>
                                                                               <tr>
                                                                                     <th scope="col">Member Id</th>
@@ -195,8 +195,8 @@ function Members() {
                                                                               </tr>
                                                                         </thead>
                                                                         <tbody>
-                                                                              {alphabetList.memberList.map(memberItem => (
-                                                                                    <tr>
+                                                                              {alphabetList.memberList.map((memberItem, index) => (
+                                                                                    <tr key={`MemeberDVD2${index}`}>
                                                                                           <td>{memberItem.memberId}</td>
                                                                                           <td>{memberItem.firstName} {memberItem.lastName}</td>
                                                                                           <td>{memberItem.dateOfBirth}</td>
@@ -204,9 +204,9 @@ function Members() {
                                                                                           <td>{memberItem.currentLoanCount}</td>
                                                                                           <td>{memberItem.membershipCategory}</td>
                                                                                           <td>{(memberItem.limitStatus === "Ok") ?
-                                                                                                <span class="badge bg-success">{memberItem.limitStatus}</span>
+                                                                                                <span className="badge bg-success">{memberItem.limitStatus}</span>
                                                                                                 :
-                                                                                                <span class="badge bg-danger">{memberItem.limitStatus}</span>
+                                                                                                <span className="badge bg-danger">{memberItem.limitStatus}</span>
                                                                                           }</td>
                                                                                     </tr>
                                                                               ))}
@@ -219,19 +219,18 @@ function Members() {
                                           </div>))
                                     )
                                     :(memberData.map(({memberName, loans}, index)=>{return(
-                                          <div class="accordion" id={memberName+ "parent"}>
-                                                {console.log("Here")}
-                                                
-                                                <div class="accordion-item">
-                                                      <h2 class="accordion-header" id={memberName + "-heading"}>
-                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={'#' + memberName} aria-expanded="true" aria-controls={memberName}>
+                                          <div className="accordion" id={memberName+ "parent"} key={`accordion2${index}`}>
+
+                                                <div className="accordion-item">
+                                                      <h2 className="accordion-header" id={memberName + "-heading"}>
+                                                            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={'#' + memberName} aria-expanded="true" aria-controls={memberName}>
                                                                   <strong style={{marginLeft:'45%'}}>Members Name: {memberName}</strong>
                                                             </button>
                                                       </h2>
-                                                      <div id={memberName} class="accordion-collapse  collapse show" aria-labelledby="headingOne" data-bs-parent={memberName + "parent"}>
+                                                      <div id={memberName} className="accordion-collapse  collapse show" aria-labelledby="headingOne" data-bs-parent={memberName + "parent"}>
 
-                                                            <div class="accordion-body">
-                                                                  <table class="table">
+                                                            <div className="accordion-body">
+                                                                  <table className="table">
                                                                         <thead>
                                                                               <tr>
                                                                                     <th scope="col">Loan Id</th>
@@ -244,7 +243,7 @@ function Members() {
                                                                         </thead>
                                                                         <tbody>
                                                                               {loans.map( ({loanId, dvdTitle, copyId, dateOut, dateDue, returnedDate}, index) => (
-                                                                                    <tr>
+                                                                                    <tr key={`MemeberDVD3${index}`}>
                                                                                           <td>{loanId}</td>
                                                                                           <td>{dvdTitle}</td>
                                                                                           <td>{copyId}</td>
@@ -258,7 +257,7 @@ function Members() {
                                                                               ))}
                                                                               {loans.length<=0 &&(
                                                                                     <tr>
-                                                                                          <td colspan="6" style={{fontWeight:'bolder'}}>No data to show</td>
+                                                                                          <td colSpan="6" style={{fontWeight:'bolder'}}>No data to show</td>
                                                                                     </tr>
                                                                                     
                                                                               )}
@@ -271,7 +270,6 @@ function Members() {
                                     
                                     )}))
                               }
-                              {console.log(memberData)}
                         </div>
                   </section>
                         

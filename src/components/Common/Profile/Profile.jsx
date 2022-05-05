@@ -78,11 +78,11 @@ export default function Profile() {
                         <hr />
 
                         <section className='d-flex' style={{gap:'4rem', margin:'0rem 8rem'}}>
-                              <div class="card" style={{width: '30rem', height:'fit-content'}}>
-                                    <img src={Avtar} class="card-img-top m-0 p-0" alt="..."/>
-                                    <div class="card-body text-center pt-0">
-                                          <p class="card-text p-0 m-0 extra--font">Welcome !!</p>
-                                          <p class="card-text p-0 m-0 extra--font">Its' your own profile..</p>
+                              <div className="card" style={{width: '30rem', height:'fit-content'}}>
+                                    <img src={Avtar} className="card-img-top m-0 p-0" alt="..."/>
+                                    <div className="card-body text-center pt-0">
+                                          <p className="card-text p-0 m-0 extra--font">Welcome !!</p>
+                                          <p className="card-text p-0 m-0 extra--font">Its' your own profile..</p>
                                     </div>
                               </div>
 
@@ -90,39 +90,39 @@ export default function Profile() {
                                     {userDetail !== undefined &&(
                                           <form className="d-flex flex-column gap-4">
                                                 <div className="col-md-12">
-                                                      <label for="inputfirstName" className="form-label">First Name</label>
+                                                      <label htmlFor="inputfirstName" className="form-label">First Name</label>
                                                       <span id='inputfirstName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                                       <input type="text" className="form-control input--design" id="inputfirstName" name='firstName' placeholder='Enter first name...' value={userDetail.firstName} onChange={inputChangeHandler} />
                                                 </div>
 
                                                 <div className="col-md-12">
-                                                      <label for="inputlastName" className="form-label">Last Name</label>
+                                                      <label htmlFor="inputlastName" className="form-label">Last Name</label>
                                                       <span id='inputlastName-tooltip'  style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                                       <input type="text" className="form-control input--design" id="inputlastName" name='lastName'  placeholder='Enter last name...' value={userDetail.lastName} onChange={inputChangeHandler}/>
                                                 </div>
 
                                                 <div className="col-md-12">
-                                                      <label for="inputemail" className="form-label">Email</label>
+                                                      <label htmlFor="inputemail" className="form-label">Email</label>
                                                       <span id='inputemail-tooltip'  style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                                       <input type="email" className="form-control input--design" id="inputemail" name='email'  placeholder='Enter email address...' value={userDetail.email} onChange={inputChangeHandler}/>
                                                 </div>
 
                                                 <div className="col-md-12">
-                                                      <label for="inputemail" className="form-label">Gender</label>
+                                                      <label htmlFor="inputemail" className="form-label">Gender</label>
                                                       <span id='inputgender-tooltip'  style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                                       <br/>
-                                                      <div class="form-check form-check-inline fs-5 mt-2">
-                                                            <input class="form-check-input" type="radio" name="gender" id="radiomale" value='male' checked={(userDetail.gender.toLowerCase() === 'male')} onChange={inputChangeHandler}/>
-                                                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                                                      <div className="form-check form-check-inline fs-5 mt-2">
+                                                            <input className="form-check-input" type="radio" name="gender" id="radiomale" value='male' checked={(userDetail.gender.toLowerCase() === 'male')} onChange={inputChangeHandler}/>
+                                                            <label className="form-check-label" htmlFor="inlineRadio1">Male</label>
                                                       </div>
-                                                      <div class="form-check form-check-inline fs-5">
-                                                            <input class="form-check-input" type="radio" name="gender" id="radiofemale" value='female' checked={userDetail.gender.toLowerCase() === 'female'} onChange={inputChangeHandler} />
-                                                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                                                      <div className="form-check form-check-inline fs-5">
+                                                            <input className="form-check-input" type="radio" name="gender" id="radiofemale" value='female' checked={userDetail.gender.toLowerCase() === 'female'} onChange={inputChangeHandler} />
+                                                            <label className="form-check-label" htmlFor="inlineRadio2">Female</label>
                                                       </div>
                                                 </div>
 
                                                 <div className="col-md-12">
-                                                      <label for="inputdateOfBirth" className="form-label">Date of Birth</label>
+                                                      <label htmlFor="inputdateOfBirth" className="form-label">Date of Birth</label>
                                                       <span id='inputdateOfBirth-tooltip'  style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                                       <input type="date" className="form-control input--design" id="inputdateOfBirth" name='dateOfBirth' 
                                                             value={(userDetail.dateOfBirth.trim() !== '')?new Date(userDetail.dateOfBirth).toISOString().split('T')[0] :''}

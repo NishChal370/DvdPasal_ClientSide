@@ -9,6 +9,7 @@ import jwt_decode from "jwt-decode";
 
 import { AdminContainer, Catelog, Dashboard, DvdContainer, Home, InventoryContainer, LoanContainer, Login, MemberContainer, PageNotFound, RegisterMe, SettingContainer } from "./pages";
 import { UnpopularDvd, RegisterMember, AddDVD, OldDvdDetail, AddLoan, CurrentLoans, InactiveMemberDetail, Members, LoanDetail, DVDCopies, RegisterUser, ChangePassword, UserDetail, Profile } from "./components";
+import { AXIOS } from "./API/Constant";
 
 
 
@@ -23,6 +24,17 @@ function App() {
   }
 
   useEffect(()=>{
+    // if(localStorage.getItem('is_checked') === 'false' || localStorage.getItem('is_checked') === null){
+    //   // remove data from token if remember me is false
+    //   localStorage.removeItem('token');
+    //   localStorage.removeItem('is_login');
+    //   AXIOS.defaults.headers['Authorization'] = null;
+
+    //   loginStatus.isloggedIn = false;
+    //   loginStatus.userType = '';
+
+    //   setLoginStatus({...loginStatus});
+    // }
     if(localStorage.getItem('token') !== null){
       loginStatus.userType = jwt_decode(localStorage.getItem('token'))['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']
 

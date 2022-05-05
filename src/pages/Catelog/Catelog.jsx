@@ -15,8 +15,7 @@ function Catelog() {
             Get_DVD_Details()
                   .then(({ data }) => {
                         setDvdDetails(data);
-                        console.log(data.length);
-                        console.log(data);
+
                         itemIndex.end = (data.length >= 8) ? 8 : data.length;
                         setItemIndex({ ...itemIndex });
                   })
@@ -27,7 +26,6 @@ function Catelog() {
                               'error'
                         )
                         console.log("error");
-                        console.log("eroorr");
                   })
       }
 
@@ -61,7 +59,6 @@ function Catelog() {
 
       useEffect(() => {
             get_dvd_details();
-            console.log("HERE in catelog");
       },[])
       return (
             <div id='catelog-wrapper'>
@@ -110,8 +107,8 @@ function Catelog() {
                         )}
 
                         {dvdDetails === undefined&&(
-                              <div class="spinner-grow" style={{width: '3rem', height: '3rem'}} role="status">
-                                    <span class="visually-hidden">Loading...</span>
+                              <div className="spinner-grow" style={{width: '3rem', height: '3rem'}} role="status">
+                                    <span className="visually-hidden">Loading...</span>
                               </div>
                         )}
                         
@@ -122,7 +119,7 @@ function Catelog() {
                         <hr />
                         <section className='d-flex justify-content-end'>
                               <span className='d-flex gap-2 pagination--button'>
-                                    <i class="fas fa-arrow-alt-circle-left"></i>
+                                    <i className="fas fa-arrow-alt-circle-left"></i>
                                     <img src={RightIcon} name='back' alt="back-icon" onClick={changePageHandler} />
                                     {(itemIndex.end < dvdDetails.length) && (
                                           <img src={RightIcon} name='front' alt="front-icon" onClick={changePageHandler} />

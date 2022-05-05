@@ -125,7 +125,7 @@ function LoanDetail() {
                         <hr />
 
                         <section>
-                              <table class="table">
+                              <table className="table">
                                     <thead>
                                           <tr>
                                                 <th scope="col">Title</th>

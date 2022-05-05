@@ -74,19 +74,19 @@ function AddDvdFormModel({refreshPage}) {
             get_dvd_name_list();
       },[])
       return (
-            <div  class="modal fade" id="dvdCopiesModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                        <div class="modal-content">
-                              <div class="modal-header">
-                                    <h2 class="modal-title fs-2 moving-text---effect" id="exampleModalLabel">Create copies</h2>
-                                    <button type="button" class="btn-close" id='model-close-button' data-bs-dismiss="modal" aria-label="Close"></button>
+            <div  className="modal fade" id="dvdCopiesModel" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div className="modal-dialog">
+                        <div className="modal-content">
+                              <div className="modal-header">
+                                    <h2 className="modal-title fs-2 moving-text---effect" id="exampleModalLabel">Create copies</h2>
+                                    <button type="button" className="btn-close" id='model-close-button' data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
-                              <div class="modal-body">
+                              <div className="modal-body">
                                     <form>
-                                          <div class="mb-3">
-                                                <label for="dvdId" class="col-form-label">DvD Name:</label>
+                                          <div className="mb-3">
+                                                <label htmlFor="dvdId" className="col-form-label">DvD Name:</label>
                                                 <span id='dvdId-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                                <select class="form-select" aria-label="Default select example" id='dvdId' name='dvdId' value={newDvdDetail.dvdId} onChange={inputChangeHandler} required>
+                                                <select className="form-select" aria-label="Default select example" id='dvdId' name='dvdId' value={newDvdDetail.dvdId} onChange={inputChangeHandler} required>
                                                       <option value=''>-- Select DvD name --</option>
                                                       {dvdNameList !== undefined &&(
                                                             dvdNameList.map(({dvdId, dvDName}, index)=>{return(
@@ -95,19 +95,19 @@ function AddDvdFormModel({refreshPage}) {
                                                       )}
                                                 </select>
                                           </div>
-                                          <div class="mb-3">
-                                                <label for="datePurchased" class="col-form-label">Purchase Date:</label>
+                                          <div className="mb-3">
+                                                <label htmlFor="datePurchased" className="col-form-label">Purchase Date:</label>
                                                 <span id='datePurchased-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                                <input type="date" class="form-control" id="datePurchased" name='datePurchased' value={newDvdDetail.datePurchased} onChange={inputChangeHandler} required/>
+                                                <input type="date" className="form-control" id="datePurchased" name='datePurchased' value={newDvdDetail.datePurchased} onChange={inputChangeHandler} required/>
                                           </div>
-                                          <div class="mb-3">
-                                                <label for="dvdCount" class="col-form-label">Total number of copies:</label>
+                                          <div className="mb-3">
+                                                <label htmlFor="dvdCount" className="col-form-label">Total number of copies:</label>
                                                 <span id='dvdCount-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                                <input type="number" class="form-control" id="dvdCount"  name='dvdCount' value={newDvdDetail.dvdCount} min='1' onChange={inputChangeHandler} required/>
+                                                <input type="number" className="form-control" id="dvdCount"  name='dvdCount' value={newDvdDetail.dvdCount} min='1' onChange={inputChangeHandler} required/>
                                           </div>
                                     </form>
                               </div>
-                              <div class="modal-footer">
+                              <div className="modal-footer">
                                     <button type="submit" className="save-dvd-btn btn btn-primary" id='btnSave' onClick={submitHandler}>Submit</button>
                                     <button type="reset" className=" save-dvd-btn btn btn-danger" onClick={resetHandler}>Reset</button>
                               </div>

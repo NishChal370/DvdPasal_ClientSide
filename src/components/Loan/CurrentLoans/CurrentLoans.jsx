@@ -12,7 +12,6 @@ function CurrentLoans(){
         Get_current_loans().then(({ data }) => {
             
             setLoanData(Array.from(data));
-            console.log(data);
         }).catch(({ response }) => {
             
             console.log("Error getting current loans");
@@ -45,18 +44,18 @@ function CurrentLoans(){
                 
                 <section id='loan-section'>
                     {
-                        allLoanData.map(dataItem => (
-                            <div class="accordion" id={"i" + md5(dataItem.dateOut) + "parent"}>
-                                                <div class="accordion-item">
-                                                        <h2 class="accordion-header" id={"i" + md5(dataItem.dateOut) + "-heading"}>
-                                                            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target={'#' + "i" +  md5(dataItem.dateOut)} aria-expanded="true" aria-controls={"i" + md5(dataItem.dateOut)}>
+                        allLoanData.map((dataItem, index) => (
+                            <div className="accordion" id={"i" + md5(dataItem.dateOut) + "parent"} key={`loan${index}`}>
+                                                <div className="accordion-item">
+                                                        <h2 className="accordion-header" id={"i" + md5(dataItem.dateOut) + "-heading"}>
+                                                            <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target={'#' + "i" +  md5(dataItem.dateOut)} aria-expanded="true" aria-controls={"i" + md5(dataItem.dateOut)}>
                                                                 <strong style={{marginLeft:'44%'}}>Loaned on {dateConverter(dataItem.dateOut)}</strong>
                                                             </button>
                                                         </h2>
-                                                        <div id={"i" + md5(dataItem.dateOut)} class="accordion-collapse   collapse show" aria-labelledby="headingOne" data-bs-parent={"i" + md5(dataItem.dateOut) + "parent"}>
+                                                        <div id={"i" + md5(dataItem.dateOut)} className="accordion-collapse   collapse show" aria-labelledby="headingOne" data-bs-parent={"i" + md5(dataItem.dateOut) + "parent"}>
 
-                                                            <div class="accordion-body">
-                                                                    <table class="table">
+                                                            <div className="accordion-body">
+                                                                    <table className="table">
                                                                         <thead>
                                                                             <th>Loan Id</th>
                                                                             <th>Copy Id</th>
@@ -67,8 +66,8 @@ function CurrentLoans(){
                                                                             <th>Total Loans(Copy)</th>
                                                                         </thead>
                                                                         <tbody>
-                                                                            {dataItem.loanData.map(loan => (
-                                                                                <tr>
+                                                                            {dataItem.loanData.map((loan,index) => (
+                                                                                <tr key={`currentLoan${index}`}>
                                                                                     <td>{loan.loanId}</td>
                                                                                     <td>{loan.copyId}</td>
                                                                                     <td>{loan.dvdTitle}</td>

@@ -103,7 +103,7 @@ function Dashboard() {
                         <nav>
                               <p className='fw-bolder fs-1 moving-text---effect'>DVDs in store</p>
                               <aside style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-                                    {/* <h3>Filter</h3> */}
+
                                     <div className='filter---button' onClick={showFilterHandler}>
                                           <img src={FilterIcon} alt="" />
                                           <h4>Filter</h4>
@@ -116,9 +116,9 @@ function Dashboard() {
                                                 <img src={SearchIcon2} alt="" onClick={submitSearchHandler} id="search-img"/>
                                           </div>
                                           
-                                          <div class="form-check form-switch" style={{ display: 'flex', marginTop: 'auto', gap: '0.2rem', backgroundColor: 'white', justifyContent:"flex-end" }}>
+                                          <div className="form-check form-switch" style={{ display: 'flex', marginTop: 'auto', gap: '0.2rem', backgroundColor: 'white', justifyContent:"flex-end" }}>
                                                 <input className='mt-1 form-check-input' type="checkbox" name="showAvailable" id="showAvailable-chekbox" value={search.showAvailable} onChange={searchInputHandler} />
-                                                <label for="showAvailable-chekbox" id='switch-label'>Available DvDs</label>
+                                                <label htmlFor="showAvailable-chekbox" id='switch-label'>Available DvDs</label>
                                           </div>
 
                                     </div>
@@ -130,9 +130,9 @@ function Dashboard() {
                         {/* cards */}
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3rem', minHeight: '40rem' }}>
 
-                              {(dvdDetails !== undefined) && (dvdDetails.map(({ dvdName, dateReleased, dvDimages, standardCharge, dvdCategory, actors }) => {
+                              {(dvdDetails !== undefined) && (dvdDetails.map(({ dvdName, dateReleased, dvDimages, standardCharge, dvdCategory, actors }, index) => {
                                     return (
-                                          <div className="card dvd-card" style={{ maxHeight: '30rem' }}>
+                                          <div className="card dvd-card" style={{ maxHeight: '30rem' }} key={`dvdInStore${index}`}>
                                                 <div className="card-body p-0">
                                                       <img src={dvDimages[0].image64} onError={(e) => e.target.src = DvdImg} className="dvd-image card-img-top img-fluid" alt="dvd-img" />
                                                       <article className='p-3'>

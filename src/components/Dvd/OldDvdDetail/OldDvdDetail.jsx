@@ -93,13 +93,13 @@ function OldDvdDetail() {
                         <nav>
                               <p className='fw-bolder fs-1 moving-text---effect'>Old Dvds In Stock</p>
                               <aside>          
-                                    <button class="delete-all-button" role="button" onClick={delete_all_old_dvd}>Delete All</button>    
+                                    <button className="delete-all-button" role="button" onClick={delete_all_old_dvd}>Delete All</button>    
                               </aside> 
                         </nav>
                         <hr />
 
                         <section>
-                              <table class="table">
+                              <table className="table">
                                     <thead>
                                           <tr>
                                                 <th scope="col">#</th>

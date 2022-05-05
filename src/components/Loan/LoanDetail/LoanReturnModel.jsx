@@ -9,7 +9,7 @@ function LoanReturnModel({returnLoanDetail}) {
 
       return (
             <>
-            <div className="modal fade" id="loanReturnModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="loanReturnModel" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <button id='loanReturnModelBtn' data-bs-toggle="modal" data-bs-target="#loanReturnModel" data-bs-whatever="@mdo" >Show Return Bill</button>
                   <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
@@ -35,7 +35,7 @@ function LoanReturnModel({returnLoanDetail}) {
                                     )}
                                     
                               </div>
-                              <div class="modal-footer">
+                              <div className="modal-footer">
                                     <button type="submit" className="save-dvd-btn btn btn-primary" id='btnSave' onClick={closeHandler}>Close</button>
                               </div>
                         </div>

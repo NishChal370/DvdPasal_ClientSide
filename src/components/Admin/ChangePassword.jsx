@@ -91,7 +91,7 @@ function ChangePassword() {
       }
 
       useEffect(()=>{
-            console.log("IN HERE");
+
             if(state !== null){
 
                   setPasswordDetail({userID: (state.userId === undefined)? '':state.userId, type:state.name, newPassword: '', newPassword2: '',  oldPassword:''});
@@ -105,7 +105,7 @@ function ChangePassword() {
 
       return (
             <div id='registerStaff' style={{marginTop:'2rem'}}>
-                  {console.log(passwordDetail)}
+
                   <section id='register-staff-wrrapper'>
                         <nav>
                               <p className='fw-bolder fs-1 moving-text---effect'>Change Password</p>
@@ -123,20 +123,20 @@ function ChangePassword() {
 
                                     {(passwordDetail.userID === '') &&(
                                           <div className="col-md-12">
-                                                <label for="inputoldPassword" className="form-label">Old Password</label>
+                                                <label htmlFor="inputoldPassword" className="htmlForm-label">Old Password</label>
                                                 <span id='inputoldPassword-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                                 <input type="password" className="form-control input--design" id="inputoldPassword" name='oldPassword' placeholder='Enter new password...' value={passwordDetail.oldPassword} onChange={inputChangeHandler}/>
                                           </div>
                                     )}
                                                 
                                     <div className="col-md-12">
-                                          <label for="inputuserName" className="form-label">New Password</label>
+                                          <label htmlFor="inputuserName" className="form-label">New Password</label>
                                           <span id='inputnewPassword-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                           <input type="password" className="form-control input--design" id="inputnewPassword" name='newPassword' placeholder='Enter new password...' value={passwordDetail.newPassword} onChange={inputChangeHandler}/>
                                     </div>
 
                                     <div className="col-md-12">
-                                          <label for="inputuserName" className="form-label">Confirm New Password</label>
+                                          <label htmlFor="inputuserName" className="form-label">Confirm New Password</label>
                                           <span id='inputnewPassword2-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                           <input type="password" className="form-control input--design" id="inputnewPassword2" name='newPassword2' placeholder='Re-enter new password...' value={passwordDetail.newPassword2} onChange={inputChangeHandler}/>
                                     </div>

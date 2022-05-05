@@ -40,6 +40,7 @@ function Home() {
 
     localStorage.removeItem('token');
     localStorage.removeItem('is_login');
+    localStorage.removeItem('is_checked');
     AXIOS.defaults.headers['Authorization'] = null;
 
     //move to dashboard
@@ -57,7 +58,7 @@ function Home() {
       navigate('/login');
     }
   }
-
+  
 
   return (
     <>

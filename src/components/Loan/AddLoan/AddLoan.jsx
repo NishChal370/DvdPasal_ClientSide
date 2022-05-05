@@ -140,7 +140,7 @@ function AddLoan() {
                               loanDvdCopyDetail.map(({ageRestricted, category, copyId, dvdImage, dvdTitle, price}, index)=>{return(
 
                                     <div className="card" key={`addLoanCard${index}`}style={{width: '30rem'}}>
-                                          <img src={dvdImage} onError={(e) => e.target.src = DvdImg} class="dvd-img card-img-top img-fluid" alt="..."/>
+                                          <img src={dvdImage} onError={(e) => e.target.src = DvdImg} className="dvd-img card-img-top img-fluid" alt="..."/>
 
                                           <div className="card-body" key={`addLoan${index}`}>
                                                 <h4 className="card-title">{dvdTitle}</h4>
@@ -154,7 +154,7 @@ function AddLoan() {
                                                 {(inputDetail.length>0) &&(
                                                       <>
                                                       <div className="mb-3 mt-2">
-                                                            <label for="memberNumber" className="form-label">Member ID: </label>
+                                                            <label htmlFor="memberNumber" className="form-label">Member ID: </label>
                                                             <input type="number" className="form-control" id={`memberNumber${index}`} name="memberNumber" placeholder="Enter member id..." value={inputDetail[index].memberNumber} onChange={(e)=>inputChangeHandler(e,index)}/>
                                                       </div>
 

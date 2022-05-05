@@ -20,7 +20,7 @@ function LastLoanDetailModel({loanDetail}) {
 
 
       return (
-            <div className="modal fade" id="lastloanModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal fade" id="lastloanModel" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <button id='lastLoandDetailModelShowBtn' data-bs-toggle="modal" data-bs-target="#lastloanModel" data-bs-whatever="@mdo"  style={{display:'none'}}>show</button>
                   <div className="modal-dialog modal-dialog-centered">
                         <div className="modal-content">
@@ -43,7 +43,7 @@ function LastLoanDetailModel({loanDetail}) {
                                     </div>
                               )}
                               
-                              <div class="modal-footer">
+                              <div className="modal-footer">
                                     <button type="submit" className="save-dvd-btn btn btn-primary" id='btnSave' onClick={closeHandler}>Close</button>
                               </div>
                         </div>

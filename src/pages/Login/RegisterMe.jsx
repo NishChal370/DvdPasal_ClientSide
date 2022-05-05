@@ -133,11 +133,15 @@ function RegisterMe() {
                                           <span id='gender-tooltip'  style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
                                           <br/>
                                           <div class="form-check form-check-inline fs-5 mt-2">
-                                                <input class="form-check-input" type="radio" name="gender" id="radiomale" value='male' style={{ width:'1rem'}} onChange={inputChangeHandler} />
+                                                <input class="form-check-input" type="radio" name="gender" id="radiomale" value='male' style={{ width:'1rem'}}
+                                                      checked={(newUserDetail.gender === 'male')} onChange={inputChangeHandler} 
+                                                />
                                                 <label class="form-check-label" for="inlineRadio1">Male</label>
                                           </div>
                                           <div class="form-check form-check-inline fs-5">
-                                                <input class="form-check-input" type="radio" name="gender" id="radiofemale" value='female' style={{ width:'1rem'}} onChange={inputChangeHandler}/>
+                                                <input class="form-check-input" type="radio" name="gender" id="radiofemale" value='female' style={{ width:'1rem'}} 
+                                                      checked={(newUserDetail.gender === 'female')}  onChange={inputChangeHandler}
+                                                />
                                                 <label class="form-check-label" for="inlineRadio2">Female</label>
                                           </div>
 

@@ -73,6 +73,8 @@ const URL_POST_LOGIN = 'user/login'
 const URL_GET_CURRENT_USER_PROFILE_DETAIL = 'user/getCurrentUser'
 const URL_POST_CURRENT_USER_PROFILE_DETAIL = 'user/changeUserInfo'
 
+const URL_GET_MOST_LOAN = 'DvdTitle/getMostLoaned'
+
 export{
     AXIOS,
 
@@ -130,4 +132,6 @@ export{
     URL_POST_LOGIN,
     URL_GET_CURRENT_USER_PROFILE_DETAIL,
     URL_POST_CURRENT_USER_PROFILE_DETAIL,
+
+    URL_GET_MOST_LOAN,
 }
