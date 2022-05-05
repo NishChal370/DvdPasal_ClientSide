@@ -114,7 +114,7 @@ function AddLoan() {
       useEffect(()=>{
             get_dvd_copy_for_loan();
             get_loan_type_list();
-      },[])
+      },[wantToRefresh])
 
 
       // creating array according to number of data
