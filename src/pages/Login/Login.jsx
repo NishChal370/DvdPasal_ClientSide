@@ -14,7 +14,7 @@ const Toast = Swal.mixin({
   timerProgressBar: false,
 });
 
-let initialLoginDetail = { username: "", password: "" };
+let initialLoginDetail = { username: "", password: "", rememberMe: false };
 function Login({ setLoggeedIn }) {
   const navigate = useNavigate();
   const [isRememberMe, setIsRememberMe] = useState(false);
@@ -31,6 +31,7 @@ function Login({ setLoggeedIn }) {
     Post_Login({
       username: loginDetail.username,
       password: loginDetail.password,
+      rememberMe: isRememberMe
     })
       .then(({ data }) => {
         Toast.fire({
@@ -65,7 +66,7 @@ function Login({ setLoggeedIn }) {
   };
 
   const resetInput = () => {
-    setLoginDetail({ username: "", password: "" });
+    setLoginDetail({ username: "", password: "", rememberMe: false});
 
     document.getElementById("rememberMeCheck").checked = false;
   };
