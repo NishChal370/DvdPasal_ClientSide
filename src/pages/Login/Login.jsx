@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import jwt_decode from "jwt-decode";
 import { AXIOS } from "../../API/Constant";
 import { Post_Login } from "../../API/UserService";
+import { back } from "../../assets/images";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -66,82 +67,78 @@ function Login({ setLoggeedIn }) {
   };
 
   const resetInput = () => {
-    setLoginDetail({ username: "", password: "", rememberMe: false});
+    setLoginDetail({ username: "", password: "", rememberMe: false });
 
     document.getElementById("rememberMeCheck").checked = false;
   };
 
   return (
-    <div id="login">
-      <section className="login-wrapper">
-        <div className="title">
-          <p>L</p>
-          <p>o</p>
-          <p>g</p>
-          <p>i</p>
-          <p>n</p>
-        </div>
+    <div>
 
-        <form id="login-form" onSubmit={submitHandler}>
-          <div className="login-form-group">
-            <label htmlFor="formUsernameInput">User name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="username"
-              placeholder="Enter username..."
-              style={{color:'white'}}
-              value={loginDetail.username}
-              onChange={inputChangeHandler}
-              required
-            />
-          </div>
-          <br />
-          <div className="login-form-group">
-            <label htmlFor="formPassswordInput">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Enter password..."
-              style={{color:'white'}}
-              value={loginDetail.password}
-              onChange={inputChangeHandler}
-              required
-            />
-          </div>
+      <img src={back} alt="background image" id="back-img" />
 
-          <div className="login-form-check">
-            <input
-              type="checkbox"
-              className="login-form-check-input"
-              id="rememberMeCheck"
-              style={{color:'white'}}
-              checked={isRememberMe}
-              onChange={()=>setIsRememberMe(!isRememberMe)}
-            />
-            <label className="login-form-check-label" htmlFor="rememberMeCheck">
-              Remember me
-            </label>
-          </div>
 
-          <div className="login-form-check">
-            <label htmlFor="">
-              Don't have account?
-            </label>
+      <div id="login">
+        <section className="login-wrapper">
 
-            <label htmlFor="" style={{fontSize:'1.4rem', textDecoration:'underline', marginTop:'0.2rem', cursor:'pointer'}}
-              onClick={()=>navigate('/registration')}  
-            >
-              Click Here
-            </label>
-          </div>
+          <h1 class="neonText">
+            L<span id="flickering-text">o</span>gin
+          </h1>
 
-          <div className="button-wrapper">
-            <button type="submit">Login</button>
-          </div>
-        </form>
-      </section>
+          <form id="login-form" onSubmit={submitHandler}>
+            <div className="login-form-group">
+              <label htmlFor="username" class="input-label">Username</label>
+              <input
+                type="text"
+                className="form-control text-input"
+                id="username"
+                placeholder="Enter username..."
+                value={loginDetail.username}
+                onChange={inputChangeHandler}
+                required
+              />
+            </div>
+            <br />
+            <div className="login-form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control text-input"
+                id="password"
+                placeholder="Enter password..."
+
+                value={loginDetail.password}
+                onChange={inputChangeHandler}
+                required
+              />
+            </div>
+
+            <div className="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="rememberMeCheck"
+
+                checked={isRememberMe}
+                onChange={() => setIsRememberMe(!isRememberMe)}
+              />
+              <label class="form-check-label" id="check-label" htmlFor="rememberMeCheck">
+                Remember me
+              </label>
+            </div>
+
+            <div className="login-form-check">
+              <p id="no-account-p">
+                Don't have an account? <a href="/registration">Register</a>
+              </p>
+            </div>
+
+            <div className="d-grid gap-2 col-6 mx-auto">
+              <button class="btn btn-outline-light " id="login-btn" type="submit">Login</button>
+            </div>
+          </form>
+        </section>
+      </div>
     </div>
   );
 }

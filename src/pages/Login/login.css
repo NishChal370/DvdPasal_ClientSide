@@ -1,156 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
 
-#login{
-      background-image: url('../../assets/images/login-backgoround14.jpg');
+#login {
       background-size: 100% 100%;
       background-position: center;
       background-repeat: no-repeat;
-      height: 100vh;   
+      height: 100vh;
       display: flex;
       justify-content: right;
       object-fit: cover;
       font-family: 'Square Peg', cursive !important;
 }
 
-.login-wrapper{
+#back-img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+      z-index: -9999;
+}
+
+.login-wrapper {
       width: 30%;
       margin: 10rem;
       padding: 2rem;
       position: absolute;
-      border-radius: 1rem;
-      box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
-      background-color: rgba(83, 80, 80, 0.616);     
-      
+      background: rgba(137, 49, 49, 0.5);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(7.7px);
+      -webkit-backdrop-filter: blur(7.7px);
 }
 
-.login-wrapper input{
-      width: 100%;
-}
-
-.login-wrapper>div>p{
-      font-family: 'Libre Bodoni', serif;
-      color: rgb(41, 40, 40);
-}
-
-.login-wrapper>.sub-title{ /* not in use now */
-      font-size: 1.4rem;
-      font-weight:900;
-}
-
-.login-wrapper .title{
-      display: flex;
-}
-.login-wrapper>.title>p{
-      font-size: 6rem;
+.text-input {
       color: white;
-      font-family: 'Rampart One', cursive !important;
-
-      transform: rotate(-45deg);
-      animation: changeFont 5s ease-in-out infinite;
-
+      background: rgba(145, 83, 83, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(145, 83, 83, 0.3);
 }
 
-
-@keyframes changeFont{
-      0%{
-            transform: rotate(-45deg);
-            color: greenyellow;
-      }
-      50%{
-            transform: rotate(45deg);
-            color: red;
-      }
-      100%{
-            transform: rotate(-45deg);
-            color: white;
-      }
+.text-input::placeholder{
+      color: whitesmoke;
+      opacity: 0.8;
 }
 
-.login-wrapper>#login-form>div>label{
+.text-input:focus{
+      background-color: rgba(0, 0, 0, 0.5);
+      color: whitesmoke;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#login-btn{
+      font-weight: bold;
+      font-size: 1.5em;
+      transition: background-color 0.2s linear,
+                  border-radius 0.2s linear,
+                  color 0.2s linear;
+}
+
+#login-btn:hover{
+      background-color: rgba(0, 0, 128, 0.5);
+      border-radius: 30px;
       color: white;
-      font-size: 1.6rem;
-      -webkit-text-stroke: 1px black;
-      font-family: 'Orelega One', cursive !important;
-}
-.login-wrapper>#login-form>.login-form-group>input{
-      border: none;
-      border-radius: 0rem;
-      box-shadow: 0px 15px 10px -10px #00E4B6; 
-      background-color: rgba(255, 255, 255, 0);
-      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.651);
-}
-.login-wrapper>#login-form>.login-form-group>input:focus{
-      border: none;
-      box-shadow: none;
-      box-shadow: 0px 15px 10px -10px rgb(93, 2, 105); 
-      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.651);
-}
-.login-wrapper>#login-form>.login-form-group>input:active{
-      border: none;
-      box-shadow: none;
-      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.651);
-      box-shadow: 0px 15px 10px -10px rgb(93, 2, 105); 
-}
-.login-wrapper>#login-form>.login-form-group>input:hover{
-      border: none;
-      box-shadow: none;
-      border-bottom: 0.1rem solid rgba(0, 0, 0, 0.651);
-      box-shadow: 0px 15px 10px -10px rgb(93, 2, 105); 
 }
 
-.login-wrapper>#login-form>.login-form-check{
-      gap: 0.5rem;
-      padding: 0rem;
-      display: flex;
-      margin-top: 1rem;
-}
-.login-wrapper>#login-form>.login-form-check>.login-form-check-input{
-      width: 1.3rem;
-      display: block;
-      margin:auto 0rem;
+label {
+      font-family: 'MuseoModerno', sans-serif !important;
+      font-size: 1.4em;
+      color: white;
+      text-shadow:
+            0 0 7px #fff,
+            0 0 102px #bc13fe,
+            0 0 151px #bc13fe;
 
 }
-.login-wrapper>#login-form>.login-form-group>#formEmailInput:invalid{
-      animation: shake 300ms;
+
+.form-check {
+      margin: 15px 0 15px 0;
 }
 
-
-@keyframes shake{
-      25%{ transform: translateX(8px); }
-      50%{ transform: translateX(-8px);}
-      75%{ transform: translateX(8px); }
+#rememberMeCheck {
+      margin-top: 10px;
 }
 
-.login-wrapper>#login-form>.button-wrapper{
-      display: flex;
-      justify-content: right;
+#check-label {
+      margin-left: 0.3em;
 }
 
-.login-wrapper>#login-form>.button-wrapper>button{
-      margin-top: 1.6rem;
-      width: 9rem;
-      height: 2.3rem;
-      font-size: 1.2rem;
-      font-weight: 900;
-      background: #000;
+#no-account-p {
+      color: white;
+      font-weight: bold;
+}
+
+#no-account-p a {
+      color: #bc13fe;
+}
+
+.neonText {
       color: #fff;
-      border: 1px solid;
-      transition: all 1s ease;
-      transition-delay: 0.2s;
-      cursor: pointer;
+      text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #bc13fe,
+            0 0 82px #bc13fe,
+            0 0 92px #bc13fe,
+            0 0 102px #bc13fe,
+            0 0 151px #bc13fe;
 }
 
-.login-wrapper>#login-form>.button-wrapper>button:hover{
-      animation: pulsate 1s ease-in-out;
+
+h1,
+h2 {
+      text-align: center;
+      font-weight: 400;
+      font-family: 'Marck Script', cursive !important;
 }
 
-@keyframes pulsate{
-      0%{
-            box-shadow: 0 0 25px rgb(93, 2, 105), 0 0 50px rgb(93, 2, 105);
+h1 {
+      font-size: 6.2rem;
+      animation: pulsate 1.5s infinite alternate;
+      border: 0.2rem solid #fff;
+      border-radius: 2rem;
+      margin-bottom: 0.5em;
+      padding: 0.4em;
+      box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe;
+}
+
+#flickering-text {
+      animation: flicker 4s infinite alternate;
+}
+
+
+
+@keyframes flicker {
+
+      0%,
+      18%,
+      22%,
+      25%,
+      53%,
+      57%,
+      100% {
+
+            text-shadow:
+                  0 0 4px #fff,
+                  0 0 11px #fff,
+                  0 0 19px #fff,
+                  0 0 40px #bc13fe,
+                  0 0 80px greenyellow,
+                  0 0 90px #bc13fe,
+                  0 0 100px greenyellow,
+                  0 0 150px #bc13fe;
+
+      }
+
+      20%,
+      24%,
+      55% {
+            text-shadow: none;
+      }
+}
+
+
+@keyframes pulsate {
+
+      100% {
+
+            text-shadow:
+                  0 0 4px #fff,
+                  0 0 11px #fff,
+                  0 0 19px #fff,
+                  0 0 40px #bc13fe,
+                  0 0 80px #bc13fe,
+                  0 0 90px #bc13fe,
+                  0 0 100px #bc13fe,
+                  0 0 150px #bc13fe;
+
+      }
+
+      0% {
+
+            text-shadow:
+                  0 0 2px #fff,
+                  0 0 4px #fff,
+                  0 0 6px #fff,
+                  0 0 10px #bc13fe,
+                  0 0 45px #bc13fe,
+                  0 0 55px #bc13fe,
+                  0 0 70px #bc13fe,
+                  0 0 80px #bc13fe;
+
       }
 }
