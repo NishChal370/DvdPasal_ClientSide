@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&display=swap');
+
+#login {
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: right;
+      object-fit: cover;
+      font-family: 'Square Peg', cursive !important;
+}
+
+#back-img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+      z-index: -9999;
+}
+
+.login-wrapper {
+      width: 30%;
+      margin: 10rem;
+      padding: 2rem;
+      position: absolute;
+      background: rgba(137, 49, 49, 0.5);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(7.7px);
+      -webkit-backdrop-filter: blur(7.7px);
+}
+
+.text-input {
+      color: white;
+      background: rgba(145, 83, 83, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(145, 83, 83, 0.3);
+}
+
+.text-input::placeholder{
+      color: whitesmoke;
+      opacity: 0.8;
+}
+
+.text-input:focus{
+      background-color: rgba(0, 0, 0, 0.5);
+      color: whitesmoke;
+}
+
+.text-input:-webkit-autofill,
+.text-input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+.text-input[data-autocompleted] {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#login-btn{
+      font-weight: bold;
+      font-size: 1.5em;
+      transition: background-color 0.2s linear,
+                  border-radius 0.2s linear,
+                  color 0.2s linear;
+}
+
+#login-btn:hover{
+      background-color: rgba(0, 0, 128, 0.5);
+      border-radius: 30px;
+      color: white;
+}
+
+label {
+      font-family: 'MuseoModerno', sans-serif !important;
+      font-size: 1.4em;
+      color: white;
+      text-shadow:
+            0 0 7px #fff,
+            0 0 102px #bc13fe,
+            0 0 151px #bc13fe;
+
+}
+
+.form-check {
+      margin: 15px 0 15px 0;
+}
+
+#rememberMeCheck {
+      margin-top: 10px;
+}
+
+#check-label {
+      margin-left: 0.3em;
+}
+
+#no-account-p {
+      color: white;
+      font-weight: bold;
+}
+
+#no-account-p a {
+      color: #bc13fe;
+}
+
+.neonText {
+      color: #fff;
+      text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #bc13fe,
+            0 0 82px #bc13fe,
+            0 0 92px #bc13fe,
+            0 0 102px #bc13fe,
+            0 0 151px #bc13fe;
+}
+
+
+#login-head {
+      text-align: center;
+      font-weight: 400;
+      font-family: 'Marck Script', cursive !important;
+}
+
+#login-head {
+      font-size: 6.2rem;
+      animation: pulsate 1.5s infinite alternate;
+      border: 0.2rem solid #fff;
+      border-radius: 2rem;
+      margin-bottom: 0.5em;
+      padding: 0.4em;
+      box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe;
+}
+
+#flickering-text {
+      animation: flicker 4s infinite alternate;
+}
+
+
+
+@keyframes flicker {
+
+      0%,
+      18%,
+      22%,
+      25%,
+      53%,
+      57%,
+      100% {
+
+            text-shadow:
+                  0 0 4px #fff,
+                  0 0 11px #fff,
+                  0 0 19px #fff,
+                  0 0 40px #bc13fe,
+                  0 0 80px greenyellow,
+                  0 0 90px #bc13fe,
+                  0 0 100px greenyellow,
+                  0 0 150px #bc13fe;
+
+      }
+
+      20%,
+      24%,
+      55% {
+            text-shadow: none;
+      }
+}
+
+
+@keyframes pulsate {
+
+      100% {
+
+            text-shadow:
+                  0 0 4px #fff,
+                  0 0 11px #fff,
+                  0 0 19px #fff,
+                  0 0 40px #bc13fe,
+                  0 0 80px #bc13fe,
+                  0 0 90px #bc13fe,
+                  0 0 100px #bc13fe,
+                  0 0 150px #bc13fe;
+
+      }
+
+      0% {
+
+            text-shadow:
+                  0 0 2px #fff,
+                  0 0 4px #fff,
+                  0 0 6px #fff,
+                  0 0 10px #bc13fe,
+                  0 0 45px #bc13fe,
+                  0 0 55px #bc13fe,
+                  0 0 70px #bc13fe,
+                  0 0 80px #bc13fe;
+
+      }
+}

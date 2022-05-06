@@ -78,12 +78,12 @@ function ChangePassword() {
 
             if( validateNewPassword({oldPassword: oldPassword, newPassword: newPassword, newPassword2: newPassword2, checkoldPassword: userID === ''}) ){
                   if(userID.trim() !== ''){
-                        // alert("Aru KO PASSWORD CHANGE");
+                        // Changing password of other user.
                         change_user_Password();
                         
                   }
                   else{
-                        // alert("aafno password chage")
+                        // Changing your own password.
                         post_change_own_password();
                   }
                   

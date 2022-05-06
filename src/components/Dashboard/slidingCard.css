@@ -8,6 +8,7 @@
       top: -6rem;
       display: flex;
       padding: 2rem 0rem;
+      
       position: absolute;
       justify-content: space-around;
 }
@@ -18,11 +19,16 @@
       padding: 1rem;
       width: 16%;
       gap: 1rem;
+      max-height: 200px;
       animation: float 5s ease-in-out infinite;
       box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 #slidingCard-wrapper>span>.card:nth-child(even){
       animation-delay: 2s;
+}
+
+.top-image{
+      max-height: 100px;
 }
 
 @keyframes float{
@@ -46,6 +52,10 @@
 }
 #slidingCard-wrapper>span>.card>.top-image>img{
       width: 40%;
+      height: 40%;
+      min-height: 100px;
+      min-width: 100px;
+      object-fit: cover;
       border-radius: 0.5rem;
 }
 
