@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./login.css";
+import { Helmet } from 'react-helmet';
 import Swal from "sweetalert2";
 import jwt_decode from "jwt-decode";
 import { AXIOS } from "../../API/Constant";
@@ -74,6 +74,11 @@ function Login({ setLoggeedIn }) {
 
   return (
     <div>
+      {/* The css was being applied to all pages. Used react-helmet to mitigate this. */}
+      <Helmet>
+        <link rel="stylesheet" href="css/login.css" />
+      </Helmet>
+
 
       <img src={back} alt="background image" id="back-img" />
 
@@ -81,7 +86,7 @@ function Login({ setLoggeedIn }) {
       <div id="login">
         <section className="login-wrapper">
 
-          <h1 class="neonText">
+          <h1 id="login-head" class="neonText">
             L<span id="flickering-text">o</span>gin
           </h1>
 
@@ -139,6 +144,8 @@ function Login({ setLoggeedIn }) {
           </form>
         </section>
       </div>
+
+
     </div>
   );
 }

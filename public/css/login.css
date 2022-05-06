@@ -57,11 +57,11 @@
       color: whitesmoke;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:focus {
+.text-input:-webkit-autofill,
+.text-input:-webkit-autofill:focus {
     transition: background-color 600000s 0s, color 600000s 0s;
 }
-input[data-autocompleted] {
+.text-input[data-autocompleted] {
     background-color: rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -125,14 +125,13 @@ label {
 }
 
 
-h1,
-h2 {
+#login-head {
       text-align: center;
       font-weight: 400;
       font-family: 'Marck Script', cursive !important;
 }
 
-h1 {
+#login-head {
       font-size: 6.2rem;
       animation: pulsate 1.5s infinite alternate;
       border: 0.2rem solid #fff;
