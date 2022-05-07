@@ -27,6 +27,22 @@
     border: 1px solid rgba(0, 255, 144, 0.3);
 }
 
+@media only screen and (max-height: 800px) {
+    .register-wrapper{
+        margin: 1rem;  
+    }
+
+    #register-head{
+        font-size: 72px !important;
+    }
+}
+
+@media only screen and (max-height: 1024px) {
+    .register-wrapper{
+          width: 55% !important;
+    }
+}
+
 #register {
     background-size: 100% 100%;
     background-position: center;

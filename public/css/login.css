@@ -41,7 +41,14 @@
 
 @media only screen and (max-height: 800px) {
       .login-wrapper{
-            /* TODO make login page responsive. */
+            margin: 5rem;
+            width: 40%
+      }
+}
+
+@media only screen and (max-width: 1024px) {
+      .login-wrapper{
+            width: 40%;
       }
 }
 

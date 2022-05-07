@@ -4,8 +4,6 @@ import { first, second,third, fourth } from '../../assets/images'
 import './slidingCard.css'
 
 
-
-
 function SlidingCard() {
 
       const position_list = [first, second, third, fourth];
@@ -15,10 +13,6 @@ function SlidingCard() {
       const get_most_loan = ()=>{
             Get_Most_Loan()
                   .then(({data})=>{
-                        data = (data.length <4) 
-                              ? [...data, ...data]
-                              : data
-                        
 
                         setMostLoanDetail(data);
                         
@@ -37,20 +31,19 @@ function SlidingCard() {
             <span>
                   {mostLoanDetail !== undefined && mostLoanDetail.map(({dvDImage, dvDName, totalLoans,}, index)=>{
                         return(
-                              <div className='card' key={`slidingCard${index}`}>
+                              <div className='card' data-bs-toggle="tooltip" data-bs-placement="top" title={dvDName} key={`slidingCard${index}`}>
                                     <div className='top-image'>
                                           <img src={dvDImage} alt="rangers" />
                                           <aside>
                                                 <span>
                                                       <img class="position-img" src={position_list[index]} alt="rangers" />
-                                                   
                                                 </span>
                                           </aside>
                                     </div>
                                     
                                     <article>
-                                          <h3>{dvDName}</h3>
-                                          <p>Total Loans: {totalLoans}</p>
+                                          <h3 id='dvd-name'>{dvDName}</h3>
+                                          <p id='total-loans'>Total Loans: {totalLoans}</p>
                                     </article>
                               </div>
                         )

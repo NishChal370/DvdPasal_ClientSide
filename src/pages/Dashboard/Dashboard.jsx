@@ -23,16 +23,6 @@ function Dashboard() {
                   })
       }
 
-      // const dateConverter=(dateStr)=>{
-      //       const  monthsList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-      //       let date = new Date(dateStr);
-      //       const year = date.getFullYear()
-      //       const month = monthsList[date.getMonth()];
-      //       const day = date.getDate();
-
-      //       return day+" "+month+" "+year
-      // }
-
 
       const searchInputHandler = ({ target }) => {
             const { name, value } = target;
@@ -132,12 +122,12 @@ function Dashboard() {
 
                               {(dvdDetails !== undefined) && (dvdDetails.map(({ dvdName, dateReleased, dvDimages, standardCharge, dvdCategory, actors }, index) => {
                                     return (
-                                          <div className="card dvd-card" style={{ maxHeight: '30rem' }} key={`dvdInStore${index}`}>
+                                          <div className="card dvd-card" data-bs-toggle="tooltip" data-bs-placement="top" title={dvdName} style={{ maxHeight: '30rem' }} key={`dvdInStore${index}`}>
                                                 <div className="card-body p-0">
                                                       <img src={dvDimages[0].image64} onError={(e) => e.target.src = DvdImg} className="dvd-image card-img-top img-fluid" alt="dvd-img" />
                                                       <article className='p-3'>
-                                                            <span>
-                                                                  <p className="fs-3 p-0 m-0" style={{ fontWeight: 'bold', textAlign: 'center' }} >{dvdName}</p>
+                                                            <span id='dvd-name-span'>
+                                                                  <p id='dvd-name-p' className="fs-3 p-0 m-0">{dvdName}</p>
                                                             </span>
                                                             <p className="fs-5 p-0 m-0"><span style={{ fontWeight: 'bold' }}>Release Date:</span> {dateConverter(dateReleased)}</p>
                                                             <p className="fs-5 p-0 m-0"><span style={{ fontWeight: 'bold' }}>Price:</span> {standardCharge}</p>

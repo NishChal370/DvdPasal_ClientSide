@@ -4,13 +4,13 @@ import './home.css'
 // import SideNav from '../../components/SideNav/SideNav';
 import { SideNav } from '../../components';
 import { SlidingCard } from '../../components/Dashboard';
-import { Cartoon, Cartoon3, Cartoon4, NavCompassIcon } from '../../assets/images';
+import { Cartoon, Cartoon3, Cartoon4, NavCompassIcon, yourname } from '../../assets/images';
 import { AXIOS } from '../../API/Constant';
 
 
 function Home() {
   const location = useLocation().pathname;
-  let topCoverImage = (location.includes('catelog')) ? Cartoon3 : (location.includes('members')) ? Cartoon : Cartoon4
+  let topCoverImage = (location.includes('catelog')) ? Cartoon3 : (location.includes('members')) ? yourname : Cartoon4
   const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(localStorage.getItem('is_login'));
 
