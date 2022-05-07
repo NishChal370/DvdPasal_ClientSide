@@ -118,7 +118,7 @@ function Dashboard() {
                         <hr />
 
                         {/* cards */}
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '3rem', minHeight: '40rem' }}>
+                        <div id='dvd-item-cards' >
 
                               {(dvdDetails !== undefined) && (dvdDetails.map(({ dvdName, dateReleased, dvDimages, standardCharge, dvdCategory, actors }, index) => {
                                     return (

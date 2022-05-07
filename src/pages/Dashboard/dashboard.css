@@ -1,31 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
-#available-dvds-wrapper{
-      padding: 0rem 2.6rem;     
+#available-dvds-wrapper {
+      padding: 0rem 2.6rem;
 }
 
 
-#available-dvds-wrapper> nav{
+#available-dvds-wrapper>nav {
       padding: 0px;
       margin: 0px;
       display: flex;
       place-items: center;
       justify-content: space-between;
 }
-#available-dvds-wrapper> nav>*{
+
+#available-dvds-wrapper>nav>* {
       padding: 0px;
       margin: 0px;
       font-family: 'Rubik', sans-serif !important;
 }
 
 
-.dvd-image{
+.dvd-image {
       max-height: 250px;
-      height: 50%;     
+      height: 50%;
       object-fit: cover;
 }
 
-#search-img{
+#search-img {
       transform: scale(0.5);
       cursor: pointer;
       position: relative;
@@ -33,33 +34,33 @@
       margin: 0 0 0 0.7em;
 }
 
-#lastname-input{
+#lastname-input {
       position: relative;
       border: none;
       bottom: -15px;
 }
 
-#lastname-input:focus{
+#lastname-input:focus {
       outline: none;
 }
 
-#switch-label{
+#switch-label {
       margin-left: 10px;
       font-weight: bold;
 }
 
-#search-div{
+#search-div {
       border-bottom: solid 1px black;
       padding: 0;
       margin-bottom: 1.5em;
 }
 
-#dvd-name-span{
+#dvd-name-span {
       display: flex;
       justify-content: center;
 }
 
-#dvd-name-p{
+#dvd-name-p {
       overflow: hidden;
       white-space: nowrap;
       font-weight: bold;
@@ -68,61 +69,82 @@
       width: 300px;
 }
 
-hr{
+hr {
       padding: 0px;
       margin: 0px 0px 2rem 0px;
 }
 
-#available-dvds-wrapper>nav>aside>span{
+#available-dvds-wrapper>nav>aside>span {
       justify-content: center;
 }
-#available-dvds-wrapper>nav>aside>span{
+
+#available-dvds-wrapper>nav>aside>span {
       display: flex;
       gap: 1rem;
       margin-top: 1rem;
 }
-#available-dvds-wrapper>nav>aside>span>span>input{
+
+#available-dvds-wrapper>nav>aside>span>span>input {
       border: 0rem;
       border-bottom: 1px solid black !important;
 }
 
-#available-dvds-wrapper>nav>aside>span>span>input:focus{
+#available-dvds-wrapper>nav>aside>span>span>input:focus {
       outline: none;
       box-shadow: 0 4px 2px -2px #0ff;
 
 }
 
+#dvd-item-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+      min-height: 40rem;
+}
 
-#available-dvds-wrapper>nav>aside>span>span>img{
+@media only screen and (max-height: 800px) {
+      #dvd-item-cards{
+            grid-template-columns: repeat(3, 1fr);
+      }
+}
+
+@media only screen and (max-width: 1024px) {
+      #dvd-item-cards{
+            grid-template-columns: repeat(2, 1fr);
+      }
+}
+
+
+#available-dvds-wrapper>nav>aside>span>span>img {
       width: 2rem;
       margin-bottom: 0.4rem;
       padding: 0rem 0rem 0.rem 0rem;
       border-bottom: 1px solid black !important;
 }
 
-#available-dvds-wrapper>nav>aside>span>span>img:hover{
+#available-dvds-wrapper>nav>aside>span>span>img:hover {
       cursor: pointer;
       box-shadow: 0 4px 2px -2px #0ff;
 
 }
 
 
-.dvd-card{
+.dvd-card {
       border-radius: 1rem;
       border: none;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
-.dvd-card:hover{
+.dvd-card:hover {
       cursor: pointer;
       transform: translateY(-6%);
       box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.dvd-card p{
+.dvd-card p {
       font-family: 'Rubik', sans-serif !important;
 }
 
-.dvd-card>.card-body>img{
+.dvd-card>.card-body>img {
       border-radius: 1rem 1rem 0rem 0rem;
 }

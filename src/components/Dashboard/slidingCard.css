@@ -3,16 +3,14 @@
 #slidingCard-wrapper {
       position: relative;
       height: 12rem;
-
-      /* background-color: red; */
 }
 
 #slidingCard-wrapper>span {
       top: -6rem;
       display: flex;
       padding: 2rem 0rem;
-
       position: absolute;
+      max-width: 100%;
       justify-content: center;
 }
 
@@ -23,10 +21,17 @@
       width: 16%;
       margin: 0 4em 0 4em;
       gap: 1rem;
-
       max-height: 200px;
       animation: float 5s ease-in-out infinite;
       box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+@media only screen and (max-height: 800px) {
+      #slidingCard-wrapper>span>.card {
+            margin: 0 2em 0 2em;
+            width: fit-content;
+            min-width: 20%;
+      }
 }
 
 #slidingCard-wrapper>span>.card:nth-child(even) {
