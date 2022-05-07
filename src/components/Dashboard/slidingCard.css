@@ -61,25 +61,11 @@
 
 #slidingCard-wrapper>span>.card>.top-image>aside{
       width: 36%;
-}
-#slidingCard-wrapper>span>.card>.top-image>aside>span{
-      position: relative;
-      justify-content: right;
+      max-height: 100px;
 }
 
-#slidingCard-wrapper>span>.card>.top-image>aside>span>img{
-      width: 3rem;
-      height: 3rem;
-      border-radius: 50%;
-      position: absolute;
+.position-img{
+      transform: scale(0.8);
+      margin-left: 32px;
 }
-#slidingCard-wrapper>span>.card>.top-image>aside>span>img:nth-child(2){
-      left: 1.5rem;
-      border-left: 2px solid black;
 
-}
-#slidingCard-wrapper>span>.card>.top-image>aside>span>img:nth-child(1){
-      left: 3rem;
-      border-left: 2px solid black;
-
-}
