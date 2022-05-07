@@ -9,7 +9,7 @@ function ChangePassword() {
       const {pathname, state} = useLocation();
       const navigate = useNavigate();
 
-      const [passwordDetail, setPasswordDetail] = useState({userID: '', type:'Admin', oldPassword:'', newPassword: '', newPassword2: ''})
+      const [passwordDetail, setPasswordDetail] = useState({userID: '', type:'', oldPassword:'', newPassword: '', newPassword2: ''})
 
 
       const inputChangeHandler= ({target})=>{
@@ -114,7 +114,7 @@ function ChangePassword() {
                         <div  style={{margin:'0rem 30rem'}} onSubmit={submitButtonHandler} onReset={resetHandler}>
 
                               <form className="row g-3">
-                                    <div className="col-md-12 mb-3">UserName:&nbsp;
+                                    <div className="col-md-12 mb-3">Username:&nbsp;
                                           {(state !== null)
                                                 ? state.name
                                                 : jwt_decode(localStorage.getItem("token"))['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name']

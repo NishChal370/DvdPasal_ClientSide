@@ -34,6 +34,8 @@ import HomeImg from './home-img.png';
 import PageNotFoundGif from './image_processing20191008-30851-fhz5mc.jpg';
 
 import back from './back.webp'
+import minus from './minus.png'
+import plus from './plus.png'
 import reg_back from './reg-back.webp'
 
 import first from './first.png'
@@ -45,4 +47,4 @@ export { DownIcon, ReturnIcon, DvdIcon, PageNotFoundGif, CatelogIcon, HomeImg,
     AvtarImg, AvtarImg2, FilterIcon, DvdImg, DvdImg2, AddUserImg, DataNotFoundImg,
     CrossImg, NavCompassIcon, RightIcon, SearchIcon2, Cartoon ,Cartoon3, Cartoon4,
     PageNotFoundImg, DeleteIcon, ChangePasswordIcon, EditIcon, back, reg_back,
-    first, second, third, fourth}
+    first, second, third, fourth, minus, plus}

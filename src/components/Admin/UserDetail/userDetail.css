@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 #change-password-icon{
       width: 2rem;
@@ -20,9 +21,15 @@
       justify-content: space-between;
 }
 
+
 #pass-change-form label{
-      font-size: large;
+      font-size: medium;
       font-weight: bold;
+      font-family: 'Varela Round', sans-serif !important;
+}
+
+#pass-change-form li span{
+      font-family: 'Varela Round', sans-serif !important;
 }
 
 #pass-change-form input{

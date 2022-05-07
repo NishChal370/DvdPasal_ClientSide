@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Get_All_Users_Detail, Post_Change_User_Password } from '../../../API/UserService'
 import { ChangePasswordIcon, DataNotFoundImg, EditIcon } from '../../../assets/images';
 import { dateConverter } from '../../Common/dateConverter';
-import './userDetail.css'
+import './userDetail.css';
 import Swal from 'sweetalert2';
 import UserDetailModel from './UserDetailModel';
 import PasswordChecklist from "react-password-checklist";
@@ -30,10 +30,6 @@ function UserDetail() {
                   })
       }
 
-      const changePasswordButtonHandler = (userDetail) => {
-
-            navigate("/admin/changePassword", { state: userDetail });
-      }
 
       const editUserDetailHandler = (selectedUserDetail) => {
             setEditingUserDetail(selectedUserDetail);
