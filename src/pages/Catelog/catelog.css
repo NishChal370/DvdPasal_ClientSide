@@ -1,10 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
 
 #catelog-wrapper{
       margin-top: 2rem;
       padding: 0rem 2.6rem;
       min-height: 40rem;
+      min-width: 40rem;
 }
 
+
+#cards-section{
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center;
+}
+
+#cards-section>*{
+      flex: 0 0 20%;
+      
+}
+
+#catelog-title{
+      overflow: hidden;
+      white-space: nowrap;
+      font-weight: bold;
+      text-overflow: ellipsis;
+      text-align: center;
+      width: 300px;
+}
+
+#title-span{
+      display: flex;
+      justify-content: center;
+}
+
+#catelog-info-container p{
+      font-family: 'Rubik', sans-serif !important;
+}
 
 
 #catelog-wrapper>section:nth-child(3){
@@ -67,6 +99,26 @@
       height: 80%;
       overflow: auto;
       color: white;
+}
+
+@media only screen and (max-height: 800px) {
+      #cards-section>*{
+            flex: 0 0 25%;
+      }
+}
+
+@media only screen and (max-width: 1024px) {
+      #cards-section>*{
+            flex: 0 0 40%;
+      }
+}
+
+.name-link{
+      color: white;
+}
+
+.name-link:hover{
+      color: gold;
 }
 
 
