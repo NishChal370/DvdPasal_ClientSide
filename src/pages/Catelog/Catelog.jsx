@@ -5,6 +5,7 @@ import { Get_DVD_Details } from '../../API/UserService';
 import { DvdImg2, RightIcon } from '../../assets/images';
 import { dateConverter } from '../../components';
 
+// TODO add links to the actors profile.
 
 function Catelog() {
       const [itemIndex, setItemIndex] = useState({ start: 0, end: 8 })
