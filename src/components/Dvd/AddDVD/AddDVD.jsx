@@ -369,6 +369,8 @@ function AddDVD() {
             }
             );
             setInputNewStatus({ producer: false, studio: false, actor: { 0: false }, image: { 0: false }, cateogary: false });
+
+            document.getElementById('dvDimages').value = '';
       }
 
 
@@ -529,7 +531,7 @@ function AddDVD() {
                                           )
                                     })}
                                     <div id='plus-btn-container'>
-                                    <img src={plus} alt="Add Actor" onClick={() => addActorHandler('more')} data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add an actor." />
+                                          <img src={plus} alt="Add Actor" onClick={() => addActorHandler('more')} data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add an actor." />
                                     </div>
                               </section>
 

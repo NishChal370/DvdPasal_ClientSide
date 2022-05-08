@@ -47,7 +47,7 @@ export const checkValidation = ({newDvdDetail, numberOfActors})=>{
             errorType = 'empty';
             isValid = false;
       }
-      else if(penaltyCharge >= standardCharge){
+      else if(parseInt(penaltyCharge) >= parseInt(standardCharge)){
             errorInputId = 'penaltyCharge';
             errorType = 'limit';
             isValid = false;

@@ -116,7 +116,7 @@ function AddLoan() {
       useEffect(()=>{
             get_dvd_copy_for_loan();
             get_loan_type_list();
-      },[wantToRefresh])
+      },[wantToRefresh]);
 
 
       // creating array according to number of data
@@ -185,7 +185,7 @@ function AddLoan() {
                               )})
                         )}
 
-                        {(loanTypeList !== undefined)&&(loanTypeList.length<=0)&&(
+                        {(loanDvdCopyDetail !== undefined)&&(loanDvdCopyDetail.length<=0)&&(
                               <img style={{width:'30rem', marginLeft:'50rem'}} src={DataNotFoundImg} alt="div" />
                         )}
                   </section>
