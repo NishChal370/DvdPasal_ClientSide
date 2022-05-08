@@ -58,6 +58,7 @@ const actor = {
 
 function AddDVD() {
       const [dvdData, setDvdData] = useState({ ...data });
+      const [wantToRefresh, setWantToRefresh]= useState(false);
       let [numberOFActors, setNumberOfActors] = useState(1);
       const [nameList, setNameList] = useState({ producers: [], studios: [], actors: [], cateogary: [], });
       const [inputNewStatus, setInputNewStatus] = useState({ producer: false, studio: false, actor: { 0: false }, image: { 0: false }, cateogary: false });
@@ -71,6 +72,9 @@ function AddDVD() {
                               response,
                               'success'
                         )
+
+                        let refresh = !wantToRefresh;
+                        setWantToRefresh({...refresh});
 
                         resetButtonHandler();
                   })
@@ -226,15 +230,11 @@ function AddDVD() {
                   ? dropDownChangeHandler(target, index)
                   : textBoxChangeHandler(target, index);
 
-            console.log(dvdData);
-
       }
 
 
       const dropDownChangeHandler = (target, index) => {
             const { id, name, value, selectedOptions } = target;
-            console.log(id, name, value,);
-            console.log(selectedOptions[0].text);
 
             if (id.includes('actors')) {
                   dvdData[id][index][name] = value;
@@ -263,7 +263,6 @@ function AddDVD() {
                   dvdData[id]['categoryDescription'] = selectedOptions[0].text;
             }
 
-            console.log(dvdData);
             setDvdData({ ...dvdData });
       }
 
@@ -294,11 +293,7 @@ function AddDVD() {
                   }
             });
 
-            console.log(imageList);
-
             dvdData.dvDimages = imageList;
-
-            console.log(dvdData);
       }
 
 
@@ -383,8 +378,7 @@ function AddDVD() {
             get_actors_name();
             get_studios_name();
             get_dvd_cateogaries_name();
-
-      }, [])
+      }, [wantToRefresh])
 
       return (
             <div id='add-dvd'>

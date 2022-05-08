@@ -1,4 +1,4 @@
-const ALPHABET_REGEX = new RegExp('^[a-zA-Z\\s]*$');
+const ALPHABET_REGEX = new RegExp('^[A-Za-z\\-\\. ]+$');
 
 export const checkValidation = ({newDvdDetail, numberOfActors})=>{
       const {dvdName, dateReleased, standardCharge, penaltyCharge, dvdCategory, dvdProducer, dvdStudio, dvDimages, actors} = newDvdDetail;
