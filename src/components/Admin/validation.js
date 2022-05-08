@@ -115,9 +115,7 @@ export const removeValidationMessage=({inputName})=>{
 
 export const validateNewPassword=({newPassword, newPassword2, oldPassword, checkoldPassword})=>{
       let isValid = true;
-      console.log("CHECK TIS")
-      console.log(oldPassword)
-      console.log(checkoldPassword)
+
       if(oldPassword.trim() === '' && checkoldPassword){
             isValid = false;
             showErrorMessage({inputName: 'oldPassword', errorMessage: 'empty'})

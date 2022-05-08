@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import './home.css'
-// import SideNav from '../../components/SideNav/SideNav';
+import jwt_decode from "jwt-decode";
+import { AXIOS } from '../../API/Constant';
 import { SideNav } from '../../components';
 import { SlidingCard } from '../../components/Dashboard';
-import { Cartoon, Cartoon3, Cartoon4, NavCompassIcon, yourname } from '../../assets/images';
-import { AXIOS } from '../../API/Constant';
+import {  Cartoon3, Cartoon4, NavCompassIcon, yourname } from '../../assets/images';
+
 
 
 function Home() {
@@ -58,6 +59,15 @@ function Home() {
       navigate('/login');
     }
   }
+
+  useEffect(()=>{
+    if(localStorage.getItem("token") !== null){
+      if(jwt_decode(localStorage.getItem("token"))['exp'] < (new Date().getTime() + 1) / 1000){
+        logoutHandler();
+      }
+    }
+ 
+  })
   
 
   return (

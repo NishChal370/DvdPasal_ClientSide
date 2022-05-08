@@ -84,14 +84,18 @@ function Catelog() {
                               })
                         )}
 
-                        {dvdDetails === undefined && (
-                              <div className="spinner-grow" style={{ width: '3rem', height: '3rem' }} role="status">
+                  </section>
+                  {dvdDetails === undefined && (
+                        <section className='d-flex justify-content-center'>
+                              <div className="spinner-border" style={{width: '3rem', height: '3rem', color:'green'}} role="status">
                                     <span className="visually-hidden">Loading...</span>
                               </div>
-                        )}
-
-                  </section>
-
+                              <div className="spinner-grow" style={{width: '3rem', height: '3rem', color:'red'}} role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                              </div>
+                        </section>
+                  )}
+                  
 
 
             </div>

@@ -74,6 +74,7 @@ const URL_GET_CURRENT_USER_PROFILE_DETAIL = 'user/getCurrentUser'
 const URL_POST_CURRENT_USER_PROFILE_DETAIL = 'user/changeUserInfo'
 
 const URL_GET_MOST_LOAN = 'DvdTitle/getMostLoaned'
+const URL_POST_LOAN_TYPE = 'LoanType'
 
 export{
     AXIOS,
@@ -134,4 +135,5 @@ export{
     URL_POST_CURRENT_USER_PROFILE_DETAIL,
 
     URL_GET_MOST_LOAN,
+    URL_POST_LOAN_TYPE,
 }

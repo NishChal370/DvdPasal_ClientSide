@@ -4,6 +4,7 @@ import './addLoan.css';
 import { DataNotFoundImg, DvdImg } from '../../../assets/images';
 import { removeValidationMessage, validateData } from './validation';
 import { Get_Dvd_Copy_For_Loan, Get_Loan_Type_List, Post_Loan } from '../../../API/UserService';
+import AddLoanTypeModel from './AddLoanTypeModel';
 
 
 function AddLoan() {
@@ -98,7 +99,6 @@ function AddLoan() {
                   console.log(inputDetail[index]);
                   const {memberNumber, loanType} = inputDetail[index];
                   const {loanTypeNumber} = loanType;
-                  console.log(new Date().toISOString());
 
                   const loanData ={
                         copyNumber: parseInt(copyId),
@@ -110,6 +110,8 @@ function AddLoan() {
                   post_loan(loanData, index);                  
             }
       }
+
+      const refreshHandler=()=> setWantToRefresh({...!wantToRefresh})
 
       useEffect(()=>{
             get_dvd_copy_for_loan();
@@ -132,8 +134,12 @@ function AddLoan() {
             <section id='add-loan-wrrapper'>
                   <nav>
                         <p className='fw-bolder fs-1 moving-text---effect'>Add Loan</p>
+                        <aside>          
+                              <button className=" add-dvd-button" role="button" type="button" data-bs-toggle="modal" data-bs-target="#addLoanTypeModel" data-bs-whatever="@mdo">Add Loan Type</button>                           
+                        </aside>
                   </nav>
                   <hr />
+                  <AddLoanTypeModel refreshHandler={refreshHandler}/>
 
                   <section className='add-loan-body '>
                         {loanDvdCopyDetail !== undefined &&(
