@@ -1,9 +1,12 @@
-#main{
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+#main {
       width: 100%;
       margin-bottom: 10rem !important;
 }
-#main>.top-img{
-      height: 30rem ;
+
+#main>.top-img {
+      height: 30rem;
       background-size: cover;
       /* background:fixed; */
       background-repeat: no-repeat;
@@ -11,7 +14,7 @@
 }
 
 
-#main>.top-img>div{
+#main>.top-img>div {
       box-shadow: 0px 15px 10px -15px #0ff;
       color: white;
       padding-top: 2%;
@@ -19,52 +22,176 @@
       border-bottom: 0.2rem solid white;
 }
 
-#main>.top-img>div:hover{
+#main>.top-img>div:hover {
       box-shadow: 0px 15px 10px -15px rgb(140, 21, 238);
 }
-#main>.top-img>div>span>p:nth-child(1){
+
+#main>.top-img>div>span>p:nth-child(1) {
       text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.3em blue;
-      animation: lightBlink 2s  ease-in-out infinite;
+      animation: lightBlink 2s ease-in-out infinite;
 }
 
 
-@keyframes lightBlink{
-      0%{
+@keyframes lightBlink {
+      0% {
             text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.3em blue;
       }
-      50%{
+
+      50% {
             text-shadow: 1px 1px 2px rgb(226, 124, 124), 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
       }
-      100%{
+
+      100% {
             text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
       }
 }
 
 
 
-#login-button{
-      background-color: rgba(37, 35, 35, 0.301);
-      border-radius: 1rem;
-      box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
-      box-sizing: border-box;
-      color: #fff;
-      cursor: pointer;
-      font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 1.2rem;
-      font-weight: bold;
+#login-button,
+#logout-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 50px 75px 0 0;
+      padding: 0.6em 2em;
+      border: none;
       outline: none;
-      outline: 0;
-      padding: 0rem 1rem;
-      margin: 0rem;
-      text-align: center;
-      transform: translateY(0);
-      transition: transform 150ms, box-shadow 150ms;
+      font-family: 'MuseoModerno', sans-serif !important;
+      color: rgb(255, 255, 255);
+      background: #111;
+      cursor: pointer;
+      z-index: 0;
+      border-radius: 10px;
       user-select: none;
       -webkit-user-select: none;
       touch-action: manipulation;
 }
 
-#login-button:hover {
-      box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
-      transform: translateY(-9px);
+#login-button:before,
+#logout-button::before {
+      content: "";
+      background: linear-gradient(45deg,
+                  #ff0000,
+                  #ff7300,
+                  #fffb00,
+                  #48ff00,
+                  #00ffd5,
+                  #002bff,
+                  #7a00ff,
+                  #ff00c8,
+                  #ff0000);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing-button-85 20s linear infinite;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+      0% {
+            background-position: 0 0;
+      }
+
+      50% {
+            background-position: 400% 0;
+      }
+
+      100% {
+            background-position: 0 0;
+      }
+}
+
+#login-button:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 128, 0.8);
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+}
+
+#logout-button::after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(128, 0, 0, 0.8);
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+}
+
+#banner-container {
+      position: relative;
+      text-align: center;
+      color: white;
+}
+
+#banner-img {
+      width: 100%;
+      height: 30em;
+      position: relative;
+      object-fit: cover;
+}
+
+#app-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-family: 'Satisfy', cursive !important;
+      font-size: 4em;
+      transform: translate(-50%, -50%);
+      color: #ffedb4;
+      z-index: 1;
+      animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both,
+       pulsate 2.5s infinite alternate;     
+}
+
+
+@keyframes text-focus-in {
+      0% {
+            filter: blur(12px);
+            opacity: 0;
+      }
+
+      100% {
+            filter: blur(0px);
+            opacity: 1;
+      }
+}
+
+@keyframes pulsate {
+      100% {
+            /* Larger blur radius */
+            text-shadow:
+                  0 0 4px #ffedb4,
+                  0 0 11px #ffedb4,
+                  0 0 19px #ffedb4,
+                  0 0 90px gold,
+                  0 0 100px gold,
+                  0 0 150px gold;
+      }
+
+      0% {
+            /* Smaller blur radius */
+            text-shadow:
+                  0 0 2px #ffedb4,
+                  0 0 4px #ffedb4,
+                  0 0 6px #ffedb4,
+                  0 0 55px gold,
+                  0 0 70px gold,
+                  0 0 80px gold;
+      }
 }
