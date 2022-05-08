@@ -62,7 +62,7 @@ function InactiveMemberDetail() {
                                           {inactiveMembers !== undefined &&(
                                                 inactiveMembers.map(({firstName, lastName, address, recentDvdTitle, daysSinceLoan, dateOut, memberImage}, index)=>{return(
                                                       <tr>
-                                                            <td>{index}</td>
+                                                            <td>{index+1}</td>
                                                             <td><img id= 'inactive-profile-img' src={memberImage} alt="profile-imng" /></td>
                                                             <td>{firstName}</td>
                                                             <td>{lastName}</td>

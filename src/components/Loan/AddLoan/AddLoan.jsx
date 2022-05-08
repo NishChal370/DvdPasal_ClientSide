@@ -5,11 +5,13 @@ import { DataNotFoundImg, DvdImg } from '../../../assets/images';
 import { removeValidationMessage, validateData } from './validation';
 import { Get_Dvd_Copy_For_Loan, Get_Loan_Type_List, Post_Loan } from '../../../API/UserService';
 import AddLoanTypeModel from './AddLoanTypeModel';
+import AddLoanBillModel from './AddLoanBillModel';
 
 
 function AddLoan() {
       const [loanTypeList, setLoanTypeList] = useState();
       const [inputDetail, setInputDetail] = useState([]);
+      const [loanBill, setLoanBill] = useState();
       const [wantToRefresh, setWantToRefresh] = useState(false);
       const [loanDvdCopyDetail, setLoanDvdCopyDetail] = useState();
       
@@ -38,14 +40,16 @@ function AddLoan() {
       }
 
       const post_loan = (loanData, index)=>{
-            console.log(loanData);
             Post_Loan(loanData)
                   .then(({data})=>{
-                        Swal.fire(
-                              'Added Successfully!',
-                              data,
-                              'success'
-                        )
+                        // Swal.fire(
+                        //       'Added Successfully!',
+                        //       data,
+                        //       'success'
+                        // )
+                        setLoanBill({...data});
+
+                        document.getElementById('addLoanBillModelShowBtn').click();
 
                         resetHandler(index);
                         
@@ -140,6 +144,7 @@ function AddLoan() {
                   </nav>
                   <hr />
                   <AddLoanTypeModel refreshHandler={refreshHandler}/>
+                  <AddLoanBillModel loanBill={loanBill}/>
 
                   <section className='add-loan-body '>
                         {loanDvdCopyDetail !== undefined &&(
@@ -179,6 +184,7 @@ function AddLoan() {
                                                 
 
                                                 <button className="addtoloan-button" role="button" onClick={()=>addButtonHandler(copyId,index)}>Add To Loan</button>
+                                                <button id='addLoanBillModelShowBtn' data-bs-toggle="modal" data-bs-target="#addLoanBillModel" data-bs-whatever="@mdo"  style={{display:'none'}}>show Bill</button>
                                           </div>
 
                                     </div>
