@@ -52,7 +52,7 @@ function Dashboard() {
 
 
       const get_available_dvd_by_lastname = () => {
-            Get_Available_Dvd_By_Lastname()
+            Get_Available_Dvd_By_Lastname(search.lastname)
                   .then(({ data }) => {
                         setDvdDetails(data);
                   })
@@ -124,14 +124,14 @@ function Dashboard() {
                                     return (
                                           <div className="card dvd-card" data-bs-toggle="tooltip" data-bs-placement="top" title={dvdName} style={{ maxHeight: '30rem' }} key={`dvdInStore${index}`}>
                                                 <div className="card-body p-0">
-                                                      <img src={dvDimages[0].image64} onError={(e) => e.target.src = DvdImg} className="dvd-image card-img-top img-fluid" alt="dvd-img" />
+                                                      <img src={(dvDimages !== null) && dvDimages[0].image64} onError={(e) => e.target.src = DvdImg} className="dvd-image card-img-top img-fluid" alt="dvd-img" />
                                                       <article className='p-3'>
                                                             <span id='dvd-name-span'>
                                                                   <p id='dvd-name-p' className="fs-3 p-0 m-0">{dvdName}</p>
                                                             </span>
                                                             <p className="fs-5 p-0 m-0"><span style={{ fontWeight: 'bold' }}>Release Date:</span> {dateConverter(dateReleased)}</p>
                                                             <p className="fs-5 p-0 m-0"><span style={{ fontWeight: 'bold' }}>Price:</span> {standardCharge}</p>
-                                                            <p className="fs-5 p-0 m-0"><span style={{ fontWeight: 'bold' }}>Category:</span> {dvdCategory['categoryDescription']}</p>
+                                                            <p className="fs-5 p-0 m-0"><span style={{ fontWeight: 'bold' }}>Category:</span> {(dvdCategory.length > 0 ) && dvdCategory['categoryDescription']}</p>
                                                             <p className="fs-5 p-0 m-0"><span style={{ fontWeight: 'bold' }}>Actor:</span> {`${actors[0].actorName} ${actors[0].actorLastName}`}</p>
                                                             <p className="fs-5 p-0 m-0"><span style={{ fontWeight: 'bold' }}>Age Limit:</span> <span className={`badge rounded-pill ${(dvdCategory.ageRestricted) ? 'bg-danger' : 'bg-success'}`}>{(dvdCategory.ageRestricted) ? 'Adults' : 'Family'}</span></p>
                                                       </article>
