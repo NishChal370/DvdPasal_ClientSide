@@ -28,6 +28,7 @@
 
 .login-wrapper {
       width: 30%;
+      height: auto;
       margin: 10rem;
       padding: 2rem;
       position: absolute;
@@ -36,6 +37,34 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(7.7px);
       -webkit-backdrop-filter: blur(7.7px);
+}
+
+@media only screen and (max-height: 800px) {
+      .login-wrapper{
+            margin: 5rem;
+            width: 40%;
+      }
+}
+
+@media only screen and (max-height: 700px) {
+      .login-wrapper{
+            margin: 1rem;
+            width: 35%;
+      }
+
+      #login-head{
+            font-size: 52px !important;
+      }
+
+      label{
+            font-size: 1em !important;
+      }
+}
+
+@media only screen and (max-width: 1024px) {
+      .login-wrapper{
+            width: 35%;
+      }
 }
 
 .text-input {

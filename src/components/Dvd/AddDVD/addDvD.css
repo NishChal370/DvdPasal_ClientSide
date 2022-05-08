@@ -28,6 +28,30 @@
       margin: 0px;
 }
 
+#plus-btn-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+}
+
+#plus-btn-container img{
+      height: 50px;
+      margin-top: 20px;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#plus-btn-container :hover{
+      transform: scale(1.05);
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 8px 10px;
+}
+
+.actor-icons{
+      height: 1.8rem;
+
+}
 
 .circle-img--button{
       border-radius: 50%;

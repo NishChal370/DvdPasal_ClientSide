@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import './addDvD.css';
 import { checkValidation } from './validation';
-import { AddUserImg, CrossImg } from '../../../assets/images';
+import { AddUserImg, CrossImg, minus, plus } from '../../../assets/images';
 import { Get_Actors_Name, Get_DVD_Cateogaries_Name, Get_Producets_Name, Get_Studios_Name, Post_Dvd_Title } from '../../../API/UserService';
 
 
@@ -94,7 +94,7 @@ function AddDVD() {
                         setNameList({ ...nameList });
                   })
                   .catch(({ response }) => {
-                        alert("error in get producet name:"+ response.data)
+                        alert("error in get producet name:" + response.data)
                   })
       }
 
@@ -134,8 +134,8 @@ function AddDVD() {
                         alert("error in get cateogary name")
                   })
       }
-      
-      
+
+
       // to allow adding new producer, actor, studio, cateogar {change status of all to add the mention data}
       const handlerAddingNew = (name, index) => {
 
@@ -181,15 +181,24 @@ function AddDVD() {
             setDvdData({ ...dvdData });
       }
 
-      const addActorHandler = (type) => {
+      const addActorHandler = (type, itemIndex) => {
             if (type === 'less') {
                   numberOFActors = (numberOFActors > 1) ? numberOFActors - 1 : numberOFActors;
-                  
-                  if(Object.keys(inputNewStatus['actor']).length > 1){
-                        console.log(numberOFActors);
-                        delete inputNewStatus['actor'][numberOFActors];
 
-                        dvdData.actors.pop();
+                  if (dvdData.actors.length > 1) {
+                        console.log(numberOFActors);
+                        delete inputNewStatus['actor'][itemIndex];
+
+                        var mActors = [];
+
+                        // Remove actor at 'itemIndex'
+                        dvdData.actors.forEach((element, index) => {
+                              if (itemIndex != index) {
+                                    mActors.push(element);
+                              }
+                        });
+
+                        dvdData.actors = mActors;
                   }
 
             }
@@ -198,10 +207,12 @@ function AddDVD() {
 
                   dvdData.actors.push({ ...actor });
 
-                  inputNewStatus.actor[numberOFActors-1] = false;
+                  inputNewStatus.actor[numberOFActors - 1] = false;
             }
 
-            
+
+
+
             setNumberOfActors(numberOFActors);
             setDvdData({ ...dvdData });
             setInputNewStatus({ ...inputNewStatus });
@@ -214,7 +225,7 @@ function AddDVD() {
             (target.tagName === 'SELECT')
                   ? dropDownChangeHandler(target, index)
                   : textBoxChangeHandler(target, index);
-            
+
             console.log(dvdData);
 
       }
@@ -319,7 +330,7 @@ function AddDVD() {
       const submitButtonHandler = (e) => {
             e.preventDefault();
 
-            (checkValidation({newDvdDetail: dvdData, numberOfActors: inputNewStatus.actor})) &&(
+            (checkValidation({ newDvdDetail: dvdData, numberOfActors: inputNewStatus.actor })) && (
                   post_Dvd_Title()
             )
       }
@@ -365,7 +376,7 @@ function AddDVD() {
             setInputNewStatus({ producer: false, studio: false, actor: { 0: false }, image: { 0: false }, cateogary: false });
       }
 
-      
+
 
       useEffect(() => {
             get_producers_name();
@@ -377,9 +388,9 @@ function AddDVD() {
 
       return (
             <div id='add-dvd'>
-                  <section id='add-dvd-wrapper' style={{marginTop:'2rem'}}>
+                  <section id='add-dvd-wrapper' style={{ marginTop: '2rem' }}>
                         <nav>
-                              <p className='fw-bolder fs-1 moving-text---effect'>Register DVDs</p>
+                              <p className='fw-bolder fs-1 moving-text---effect'>Add New DVD</p>
                         </nav>
 
                         <hr />
@@ -391,38 +402,38 @@ function AddDVD() {
                               {/* DVD name */}
                               <div className="col-md-6">
                                     <label htmlFor="inputDvdName" className="form-label">DvD Name</label>
-                                    <span id='dvdName-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                    <input type="text" className="form-control input--design" id="dvdName" name='dvdName' placeholder='Add Dvd name...'  value={dvdData.dvdName} onChange={inputChangeHandler} />
+                                    <span id='dvdName-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
+                                    <input type="text" className="form-control input--design" id="dvdName" name='dvdName' placeholder='Add Dvd name...' value={dvdData.dvdName} onChange={inputChangeHandler} />
                               </div>
                               {/* release date */}
                               <div className="col-md-6">
                                     <label htmlFor="inputReleaseDate" className="form-label">Release Date</label>
-                                    <span id='dateReleased-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
+                                    <span id='dateReleased-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
                                     <input type="date" className="form-control input--design" id="dateReleased" name='dateReleased' value={dvdData.dateReleased} onChange={inputChangeHandler} />
                               </div>
                               {/* price */}
                               <div className="col-md-6">
                                     <label htmlFor="inputPrice" className="form-label">Price</label>
-                                    <span id='standardCharge-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                    <input type="number" className="form-control input--design" id="standardCharge" name='standardCharge' placeholder='Add price...' value={dvdData.standardCharge}   onChange={inputChangeHandler}  />
+                                    <span id='standardCharge-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
+                                    <input type="number" className="form-control input--design" id="standardCharge" name='standardCharge' placeholder='Enter price...' value={dvdData.standardCharge <= 0 ? NaN : dvdData.standardCharge} onChange={inputChangeHandler} />
                               </div>
                               {/* penalty */}
                               <div className="col-md-6">
                                     <label htmlFor="inputPenalty" className="form-label">Penalty</label>
-                                    <span id='penaltyCharge-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
-                                    <input type="number" className="form-control input--design" id="penaltyCharge" name='penaltyCharge' placeholder='Add penalty amount...' value={dvdData.penaltyCharge} onChange={inputChangeHandler} />
+                                    <span id='penaltyCharge-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
+                                    <input type="number" className="form-control input--design" id="penaltyCharge" name='penaltyCharge' placeholder='Enter penalty amount...' value={dvdData.penaltyCharge <= 0 ? NaN : dvdData.penaltyCharge} onChange={inputChangeHandler} />
                               </div>
 
                               {/* producer */}
                               <section className="col-md-6" >
                                     <label htmlFor="inputProducer" className="form-label">Producer</label>
-                                    <span id='dvdProducer-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
+                                    <span id='dvdProducer-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
                                     <div className='d-flex gap-3'>
                                           {(!inputNewStatus.producer)
                                                 ? (
                                                       <>
                                                             {/* existing producer */}
-                                                            <select className="form-select input--design" id="dvdProducer" name='producerNumber'  value={dvdData.dvdProducer.producerNumber} onChange={inputChangeHandler}>
+                                                            <select className="form-select input--design" id="dvdProducer" name='producerNumber' value={dvdData.dvdProducer.producerNumber} onChange={inputChangeHandler}>
                                                                   <option value={''}>---</option>
                                                                   {nameList.producers.map(({ producerNumber, producerName }, index) => {
                                                                         return (
@@ -435,7 +446,7 @@ function AddDVD() {
                                                 )
                                                 : (<>
                                                       {/* new producer */}
-                                                      <input className="form-control input--design" id="dvdProducer" name='producerName'  placeholder='insert producer name....' value={dvdData.dvdProducer.producerName} onChange={inputChangeHandler} />
+                                                      <input className="form-control input--design" id="dvdProducer" name='producerName' placeholder='Insert producer name....' value={dvdData.dvdProducer.producerName} onChange={inputChangeHandler} />
                                                       <img className='circle-img--button' src={CrossImg} alt="" onClick={() => handlerAddingNew('producer')} />
                                                 </>
                                                 )
@@ -446,7 +457,7 @@ function AddDVD() {
                               {/* studio */}
                               <section className="col-md-6" >
                                     <label htmlFor="inputProducer" className="form-label">Studio</label>
-                                    <span id='dvdStudio-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
+                                    <span id='dvdStudio-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
                                     <div className='d-flex gap-3'>
                                           {(!inputNewStatus.studio)
                                                 ? (
@@ -468,7 +479,7 @@ function AddDVD() {
                                                 : (
                                                       <>
                                                             {/* new studio */}
-                                                            <input className="form-control input--design" id="dvdStudio" name='studioName' placeholder='insert studio name...' value={dvdData.dvdStudio.studioName} onChange={inputChangeHandler} />
+                                                            <input className="form-control input--design" id="dvdStudio" name='studioName' placeholder='Insert studio name...' value={dvdData.dvdStudio.studioName} onChange={inputChangeHandler} />
                                                             <img className='circle-img--button' src={CrossImg} alt="" onClick={() => handlerAddingNew('studio')} />
                                                       </>
                                                 )
@@ -480,10 +491,10 @@ function AddDVD() {
                               <section className="col-md-6" >
                                     <label htmlFor="inputActor" className="form-label">
                                           Actor
-                                          <a style={{ color: 'blue', paddingBottom: '0rem', paddingLeft: '0.2rem', cursor: 'pointer', fontSize: '0.9rem' }} onClick={() => addActorHandler('more')}> add more</a>
-                                          <a style={{ color: 'blue', paddingBottom: '0rem', paddingLeft: '0.2rem', cursor: 'pointer', fontSize: '0.9rem' }} onClick={() => addActorHandler('less')}> add Less</a>
+
+
                                     </label>
-                                    <span id='actors-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>   
+                                    <span id='actors-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
 
                                     {/* loop to add multiple actor */}
                                     {[...Array(numberOFActors)].map((a, index) => {
@@ -493,7 +504,7 @@ function AddDVD() {
                                                             ? (
                                                                   <>
                                                                         {/* existing actor */}
-                                                                        <select className="form-select input--design" id="actors" name='actorNumber' title={`actorNumber${index}`}  value={dvdData.actors[index].actorNumber} onChange={(e) => inputChangeHandler(e, index)}>
+                                                                        <select className="form-select input--design" id="actors" name='actorNumber' title={`actorNumber${index}`} value={dvdData.actors[index].actorNumber} onChange={(e) => inputChangeHandler(e, index)}>
                                                                               <option value={''}>---</option>
                                                                               {nameList.actors.map(({ actorId, actorName }, index) => {
                                                                                     return (
@@ -501,37 +512,44 @@ function AddDVD() {
                                                                                     )
                                                                               })}
                                                                         </select>
-                                                                        <img className='circle-img--button' src={AddUserImg} alt="" onClick={() => handlerAddingNew('actor', index)} />
+                                                                        <img className='circle-img--button actor-icons' src={AddUserImg} alt="" onClick={() => handlerAddingNew('actor', index)} />
                                                                   </>
                                                             )
                                                             : (
                                                                   <>
                                                                         {/* new actor */}
-                                                                        <input className="form-control input--design" id="actors" name='actorName' title={`actorName${index}`}  placeholder='insert Name....' value={dvdData.actors[index].actorName} onChange={(e) => inputChangeHandler(e, index)} />
-                                                                        <input className="form-control input--design" id="actors" name='actorLastName' title={`actorLastName${index}`}  placeholder='insert last Name....' value={dvdData.actors[index].actorLastName} onChange={(e) => inputChangeHandler(e, index)} />
-                                                                        <input className="form-control input--design" id="actors" name='profileUrl' title={`profileUrl${index}`} placeholder='insert url....' value={dvdData.actors[index].profileUrl} onChange={(e) => inputChangeHandler(e, index)} />
+                                                                        <input className="form-control input--design" id="actors" name='actorName' title={`actorName${index}`} placeholder='Enter Name....' value={dvdData.actors[index].actorName} onChange={(e) => inputChangeHandler(e, index)} />
+                                                                        <input className="form-control input--design" id="actors" name='actorLastName' title={`actorLastName${index}`} placeholder='Enter last name....' value={dvdData.actors[index].actorLastName} onChange={(e) => inputChangeHandler(e, index)} />
+                                                                        <input className="form-control input--design" id="actors" name='profileUrl' title={`profileUrl${index}`} placeholder='Enter profile url....' value={dvdData.actors[index].profileUrl} onChange={(e) => inputChangeHandler(e, index)} />
 
-                                                                        <img className='circle-img--button' src={CrossImg} alt="" onClick={() => handlerAddingNew('actor', index)} />
+                                                                        <img className='circle-img--button actor-icons' src={CrossImg} alt="" onClick={() => handlerAddingNew('actor', index)} />
                                                                   </>
                                                             )
+
+
                                                       }
+
+                                                      <img className='circle-img--button actor-icons' src={minus} alt="" onClick={() => addActorHandler('less', index)} />
+
                                                 </div>
                                           )
                                     })}
-
+                                    <div id='plus-btn-container'>
+                                    <img src={plus} alt="Add Actor" onClick={() => addActorHandler('more')} data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add an actor." />
+                                    </div>
                               </section>
 
 
                               {/* category */}
                               <section className="col-md-6" >
                                     <label htmlFor="inputCateogary" className="form-label">Cateogary</label>
-                                    <span id='dvdCategory-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
+                                    <span id='dvdCategory-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
                                     <div className='d-flex gap-3'>
                                           {(!inputNewStatus.cateogary)
                                                 ? (
                                                       <>
                                                             {/* existing cateogary */}
-                                                            <select className="form-select input--design"  id="dvdCategory" name='categoryNumber'  value={dvdData.dvdCategory.categoryNumber} onChange={inputChangeHandler}>
+                                                            <select className="form-select input--design" id="dvdCategory" name='categoryNumber' value={dvdData.dvdCategory.categoryNumber} onChange={inputChangeHandler}>
                                                                   <option value={''}>---</option>
                                                                   {nameList.cateogary.map(({ categoryNumber, categoryDescription }, index) => {
                                                                         return (
@@ -545,9 +563,9 @@ function AddDVD() {
                                                 : (
                                                       <>
                                                             {/* new cateogary */}
-                                                            <input className="form-contro input--design" id="dvdCategory" name='categoryDescription'  placeholder='insert category name..' style={{ width: '69.6%' }} value={dvdData.dvdCategory.categoryDescription} onChange={inputChangeHandler} />
+                                                            <input className="form-contro input--design" id="dvdCategory" name='categoryDescription' placeholder='Insert category name..' style={{ width: '69.6%' }} value={dvdData.dvdCategory.categoryDescription} onChange={inputChangeHandler} />
 
-                                                            <input className='mt-2 input--design' type="checkbox" id="dvdCategory" name='ageRestricted'  checked={dvdData.dvdCategory.ageRestricted} onChange={inputChangeHandler} />
+                                                            <input className='mt-2 input--design' type="checkbox" id="dvdCategory" name='ageRestricted' checked={dvdData.dvdCategory.ageRestricted} onChange={inputChangeHandler} />
                                                             <label htmlFor="checkBox">Is age restricted</label>
                                                             <img className='circle-img--button input--design' src={CrossImg} alt="" onClick={() => handlerAddingNew('cateogary')} />
                                                       </>
@@ -561,10 +579,10 @@ function AddDVD() {
                                     <label htmlFor="inputImage" className="form-label">
                                           Image
                                     </label>
-                                    <span id='dvDimages-tooltip' className='valid' style={{color:'red', paddingleft:'0.4rem', display:'none', fontSize:'1rem'}}>  * show not be empty</span>
+                                    <span id='dvDimages-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
 
                                     <div className={`d-flex gap-3 'mt-2'}`} key={`imageInput`}>
-                                          <input type="file" accept="image/*" className="form-control input--design" id="dvDimages" name='image64'  placeholder='Add images...' multiple onChange={(e) => addImage(e)} />
+                                          <input type="file" accept="image/*" className="form-control input--design" id="dvDimages" name='image64' placeholder='Add images...' multiple onChange={(e) => addImage(e)} />
                                     </div>
                               </section>
 
