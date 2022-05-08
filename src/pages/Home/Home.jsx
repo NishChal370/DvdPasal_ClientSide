@@ -21,8 +21,6 @@ function Home() {
 
   console.log(location);
 
-  const [titleName, setTitleName] = useState()
-
   switch (location) {
     case hasLocation("catelog"):
       topCoverImage = catalog_banner;

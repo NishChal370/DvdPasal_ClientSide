@@ -1,7 +1,3 @@
-import Cartoon from './cartoon.jpg'
-import Cartoon3 from './cartoon3.jpg';
-import Cartoon4 from './cartoon4.jpg';
-
 import DvdImg from './dvd-image.jpg';
 import DvdImg2 from './dvdImg.jpg';
 
@@ -55,8 +51,8 @@ import fourth from './fourth.png'
 export {
     DownIcon, ReturnIcon, DvdIcon, PageNotFoundGif, CatelogIcon, HomeImg,
     AvtarImg, AvtarImg2, FilterIcon, DvdImg, DvdImg2, AddUserImg, DataNotFoundImg,
-    CrossImg, NavCompassIcon, RightIcon, SearchIcon2, Cartoon, Cartoon3, Cartoon4,
-    PageNotFoundImg, DeleteIcon, ChangePasswordIcon, EditIcon, back, reg_back,
-    first, second, third, fourth, minus, plus, app_banner, catalog_banner, copy_banner,
-    member_banner, dvd_banner, loan_banner, admin_banner
+    CrossImg, NavCompassIcon, RightIcon, SearchIcon2, PageNotFoundImg, DeleteIcon,
+    ChangePasswordIcon, EditIcon, back, reg_back, first, second, third, fourth,
+    minus, plus, app_banner, catalog_banner, copy_banner, member_banner, dvd_banner,
+    loan_banner, admin_banner
 }
