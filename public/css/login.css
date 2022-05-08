@@ -42,13 +42,28 @@
 @media only screen and (max-height: 800px) {
       .login-wrapper{
             margin: 5rem;
-            width: 40%
+            width: 40%;
+      }
+}
+
+@media only screen and (max-height: 700px) {
+      .login-wrapper{
+            margin: 1rem;
+            width: 35%;
+      }
+
+      #login-head{
+            font-size: 52px !important;
+      }
+
+      label{
+            font-size: 1em !important;
       }
 }
 
 @media only screen and (max-width: 1024px) {
       .login-wrapper{
-            width: 40%;
+            width: 35%;
       }
 }
 

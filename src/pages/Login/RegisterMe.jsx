@@ -71,7 +71,7 @@ function RegisterMe() {
                                     R<span class="flickering-text" id="flickering-e">e</span>gis<span class="flickering-text" id="flickering-t">t</span>er
                               </h1>
                               <div>
-                                    <label htmlFor="" className='fs-1' style={{ color: 'white', cursor: 'pointer' }} onClick={() => { navigate('/login') }}><IoMdArrowRoundBack /></label>
+                                    <label htmlFor="" id=' ' className='fs-1' style={{ color: 'white', cursor: 'pointer' }} onClick={() => { navigate('/login') }}><IoMdArrowRoundBack /></label>
                               </div>
                               <form className="row g-3" onSubmit={submitHandler} onReset={resetHandler}>
                                     <div className="col-md-6">
@@ -121,7 +121,7 @@ function RegisterMe() {
                                     <div className="col-md-6">
                                           <label for="inputdateOfBirth" className="form-label">Date of Birth</label>
                                           <span id='inputdateOfBirth-tooltip' className='valid' style={{ color: 'red', paddingleft: '0.4rem', display: 'none', fontSize: '1rem' }}>  * show not be empty</span>
-                                          <input type="date" className="form-control input--design" id="inputdateOfBirth" name='dateOfBirth' placeholder='enter first name...'
+                                          <input type="date" className="form-control input--design" id="inputdateOfBirth" name='dateOfBirth' placeholder='Enter first name...'
                                                 value={newUserDetail.dateOfBirth} onChange={inputChangeHandler}
                                           />
                                     </div>
@@ -147,8 +147,8 @@ function RegisterMe() {
                                     <div className="col-md-6"></div>
                                     <div className="col-md-6">
                                           <div className="d-flex gap-5 justify-content-end" style={{ height: '2.6rem' }}>
-                                                <button type="submit" className="save-dvd-btn btn btn-primary" >Submit</button>
-                                                <button type="reset" className=" save-dvd-btn btn btn-danger">Reset</button>
+                                                <button type="submit" className="save-dvd-btn btn btn-primary register-btn" >Submit</button>
+                                                <button type="reset" className=" save-dvd-btn btn btn-danger register-btn">Reset</button>
                                           </div>
                                     </div>
                               </form>

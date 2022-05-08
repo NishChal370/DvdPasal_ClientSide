@@ -37,6 +37,32 @@
     }
 }
 
+@media only screen and (max-height: 700px) {
+    .register-wrapper{
+          margin: 1rem !important;
+          padding: 1em;
+          width: 40%;
+    }
+
+    #register-head{
+          font-size: 52px !important;
+    }
+
+    #back-img{
+        height: 120%;
+        object-fit: fill;
+    }
+
+    .register-btn{
+        font-size: small;
+        margin: 0;
+    }
+
+    label{
+          font-size: 1em !important;
+    }
+}
+
 @media only screen and (max-height: 1024px) {
     .register-wrapper{
           width: 55% !important;
